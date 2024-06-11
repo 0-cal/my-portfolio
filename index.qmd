@@ -3,7 +3,9 @@ title: "Welcome to My Website"
 output: html_document
 ---
 
-## ![](images/IMG_7437 copy-02.JPG)
+## 
+
+![](images/IMG_7437 copy-02.JPG)
 
 ## About Me
 
