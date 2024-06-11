@@ -1,0 +1,104 @@
+---
+title: "Measuring Perceptions of the Hyperloop"
+---
+
+# Project Description
+
+*My primary research objective at Hardt Hyperloop was to investigate user perceptions of a simulated hyperloop trip. The company aimed to determine the appropriate dimensions of the hyperloop capsule before investing extensively in materials. However, since the company had not yet developed a hyperloop accessible to the public, predicting how people would feel inside the capsule was challenging. To address this, our team designed a real-life hyperloop experience---a wooden mock-up capsule equipped with seating and accompanied by a VR headset to illustrate the remaining characteristics of the hyperloop interior.*
+
+*We recruited residents in Groningen to participate in the VR simulation and complete questionnaires. Four main constructs---technology acceptance, perceived safety, perceived comfort, and claustrophobia---were identified for latent class analysis. This model will be instrumental in classifying users in future simulated hyperloop studies.*
+
+### Step 1: Install and load necessary packages
+
+``` r
+install.packages("poLCA")
+install.packages("ggplot2")
+library(poLCA)
+library(ggplot2)
+```
+
+### Step 2: Prepare your data
+
+*The dataframe named* `survey_data` *contains columns:* `tech_acceptance`, `perceived_safety`, `perceived_comfort`, *and* `claustrophobia`. *Unfortunately, due to privacy laws, I cannot share the data on this platform. I can only provide my code for analyzing the survey data collected at Hardt Hyperloop.*
+
+### Step 3: Specify the LCA model
+
+``` r
+formula <- cbind(tech_acceptance, perceived_safety, perceived_comfort, claustrophobia) ~ 1
+```
+
+### Step 4: Run the LCA for different numbers of classes and compare models
+
+``` r
+# Fit the models with different numbers of classes
+set.seed(123) # For reproducibility
+lca_models <- list()
+aic_values <- numeric()
+bic_values <- numeric()
+
+for (nclass in 1:5) { # Adjust range as needed
+  lca_model <- poLCA(formula, data = survey_data, nclass = nclass, maxiter = 1000, na.rm = TRUE)
+  lca_models[[nclass]] <- lca_model
+  aic_values[nclass] <- lca_model$aic
+  bic_values[nclass] <- lca_model$bic
+}
+
+# Compare models using AIC and BIC
+comparison <- data.frame(
+  Classes = 1:5,
+  AIC = aic_values,
+  BIC = bic_values
+)
+
+print(comparison)
+```
+
+### Step 5: Plot AIC and BIC for model comparison
+
+``` r
+ggplot(comparison, aes(x = Classes)) +
+  geom_line(aes(y = AIC, color = "AIC")) +
+  geom_line(aes(y = BIC, color = "BIC")) +
+  geom_point(aes(y = AIC, color = "AIC")) +
+  geom_point(aes(y = BIC, color = "BIC")) +
+  labs(title = "Model Comparison", y = "Criterion Value", x = "Number of Classes") +
+  scale_color_manual(name = "Criteria", values = c("AIC" = "blue", "BIC" = "red")) +
+  theme_minimal()
+```
+
+### Step 6: Select the best model based on AIC/BIC and interpret parameters
+
+``` r
+# Select the best model (assuming the lowest BIC is preferred)
+best_nclass <- which.min(bic_values)
+best_model <- lca_models[[best_nclass]]
+
+# Summary of the best model
+summary(best_model)
+
+# Print class probabilities
+print(best_model$P)
+
+# Print item-response probabilities
+print(best_model$probs)
+```
+
+### Step 7: Graph the item-response probabilities for the best model
+
+``` r
+# Create a data frame for plotting
+item_probs <- data.frame(
+  Class = rep(1:best_nclass, each = length(best_model$probs[[1]])),
+  Variable = rep(names(best_model$probs), each = best_nclass),
+  Level = rep(1:length(best_model$probs[[1]]), best_nclass),
+  Probability = unlist(lapply(best_model$probs, function(x) unlist(x)))
+)
+
+# Plot item-response probabilities
+ggplot(item_probs, aes(x = Level, y = Probability, fill = factor(Class))) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~ Variable, scales = "free_y") +
+  labs(title = "Item-Response Probabilities by Class", x = "Response Level", y = "Probability") +
+  scale_fill_brewer(palette = "Set1", name = "Class") +
+  theme_minimal()
+```

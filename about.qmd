@@ -1,0 +1,139 @@
+---
+title: "About Me"
+---
+
+![](images/IMG_8998-01.JPG)
+
+# Owen Callahan
+
+*I am passionate about research and exploring the intersections of psychology, environmental science, econometrics, and more. My curiosity drives me to tackle a wide range of unique questions, always seeking to uncover new insights and solutions.*
+
+*I earned my Master's Degree in Environmental Psychology from the University of Groningen in 2023. Prior to that, I obtained a Bachelor's Degree in Psychology with a Statistics Minor from Virginia Polytechnic Institute and State University in 2021. Despite the minor designation, my interest in statistics is anything but minor; it has been a major focus of my academic and professional pursuits.*
+
+## Professional Experience:
+
+### Junior Researcher at Hardt Hyperloop, Groningen, NL
+
+*Research lab focused on studying the user perceptions of a simulated hyperloop train, aimed at promoting sustainable transportation usage.*
+
+-   ***Psychometrics:** Designed questionnaires, interviewed subjects, and created latent-class models for experimental measures*
+
+-   ***Regression:** Designed multivariate multiple regression models*
+
+-   ***Presentations:** Presented item structure and regression graphics to company members, and was interviewed by HiveMobility*
+
+### Student Researcher at the Center for Applied Behavioral Systems, Blacksburg, VA
+
+*A center for intervention and community-based research techniques.*
+
+-   ***Teaching:** Training undergraduate students in responsible research methods*
+
+-   ***Data Management:** Reviewing and preparing data for publication using the Virginia Polytech Data Repository*
+
+-   ***Psychometrics:** Designed and tested surveys using Qualtrics and R*
+
+-   ***Collaborative Projects:** Conducted research projects with two of the doctoral students in the lab, including writing thorough literature reviews and co-authoring two papers*
+
+### Private Tutor in Statistics, **Self Employed,** Groningen, NL
+
+*Supported 16 bachelor students and 8 master's students in exam preparation and refining research methodology.*
+
+-   ***Subject Knowledge**: Instructed on topics in bachelor and master level statistics*
+
+-   ***Teaching**: Simplified coursework material into understandable lessons*
+
+### Social and Climate Justice Researcher at **Virginia Climate Action,** Blacksburg, VA
+
+*An interdisciplinary team of researchers designed a climate action proposal for Virginia Polytech University, containing 15 transition pathways.*
+
+-   ***Data Analysis:** filtered energy datasets using R and performed content analysis using Atlas*
+
+-   ***Teaching:** Created educational videos detailing the transition pathways for university students*
+
+-   ***Independent Projects:** Computed lifecycle analysis that included the social justice costs and benefits of procured systems, as well as photovoltaic system decommissioning*
+
+-   ***Collaborative Projects:** Built new green spaces on campus for students and installed a new waste distribution system at campus dining halls*
+
+![](images/IMG_0248.JPG)
+
+## Skills and Expertise:
+
+### Software
+
+*R, Python, Atlas, SPSS, Microsoft Excel*
+
+### Statistics
+
+*Set Theory and Logic, Regression, Multilevel Modelling, Psychometrics, Econometrics, Bayesian Statistics, Time Series*
+
+### Psychology
+
+*Cognitive, Social, Developmental, Clinical, Behavioral, Humanistic, Psychometrics*
+
+### Environmental Science
+
+*Geoscience, Geology, Meteorology, Climate Change, Ecosystems, Sustainable Systems,*
+
+## Certifications
+
+### R Programming (Coursera Specialization)
+
+**Johns Hopkins Bloomberg School of Public Health**
+
+04/2023 - 03/2024
+
+Building Data Visualization Tools
+
+Building R Packages
+
+Advanced R Programming
+
+The R Programming Environment
+
+### Mathematical Biostatistics (Coursera Specialization)
+
+**Johns Hopkins Bloomberg School of Public Health**
+
+09/2023 - 11/2023
+
+Probability Mass and Density Functions
+
+Bayesian Statistics
+
+Bootstrapping Algorithms
+
+Geometric Means
+
+![](images/IMG_9218.JPG)
+
+## Professional Presentations, Awards, and Conferences:
+
+**Professional Presentations**
+
+-   *Callahan, O., Eick, A., Takemoto-Jennings, R., & Geller, E. S. (2019, February). Gratitude from student to professor: Evaluating the impact of thanking a professor. Poster presented at the Annual North Carolina Association for Behavior Analysis, Winston-Salem, NC.*
+
+-   *Callahan, O., Eick, A., Takemoto-Jennings, R., & Geller, E. S. (2019, March). The impact of showing gratitude in the classroom: Evaluating students' change in their mood-states. Poster presented at the Mid-Atlantic Undergraduate Research Conference, Blacksburg, VA.*
+
+**Awards**
+
+-   *Dean's List*
+
+-   *Beyond Boundaries Scholar*
+
+-   *Summa Cum Laude*
+
+**Conferences**
+
+-   UniC Summit. 07/2021 Quebec, Canada
+
+-   COP25 United Nations Climate Change Conference. 12/2019 Madrid, Spain
+
+-   Mid-Atlantic Undergraduate Research Conference. 04/2019 Blacksburg, VA, USA
+
+-   North Carolina Applied Behavioral Association. 02/2019 Winston-Salem, NC, USA
+
+## Contact Information:
+
+Email: owen11callahan\@gmail.com
+
+## 

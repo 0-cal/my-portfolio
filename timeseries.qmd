@@ -1,0 +1,60 @@
+### 1. Install and Load Necessary Packages
+
+``` r
+install.packages("fpp2")
+install.packages("TTR")
+library(fpp2)
+library(TTR)
+data("elecdemand")
+```
+
+### 2. Plot the Time Series Data
+
+``` r
+autoplot(elecdemand[, "Demand"], main = "Electricity Demand in Victoria, Australia",
+         xlab = "Time", ylab = "Demand (MW)", col = "blue")
+```
+
+### 3. Experiment with Different Window Sizes
+
+``` r
+# Calculate moving averages with different window sizes
+moving_avg_24 <- SMA(elecdemand[, "Demand"], n = 24)  # 12 hours
+moving_avg_96 <- SMA(elecdemand[, "Demand"], n = 96)  # 48 hours
+moving_avg_192 <- SMA(elecdemand[, "Demand"], n = 192)  # 96 hours
+
+# Plot original data and moving averages with different window sizes
+plot(elecdemand[, "Demand"], type = "l", col = "blue", main = "Electricity Demand with Moving Averages",
+     xlab = "Time", ylab = "Demand (MW)")
+lines(moving_avg_24, col = "red", lty = 2)
+lines(moving_avg_96, col = "green", lty = 3)
+lines(moving_avg_192, col = "orange", lty = 4)
+legend("topright", legend = c("Original Data", "24-period MA", "96-period MA", "192-period MA"),
+       col = c("blue", "red", "green", "orange"), lty = c(1, 2, 3, 4), lwd = 2)
+```
+
+### 4. Create and Plot the Moving Average Model
+
+``` r
+# Calculate the moving average with a window size of 48 (24 hours, since data is half-hourly)
+moving_avg <- SMA(elecdemand[, "Demand"], n = 48)
+
+# Plot the original time series and the moving average
+plot(elecdemand[, "Demand"], type = "l", col = "blue", main = "Electricity Demand with Moving Average",
+     xlab = "Time", ylab = "Demand (MW)")
+lines(moving_avg, col = "red")
+legend("topright", legend = c("Original Data", "48-period MA"), col = c("blue", "red"), lty = 1, lwd = 2)
+```
+
+### 5. Evaluate Model Performance
+
+``` r
+# Calculate Mean Absolute Error (MAE)
+mae <- mean(abs(elecdemand[, "Demand"] - moving_avg), na.rm = TRUE)
+
+# Calculate Root Mean Squared Error (RMSE)
+rmse <- sqrt(mean((elecdemand[, "Demand"] - moving_avg)^2, na.rm = TRUE))
+
+print(paste("Mean Absolute Error (MAE):", round(mae, 2)))
+print(paste("Root Mean Squared Error (RMSE):", round(rmse, 2)))
+```
