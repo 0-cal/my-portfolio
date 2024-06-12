@@ -26,7 +26,7 @@
 
 -   ***Reddit**: A community where everyone deals with problems using R. Visit Reddit to view a wide range of questions and answers from people around the globe.*
 
--   ***ChatGPT**: Appropriate in certain circumstances. Use with caution, as ChatGPT can occasionally produce incorrect solutions to your code.*
+-   ***Generative AI**: Appropriate in certain circumstances. Use with caution, as AI can occasionally produce incorrect solutions to your code.*
 
 *By leveraging these resources, you can make your learning journey with R more efficient and less daunting.*
 

@@ -1,12 +1,14 @@
 # Project Description
 
-***How Individual Level Processes Undermine Social Cohesion in Ethnically Heterogeneous Neighborhoods***
+*This is a research proposal I developed during my Master's Degree in Environmental Psychology. It includes an introduction and the necessary calculations for designing a hierarchical model that explores the cross-level dynamics within communities in the Netherlands.*
+
+*I am still motivated about executing this project because it addresses contemporary challenges in ethnically heterogeneous neighborhoods and provides an unique approach to understanding social cohesion. It assesses the individual-level, cognitive processes in neighborhood behavior through spatial measurement, which can offer alternative evidence for policymakers' views toward contextual level action (e.g., developing economically vital cities, demolition, and housing renovation) (Van Kempen & Bolt, 2009). By bridging the gap between individual-level processes and neighborhood dynamics, this research has the potential to inform policy interventions and community development initiatives.*
+
+***Title: How Individual Level Processes Undermine Social Cohesion in Ethnically Heterogeneous Neighborhoods***
 
 ***Abstract***
 
-*Current research on ethnically heterogeneous neighborhoods lacks individual-level variables, limiting evaluations of social cohesion. Building upon Bektaş and Taşan-Kok (2020), this proposal integrates psychological constructs like place identity and intergroup anxiety to enhance the current framework. By utilizing cognitive mapping techniques, I aim to provide a more comprehensive understanding of social cohesion at the intersection of individual and neighborhood factors. Through hierarchical modeling, this study seeks to assess cross-level interactions and variability across ethnically heterogeneous neighborhoods in the Netherlands.*
-
-\
+*Current research on ethnically heterogeneous neighborhoods lacks individual-level variables, limiting evaluations of social cohesion. Building upon Bektaş and Taşan-Kok (2020), this proposal integrates psychological constructs like place identity and intergroup anxiety to enhance the current framework. By utilizing cognitive mapping techniques, I aim to provide a more comprehensive understanding of social cohesion at the intersection of individual and neighborhood factors. Through hierarchical modeling, this study seeks to assess cross-level interactions and variability across ethnically heterogeneous neighborhoods in the Netherlands.*\
 
 ***Introduction***
 
@@ -16,9 +18,7 @@
 
 *Policy interventions often overlook the individual-level processes (e.g., place identity), relying on social mixing policies that fail to address underlying issues (Bektaş & Taşan-Kok, 2020; Van Kempen & Bolt, 2009). In 2007, the Minister of Housing, Districts, and Integration prompted the integration of different social and ethnic groups into neighborhoods with confidence that designing innovative public spaces or identifying the perfect distribution of ethnicities per district would promote social cohesion (Van Kempen & Bolt, 2009). However, direct intergroup contact does not always promote social cohesion, it can sometimes damage relationships even more by creating intergroup anxiety (Turner et al., 2008). Concerns raised by researchers in the Netherlands highlight the need for more nuanced approaches (Kleinhans 2004; Stolle & Harell, 2013; Van Kempen & Bolt, 2009; Völker & Flap, 2007). For instance, Bektaş and Taşan-Kok (2020) found that the social mixing policies only led to superficial interactions that had little impact on social cohesion. Similarly, Stevenson et al. (2019) found that close proximity was insufficient to foster positive intergroup relationships, emphasizing the importance of developing place identity.*
 
-*My PhD proposal aims to complement the research conducted by Bektaş and Taşan-Kok (2020) and Stevenson et al. (2019) by studying the individual-level processes that undermine social cohesion in ethnically heterogeneous neighborhoods in the Netherlands. The problem at hand is the presence of unmeasured individual-level variables contributing to the social dissolution of these neighborhoods, thereby rendering contemporary evaluations of social cohesion inaccurate. This research seeks to address the following questions: (1) What reliable measures of social cohesion can capture the unexplained variability at the individual level? (2) What is the current state of residents' place identity in ethnically heterogeneous neighborhoods? (3) How can multilevel evidence about individual and contextual variables shed light on social cohesion and intergroup anxiety? (4) What impact does neighborhood leadership have on reducing intergroup anxiety? (5) How do personalized neighborhood features influence place identity?*
-
-*\
+*My PhD proposal aims to complement the research conducted by Bektaş and Taşan-Kok (2020) and Stevenson et al. (2019) by studying the individual-level processes that undermine social cohesion in ethnically heterogeneous neighborhoods in the Netherlands. The problem at hand is the presence of unmeasured individual-level variables contributing to the social dissolution of these neighborhoods, thereby rendering contemporary evaluations of social cohesion inaccurate. This research seeks to address the following questions: (1) What reliable measures of social cohesion can capture the unexplained variability at the individual level? (2) What is the current state of residents' place identity in ethnically heterogeneous neighborhoods? (3) How can multilevel evidence about individual and contextual variables shed light on social cohesion and intergroup anxiety? (4) What impact does neighborhood leadership have on reducing intergroup anxiety? (5) How do personalized neighborhood features influence place identity?\
 *
 
 ***Theoretical Approach***
@@ -27,21 +27,22 @@
 
 *Strong place identities emerge when residents feel a sense of belonging, aided by emotional ties to neighborhood features (Peng et al., 2020; Stevenson et al., 2019). Measuring place identity has multiple avenues, and some suggest that one or two-item scales are adequate (Peng et al., 2020). In community-based research, small-item scales may be a preferable method that would lead to more responses (Pretty et al., 2003).*
 
-*Measuring social cohesion poses challenges, as direct inquiries about neighbors may only capture part of the picture (Bektaş & Taşan-Kok, 2020). Cognitive mapping offers a promising avenue to understand residents' spatial perceptions (Campbell et al., 2009). Coulton et al. (2013) applied this strategy when studying the effect a neighborhood has on individuals in America, where residents drew boundaries around their perceived neighborhood on a blank map of their district, reflecting disagreements between them. In regards to intergroup anxiety, strong neighborhood ties can be assessed by studying mutual trust (Bektaş & Taşan-Kok, 2020; Stolle & Harell, 2013; Turner et al., 2008). For example, measuring residents' perceived boundary of trust in regards to theft may reveal previously unexplained variability in intergroup anxiety.*
-
-*\
+*Measuring social cohesion poses challenges, as direct inquiries about neighbors may only capture part of the picture (Bektaş & Taşan-Kok, 2020). Cognitive mapping offers a promising avenue to understand residents' spatial perceptions (Campbell et al., 2009). Coulton et al. (2013) applied this strategy when studying the effect a neighborhood has on individuals in America, where residents drew boundaries around their perceived neighborhood on a blank map of their district, reflecting disagreements between them. In regards to intergroup anxiety, strong neighborhood ties can be assessed by studying mutual trust (Bektaş & Taşan-Kok, 2020; Stolle & Harell, 2013; Turner et al., 2008). For example, measuring residents' perceived boundary of trust in regards to theft may reveal previously unexplained variability in intergroup anxiety.\
 *
 
 ***Individual Predictors***
 
 *At the individual level, disparities in education, length of residency in the neighborhood, and income have been linked to social dissolution (Coulton et al., 2013; Stevenson et al., 2019; Van Kempen & Bolt, 2009), potentially affecting perceived boundaries. Additionally, Coulton et al. (2013) advocate for assessing individual perceptions of collective efficacy---a measure of confidence in neighborhood action (Sampson et al., 1997). Collective efficacy encompasses the belief that others will contribute, influencing one's engagement in community activities (Kloos et al., 2012).*
 
-*\
-*
-
 ***Contextual Predictors***
 
 *At the contextual level, neighborhood characteristics, which help develop place identity, are also associated with positive intergroup attitudes (Stevenson et al., 2019). People generally prefer to live in orderly areas that contain operational facilities (Coulton et al., 2013). Personalizing neighborhood features such as community names (Stevenson et al., 2019; Taylor et al., 1984), local art (Lowe, 2000), or playgrounds (Kloos et al., 2012) can help people develop place identities toward their neighborhood. As mentioned, intergroup friendships and/or leadership can impact an outgroup member's sense of belonging. Inclusive leadership, as a contextual level predictor, may shape intergroup attitudes. However, it is critical to note that individual-level processes can still influence these features. For example, public spaces can be effective because they provide an area for close interactions (Easterbrook et al., 2015), but this can be less effective in intergroup settings (Völker & Flap, 2007). Exploring cross-level interactions would help clear up some of the contradictions in the literature.*
+
+***Procedure***
+
+*Residents will be asked to draw their perceived neighborhood scale (social cohesion) and perceived trust in neighbors (intergroup anxiety) on a blank map of the district. This can be completed through a door-to-door survey or an online questionnaire. More specifically, they will draw a boundary on a map that encompasses their neighborhood boundaries and the perceived space in which they would feel safe leaving their personal belongings unattended for 24 hours, excluding individuals from outside their neighborhood who could potentially be involved in theft.*
+
+*GIS software can be used to estimate residuals when analyzing mapping data, as suggested by Coulton et al. (2013). Alternatively, R programming, supported by packages such as "ggmap," "choroplethr," and "choroplethrMaps," can be utilized for this purpose. Given my extensive familiarity with R software, it will be the chosen tool for analysis.*
 
 ### 1. **Exploratory Data Analysis (EDA):**
 

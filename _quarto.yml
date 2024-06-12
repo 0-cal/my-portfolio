@@ -23,7 +23,6 @@ website:
           href: bayes.qmd
         - text: "Time Series"
           href: timeseries.qmd
-      - my-home.qmd
     tools:
       - icon: github
         href: https://github.com/0-cal/my-portfolio
