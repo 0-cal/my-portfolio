@@ -16,6 +16,8 @@
 
 4.  *Data Visualization*
 
+![](images/IMG_5316-02.png)
+
 ### 1. Asking for Help
 
 *Most experts mention asking for help at the end of their tutorials, but I believe it deserves to be first. Learning R involves seeking assistance a lot. There are countless online resources available to answer your questions. Below are some of my favorite resources:*
