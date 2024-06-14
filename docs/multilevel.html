@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Portfolio – multilevel</title>
+<title>My Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -79,7 +79,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -88,6 +94,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -102,9 +109,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">My Portfolio</span>
     </a>
@@ -116,49 +123,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About Me</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./interest.html" rel="" target="">
- <span class="menu-text">My Interests</span></a>
+    <a class="nav-link" href="./interest.html"> 
+<span class="menu-text">My Interests</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-my-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-my-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">My Projects</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-my-projects">    
         <li>
-    <a class="dropdown-item" href="./begin.html" rel="" target="">
+    <a class="dropdown-item" href="./begin.html">
  <span class="dropdown-text">For Beginners</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./hyperloop.html" rel="" target="">
+    <a class="dropdown-item" href="./hyperloop.html">
  <span class="dropdown-text">Latent Class Analysis</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./multilevel.html" rel="" target="">
+    <a class="dropdown-item" href="./multilevel.html">
  <span class="dropdown-text">Hierarchical Model</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./bayes.html" rel="" target="">
+    <a class="dropdown-item" href="./bayes.html">
  <span class="dropdown-text">Bayesian Testing</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./timeseries.html" rel="" target="">
+    <a class="dropdown-item" href="./timeseries.html">
  <span class="dropdown-text">Time Series</span></a>
   </li>  
     </ul>
   </li>
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-    <a href="https://github.com/0-cal/my-portfolio" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+    <a href="https://github.com/0-cal/my-portfolio" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -173,12 +180,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#project-description" id="toc-project-description" class="nav-link active" data-scroll-target="#project-description">Project Description</a>
   <ul class="collapse">
-  <li><a href="#exploratory-data-analysis-eda" id="toc-exploratory-data-analysis-eda" class="nav-link" data-scroll-target="#exploratory-data-analysis-eda">1. <strong>Exploratory Data Analysis (EDA):</strong></a></li>
-  <li><a href="#model-specification-and-fitting" id="toc-model-specification-and-fitting" class="nav-link" data-scroll-target="#model-specification-and-fitting">2. <strong>Model Specification and Fitting:</strong></a></li>
-  <li><a href="#model-diagnostics" id="toc-model-diagnostics" class="nav-link" data-scroll-target="#model-diagnostics">3. <strong>Model Diagnostics:</strong></a></li>
-  <li><a href="#interpretation-and-inference" id="toc-interpretation-and-inference" class="nav-link" data-scroll-target="#interpretation-and-inference">4. <strong>Interpretation and Inference:</strong></a></li>
-  <li><a href="#post-estimation-analyses" id="toc-post-estimation-analyses" class="nav-link" data-scroll-target="#post-estimation-analyses">5. <strong>Post-estimation Analyses:</strong></a></li>
-  <li><a href="#reporting-and-visualization" id="toc-reporting-and-visualization" class="nav-link" data-scroll-target="#reporting-and-visualization">6. <strong>Reporting and Visualization:</strong></a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#step-1-install-and-load-necessary-packages" id="toc-step-1-install-and-load-necessary-packages" class="nav-link" data-scroll-target="#step-1-install-and-load-necessary-packages"><strong>Step 1: Install and load necessary packages</strong></a></li>
+  <li><a href="#step-2-exploratory-data-analysis" id="toc-step-2-exploratory-data-analysis" class="nav-link" data-scroll-target="#step-2-exploratory-data-analysis">Step 2: Exploratory Data Analysis</a></li>
+  <li><a href="#step-3-comparing-alternative-models" id="toc-step-3-comparing-alternative-models" class="nav-link" data-scroll-target="#step-3-comparing-alternative-models">Step 3: <strong>Comparing Alternative Models:</strong></a></li>
+  <li><a href="#step-4-post-estimation-analyses" id="toc-step-4-post-estimation-analyses" class="nav-link" data-scroll-target="#step-4-post-estimation-analyses">Step 4: <strong>Post-estimation Analyses:</strong></a></li>
+  <li><a href="#step-5-reporting" id="toc-step-5-reporting" class="nav-link" data-scroll-target="#step-5-reporting">Step 5: <strong>Reporting:</strong></a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
@@ -189,10 +196,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+
 <section id="project-description" class="level1">
 <h1>Project Description</h1>
-<p><em>This is a research proposal I developed during my Master’s Degree in Environmental Psychology. It includes an introduction and the necessary calculations for designing a hierarchical model that explores the cross-level dynamics within communities in the Netherlands.</em></p>
-<p><em>I am still motivated about executing this project because it addresses contemporary challenges in ethnically heterogeneous neighborhoods and provides an unique approach to understanding social cohesion. It assesses the individual-level, cognitive processes in neighborhood behavior through spatial measurement, which can offer alternative evidence for policymakers’ views toward contextual level action (e.g., developing economically vital cities, demolition, and housing renovation) (Van Kempen &amp; Bolt, 2009). By bridging the gap between individual-level processes and neighborhood dynamics, this research has the potential to inform policy interventions and community development initiatives.</em></p>
+<p><em>This is a research project I developed during my Master’s Degree in Environmental Psychology. It includes an introduction and a hierarchical model that explores the cross-level dynamics within communities in the Netherlands.</em></p>
+<p><em>I am still motivated about executing this project in a practical setting because it addresses contemporary challenges in ethnically heterogeneous neighborhoods and provides an unique approach to understanding social cohesion. It assesses the individual-level, cognitive processes in neighborhood behavior through spatial measurement, which can offer alternative evidence for policymakers’ views toward contextual level action (e.g., developing economically vital cities, demolition, and housing renovation) (Van Kempen &amp; Bolt, 2009). By bridging the gap between individual-level processes and neighborhood dynamics, this research has the potential to inform policy interventions and community development initiatives.</em></p>
 <p><strong><em>Title: How Individual Level Processes Undermine Social Cohesion in Ethnically Heterogeneous Neighborhoods</em></strong></p>
 <p><strong><em>Abstract</em></strong></p>
 <p><em>Current research on ethnically heterogeneous neighborhoods lacks individual-level variables, limiting evaluations of social cohesion. Building upon Bektaş and Taşan-Kok (2020), this proposal integrates psychological constructs like place identity and intergroup anxiety to enhance the current framework. By utilizing cognitive mapping techniques, I aim to provide a more comprehensive understanding of social cohesion at the intersection of individual and neighborhood factors. Through hierarchical modeling, this study seeks to assess cross-level interactions and variability across ethnically heterogeneous neighborhoods in the Netherlands.</em><br>
@@ -215,63 +223,320 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong><em>Procedure</em></strong></p>
 <p><em>Residents will be asked to draw their perceived neighborhood scale (social cohesion) and perceived trust in neighbors (intergroup anxiety) on a blank map of the district. This can be completed through a door-to-door survey or an online questionnaire. More specifically, they will draw a boundary on a map that encompasses their neighborhood boundaries and the perceived space in which they would feel safe leaving their personal belongings unattended for 24 hours, excluding individuals from outside their neighborhood who could potentially be involved in theft.</em></p>
 <p><em>GIS software can be used to estimate residuals when analyzing mapping data, as suggested by Coulton et al.&nbsp;(2013). Alternatively, R programming, supported by packages such as “ggmap,” “choroplethr,” and “choroplethrMaps,” can be utilized for this purpose. Given my extensive familiarity with R software, it will be the chosen tool for analysis.</em></p>
-<section id="exploratory-data-analysis-eda" class="level3">
-<h3 class="anchored" data-anchor-id="exploratory-data-analysis-eda">1. <strong>Exploratory Data Analysis (EDA):</strong></h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary statistics for individual-level variables</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data[, <span class="fu">c</span>(<span class="st">"education"</span>, <span class="st">"length_res"</span>, <span class="st">"income"</span>, <span class="st">"in_efficacy"</span>)])</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary statistics for neighborhood-level variables</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data[, <span class="fu">c</span>(<span class="st">"facilities"</span>, <span class="st">"names"</span>, <span class="st">"art"</span>, <span class="st">"playgrounds"</span>, <span class="st">"leadership"</span>)])</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for missing values</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(data))</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Explore relationships of individual efficacy using visualizations</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(data<span class="sc">$</span>in_efficacy, <span class="at">main =</span> <span class="st">"Distribution of Individual Efficacy"</span>, <span class="at">xlab =</span> <span class="st">"in_efficacy"</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(inter_anx <span class="sc">~</span> gender, <span class="at">data =</span> data, <span class="at">main =</span> <span class="st">"Behavior Score by Gender"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p><em><strong>Demographics</strong>:</em></p>
+<ul>
+<li><p><em><code>age</code>: Normally distributed continuous variable.</em></p></li>
+<li><p><em><code>education</code>: Dichotomous variable generated using <code>rbinom</code> with a probability of 0.6 for university education.</em></p></li>
+<li><p><em><code>income</code>: Ordinal variable sampled from 1 to 5.</em></p></li>
+<li><p><em><code>ethnicity</code>: Categorical variable sampled from four categories “A”, “B”, “C”, and “D”.</em></p></li>
+<li><p><em><code>length_res</code>: Normally distributed continuous variable for length of residency.</em></p></li>
+</ul></li>
+<li><p><em><strong>Physical Disorder</strong>:</em></p>
+<ul>
+<li><em><code>physical_disorder</code>: Ordinal variable sampled from 1 to 5.</em></li>
+</ul></li>
+<li><p><em><strong>Perceived Collective Efficacy</strong>:</em></p>
+<ul>
+<li><em><code>perceived_collective_efficacy</code>: Normally distributed continuous variable.</em></li>
+</ul></li>
+<li><p><em><strong>Intergroup Leader</strong>:</em></p>
+<ul>
+<li><em><code>leadership</code>: Dichotomous variable generated using <code>rbinom</code>.</em></li>
+</ul></li>
+<li><p><em><strong>Personalized Features</strong>:</em></p>
+<ul>
+<li><em><code>names</code>, <code>art</code>, <code>playgrounds</code>: Dichotomous variables generated using <code>rbinom</code>.</em></li>
+</ul></li>
+</ul>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
 </section>
-<section id="model-specification-and-fitting" class="level3">
-<h3 class="anchored" data-anchor-id="model-specification-and-fitting">2. <strong>Model Specification and Fitting:</strong></h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the multilevel model with both fixed and random effects</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>multilevel_model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> education <span class="sc">+</span> length_res <span class="sc">+</span> income <span class="sc">+</span> in_efficacy <span class="sc">+</span> facilities <span class="sc">+</span> names <span class="sc">+</span> art <span class="sc">+</span> playgrounds <span class="sc">+</span> leadership <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary of the model</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(multilevel_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="step-1-install-and-load-necessary-packages" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-install-and-load-necessary-packages"><strong>Step 1: Install and load necessary packages</strong></h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">CRAN =</span> <span class="st">"https://cloud.r-project.org"</span>))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lme4"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+The downloaded binary packages are in
+    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpfqbYdB/downloaded_packages</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"car"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+The downloaded binary packages are in
+    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpfqbYdB/downloaded_packages</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+The downloaded binary packages are in
+    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpfqbYdB/downloaded_packages</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: Matrix</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: carData</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"multilevel_model_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="model-diagnostics" class="level3">
-<h3 class="anchored" data-anchor-id="model-diagnostics">3. <strong>Model Diagnostics:</strong></h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for multicollinearity among predictors</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(data[, <span class="fu">c</span>(<span class="st">"education"</span>, <span class="st">"length_res"</span>, <span class="st">"income"</span>, <span class="st">"in_efficacy"</span>)])</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot residuals to check for homoscedasticity and normality</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">residuals</span>(multilevel_model), <span class="at">main =</span> <span class="st">"Residuals vs. Fitted Values"</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for influential cases or outliers</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">influence</span>(multilevel_model)<span class="sc">$</span>hat, <span class="at">main =</span> <span class="st">"Influence Plot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="step-2-exploratory-data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-exploratory-data-analysis">Step 2: Exploratory Data Analysis</h3>
+<p><em>Before I compare the models, let’s take a look at the full model and understand out data a bit better.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the multilevel model</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>multilevel_model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> ethnicity <span class="sc">+</span> length_res <span class="sc">+</span> physical_disorder <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> facilities <span class="sc">+</span> names <span class="sc">+</span> art <span class="sc">+</span> playgrounds <span class="sc">+</span> leadership <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary of the model</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(multilevel_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: boundary ~ age + education + income + ethnicity + length_res +  
+    physical_disorder + perceived_collective_efficacy + facilities +  
+    names + art + playgrounds + leadership + (1 | neighborhood_id)
+   Data: data
+
+REML criterion at convergence: 12877.4
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.9966 -0.7063  0.0071  0.6710  3.2348 
+
+Random effects:
+ Groups          Name        Variance Std.Dev.
+ neighborhood_id (Intercept)  0.5319  0.7293  
+ Residual                    91.6096  9.5713  
+Number of obs: 1750, groups:  neighborhood_id, 25
+
+Fixed effects:
+                               Estimate Std. Error t value
+(Intercept)                   49.019346   1.575249  31.118
+age                           -0.009148   0.015198  -0.602
+education                     -0.211335   0.469636  -0.450
+income                        -0.425076   0.164823  -2.579
+ethnicityB                     0.541790   0.645876   0.839
+ethnicityMe                    0.439613   0.651204   0.675
+ethnicityW                     0.359890   0.650369   0.553
+length_res                    -0.052653   0.076229  -0.691
+physical_disorder              0.063064   0.162170   0.389
+perceived_collective_efficacy  0.366557   0.232243   1.578
+facilities                     0.163935   0.155372   1.055
+names                         -0.091896   0.600375  -0.153
+art                            0.821966   0.597757   1.375
+playgrounds                   -0.077756   0.566788  -0.137
+leadership                     0.746840   0.585630   1.275</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Correlation matrix not shown by default, as p = 15 &gt; 12.
+Use print(x, correlation=TRUE)  or
+    vcov(x)        if you need it</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check normality of residuals</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(multilevel_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="multilevel_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check homoscedasticity</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">residuals</span>(multilevel_model) <span class="sc">~</span> <span class="fu">fitted</span>(multilevel_model))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="multilevel_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check linearity (if applicable)</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Example for a continuous predictor age</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data<span class="sc">$</span>age, <span class="fu">residuals</span>(multilevel_model))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="multilevel_files/figure-html/unnamed-chunk-2-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract fixed effects estimates</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>fixed_effects <span class="ot">&lt;-</span> <span class="fu">fixef</span>(multilevel_model)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Interpretation of fixed effects</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fixed_effects)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  (Intercept)                           age 
+                 49.019346235                  -0.009148289 
+                    education                        income 
+                 -0.211335096                  -0.425075682 
+                   ethnicityB                   ethnicityMe 
+                  0.541790280                   0.439613297 
+                   ethnicityW                    length_res 
+                  0.359890186                  -0.052653388 
+            physical_disorder perceived_collective_efficacy 
+                  0.063063774                   0.366557166 
+                   facilities                         names 
+                  0.163934559                  -0.091895788 
+                          art                   playgrounds 
+                  0.821965502                  -0.077756138 
+                   leadership 
+                  0.746839797 </code></pre>
+</div>
+</div>
 </section>
-<section id="interpretation-and-inference" class="level3">
-<h3 class="anchored" data-anchor-id="interpretation-and-inference">4. <strong>Interpretation and Inference:</strong></h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract fixed effects estimates</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fixed_effects <span class="ot">&lt;-</span> <span class="fu">fixef</span>(multilevel_model)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Interpretation of fixed effects</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fixed_effects)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="step-3-comparing-alternative-models" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-comparing-alternative-models">Step 3: <strong>Comparing Alternative Models:</strong></h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model without Low-estimate predictors:</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>alt_model1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> education <span class="sc">+</span> income <span class="sc">+</span> ethnicity <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> facilities <span class="sc">+</span> art <span class="sc">+</span> leadership <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Individual-focused Model:</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>alt_model2 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Interaction Effects:</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>alt_model3 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">*</span> perceived_collective_efficacy <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> length_res <span class="sc">+</span> physical_disorder <span class="sc">+</span> facilities <span class="sc">+</span> names <span class="sc">+</span> art <span class="sc">+</span> playgrounds <span class="sc">+</span> leadership <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Random Slopes Model:</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>alt_model4 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> (age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>boundary (singular) fit: see help('isSingular')</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cross-Level Interactions:</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>alt_model5 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> facilities <span class="sc">+</span> names <span class="sc">+</span> art <span class="sc">+</span> playgrounds <span class="sc">+</span> leadership <span class="sc">+</span> (age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>boundary (singular) fit: see help('isSingular')</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Non-linear Effects:</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>age_squared <span class="ot">&lt;-</span> data<span class="sc">$</span>age<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>alt_model6 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> age_squared <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Some predictor variables are on very different scales: consider
+rescaling</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nested Models:</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>alt_model7 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> age <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>boundary (singular) fit: see help('isSingular')</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare models using AIC</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>AIC_values <span class="ot">&lt;-</span> <span class="fu">AIC</span>(multilevel_model, alt_model1, alt_model2, alt_model3, alt_model4, alt_model5, alt_model6, alt_model7)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>BIC_values <span class="ot">&lt;-</span> <span class="fu">BIC</span>(multilevel_model, alt_model1, alt_model2, alt_model3, alt_model4, alt_model5, alt_model6, alt_model7)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(AIC_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 df      AIC
+multilevel_model 17 12911.40
+alt_model1       12 12892.09
+alt_model2        7 12895.86
+alt_model3       15 12916.94
+alt_model4       21 12919.90
+alt_model5       26 12924.87
+alt_model6        8 12907.87
+alt_model7       10 12901.39</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(BIC_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 df      BIC
+multilevel_model 17 13004.35
+alt_model1       12 12957.70
+alt_model2        7 12934.13
+alt_model3       15 12998.95
+alt_model4       21 13034.71
+alt_model5       26 13067.02
+alt_model6        8 12951.61
+alt_model7       10 12956.07</code></pre>
+</div>
+</div>
+<p><em>After removing variables (<code>age, length_res, names, playgrounds, physical_disorder)</code> , my first adjusted model has one of the lower AIC/BIC, while also aligning with my theoretical framework and hypotheses.</em></p>
 </section>
-<section id="post-estimation-analyses" class="level3">
-<h3 class="anchored" data-anchor-id="post-estimation-analyses">5. <strong>Post-estimation Analyses:</strong></h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Conduct sensitivity analysis by excluding influential cases</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sensitivity_model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> education <span class="sc">+</span> length_res <span class="sc">+</span> income <span class="sc">+</span> in_efficacy <span class="sc">+</span> facilities <span class="sc">+</span> names <span class="sc">+</span> art <span class="sc">+</span> playgrounds <span class="sc">+</span> leadership <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data[<span class="sc">-</span><span class="fu">influence</span>(multilevel_model)<span class="sc">$</span>which, ])</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare results with the original model</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(multilevel_model, sensitivity_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="step-4-post-estimation-analyses" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-post-estimation-analyses">Step 4: <strong>Post-estimation Analyses:</strong></h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">influencePlot</span>(alt_model1, <span class="at">id.n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in plot.window(...): "id.n" is not a graphical parameter</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in plot.xy(xy, type, ...): "id.n" is not a graphical parameter</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in axis(side = side, at = at, labels = labels, ...): "id.n" is not a
+graphical parameter
+Warning in axis(side = side, at = at, labels = labels, ...): "id.n" is not a
+graphical parameter</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in box(...): "id.n" is not a graphical parameter</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in title(...): "id.n" is not a graphical parameter</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in plot.xy(xy.coords(x, y), type = type, ...): "id.n" is not a
+graphical parameter</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="multilevel_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        StudRes         Hat        CookD
+325   3.2599741 0.008857092 0.0094969282
+832  -2.7199424 0.010389742 0.0077671191
+961   3.0225287 0.006943756 0.0063879495
+1411 -0.8990109 0.016199316 0.0013308205
+1606 -0.6344288 0.014523900 0.0005932024</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate variance inflation factors (VIF)</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(alt_model1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                  GVIF Df GVIF^(1/(2*Df))
+education                     1.003845  1        1.001921
+income                        1.002528  1        1.001263
+ethnicity                     1.007411  3        1.001231
+perceived_collective_efficacy 1.004720  1        1.002357
+facilities                    1.075506  1        1.037066
+art                           1.105281  1        1.051324
+leadership                    1.045332  1        1.022415</code></pre>
+</div>
+</div>
 </section>
-<section id="reporting-and-visualization" class="level3">
-<h3 class="anchored" data-anchor-id="reporting-and-visualization">6. <strong>Reporting and Visualization:</strong></h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the estimated coefficients</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dotplot</span>(<span class="fu">ranef</span>(multilevel_model), <span class="at">main =</span> <span class="st">"Random Effects"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a forest plot for fixed effects</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">coefplot</span>(multilevel_model, <span class="at">main =</span> <span class="st">"Fixed Effects Coefficients"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="step-5-reporting" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-reporting">Step 5: <strong>Reporting:</strong></h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract coefficients</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>model_coefs <span class="ot">&lt;-</span> <span class="fu">coef</span>(<span class="fu">summary</span>(alt_model1))</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>model_coefs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                Estimate Std. Error    t value
+(Intercept)                   48.5442001  1.2528175 38.7480213
+education                     -0.1962912  0.4685969 -0.4188913
+income                        -0.4273233  0.1645159 -2.5974585
+ethnicityB                     0.5186504  0.6449240  0.8042039
+ethnicityMe                    0.4096027  0.6499668  0.6301902
+ethnicityW                     0.3533965  0.6496055  0.5440171
+perceived_collective_efficacy  0.3572640  0.2314167  1.5438123
+facilities                     0.1658361  0.1436879  1.1541409
+art                            0.8218169  0.5516168  1.4898330
+leadership                     0.7168449  0.5260312  1.3627422</code></pre>
+</div>
+</div>
+<ul>
+<li><em><code>art</code> and <code>leadership</code> show to have a strong influence on community boundaries and hence place identity.</em></li>
+<li>It is difficult to make any strong claims due to the lack of reliability in the data, but further research could lead to groundbreaking information as to how interracial communities can form social cohesion.</li>
+</ul>
 </section>
 <section id="references" class="level3">
 <h3 class="anchored" data-anchor-id="references">References</h3>
@@ -380,10 +645,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -393,8 +675,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -406,7 +697,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -450,6 +864,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -475,6 +890,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -537,13 +978,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© Copyright 2024, Owen Callahan</div>   
+    <div class="nav-footer-left">
+<p>© Copyright 2024, Owen Callahan</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">Built with <a href="https://quarto.org/">Quarto</a></div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org/">Quarto</a></p>
+</div>
   </div>
 </footer>
+
 
 
 

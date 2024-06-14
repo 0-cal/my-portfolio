@@ -1,8 +1,8 @@
 # Project Description
 
-*This is a research proposal I developed during my Master's Degree in Environmental Psychology. It includes an introduction and the necessary calculations for designing a hierarchical model that explores the cross-level dynamics within communities in the Netherlands.*
+*This is a research project I developed during my Master's Degree in Environmental Psychology. It includes an introduction and a hierarchical model that explores the cross-level dynamics within communities in the Netherlands.*
 
-*I am still motivated about executing this project because it addresses contemporary challenges in ethnically heterogeneous neighborhoods and provides an unique approach to understanding social cohesion. It assesses the individual-level, cognitive processes in neighborhood behavior through spatial measurement, which can offer alternative evidence for policymakers' views toward contextual level action (e.g., developing economically vital cities, demolition, and housing renovation) (Van Kempen & Bolt, 2009). By bridging the gap between individual-level processes and neighborhood dynamics, this research has the potential to inform policy interventions and community development initiatives.*
+*I am still motivated about executing this project in a practical setting because it addresses contemporary challenges in ethnically heterogeneous neighborhoods and provides an unique approach to understanding social cohesion. It assesses the individual-level, cognitive processes in neighborhood behavior through spatial measurement, which can offer alternative evidence for policymakers' views toward contextual level action (e.g., developing economically vital cities, demolition, and housing renovation) (Van Kempen & Bolt, 2009). By bridging the gap between individual-level processes and neighborhood dynamics, this research has the potential to inform policy interventions and community development initiatives.*
 
 ***Title: How Individual Level Processes Undermine Social Cohesion in Ethnically Heterogeneous Neighborhoods***
 
@@ -44,49 +44,73 @@
 
 *GIS software can be used to estimate residuals when analyzing mapping data, as suggested by Coulton et al. (2013). Alternatively, R programming, supported by packages such as "ggmap," "choroplethr," and "choroplethrMaps," can be utilized for this purpose. Given my extensive familiarity with R software, it will be the chosen tool for analysis.*
 
-### 1. **Exploratory Data Analysis (EDA):**
+-   ***Demographics**:*
 
-``` r
-# Summary statistics for individual-level variables
-summary(data[, c("education", "length_res", "income", "in_efficacy")])
+    -   *`age`: Normally distributed continuous variable.*
 
-# Summary statistics for neighborhood-level variables
-summary(data[, c("facilities", "names", "art", "playgrounds", "leadership")])
+    -   *`education`: Dichotomous variable generated using `rbinom` with a probability of 0.6 for university education.*
 
-# Check for missing values
-colSums(is.na(data))
+    -   *`income`: Ordinal variable sampled from 1 to 5.*
 
-# Explore relationships of individual efficacy using visualizations
-hist(data$in_efficacy, main = "Distribution of Individual Efficacy", xlab = "in_efficacy")
-boxplot(inter_anx ~ gender, data = data, main = "Behavior Score by Gender")
+    -   *`ethnicity`: Categorical variable sampled from four categories "A", "B", "C", and "D".*
+
+    -   *`length_res`: Normally distributed continuous variable for length of residency.*
+
+-   ***Physical Disorder**:*
+
+    -   *`physical_disorder`: Ordinal variable sampled from 1 to 5.*
+
+-   ***Perceived Collective Efficacy**:*
+
+    -   *`perceived_collective_efficacy`: Normally distributed continuous variable.*
+
+-   ***Intergroup Leader**:*
+
+    -   *`leadership`: Dichotomous variable generated using `rbinom`.*
+
+-   ***Personalized Features**:*
+
+    -   *`names`, `art`, `playgrounds`: Dichotomous variables generated using `rbinom`.*
+
+### 
+
+### **Step 1: Install and load necessary packages** 
+
+```{r}
+# Load necessary libraries
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+install.packages("lme4")
+install.packages("car")
+install.packages("ggplot2")
+library(lme4)
+library(car)
+library(ggplot2)
+
+# Load the dataset
+data <- read.csv("multilevel_model_data.csv")
 ```
 
-### 2. **Model Specification and Fitting:**
+### Step 2: Exploratory Data Analysis
 
-``` r
-# Define the multilevel model with both fixed and random effects
-multilevel_model <- lmer(boundary ~ education + length_res + income + in_efficacy + facilities + names + art + playgrounds + leadership + (1 | neighborhood_id), data = data)
+*Before I compare the models, let's take a look at the full model and understand out data a bit better.*
+
+```{r}
+# Fit the multilevel model
+multilevel_model <- lmer(boundary ~ age + education + income + ethnicity + length_res + physical_disorder + perceived_collective_efficacy + facilities + names + art + playgrounds + leadership + (1 | neighborhood_id), data = data)
 
 # Print summary of the model
 summary(multilevel_model)
-```
 
-### 3. **Model Diagnostics:**
+# Check normality of residuals
+plot(multilevel_model)
 
-``` r
-# Check for multicollinearity among predictors
-cor(data[, c("education", "length_res", "income", "in_efficacy")])
+# Check homoscedasticity
+plot(residuals(multilevel_model) ~ fitted(multilevel_model))
 
-# Plot residuals to check for homoscedasticity and normality
-plot(residuals(multilevel_model), main = "Residuals vs. Fitted Values")
+# Check linearity (if applicable)
+# Example for a continuous predictor age
+plot(data$age, residuals(multilevel_model))
 
-# Check for influential cases or outliers
-plot(influence(multilevel_model)$hat, main = "Influence Plot")
-```
-
-### 4. **Interpretation and Inference:**
-
-``` r
 # Extract fixed effects estimates
 fixed_effects <- fixef(multilevel_model)
 
@@ -94,25 +118,59 @@ fixed_effects <- fixef(multilevel_model)
 print(fixed_effects)
 ```
 
-### 5. **Post-estimation Analyses:**
+### Step 3: **Comparing Alternative Models:**
 
-``` r
-# Conduct sensitivity analysis by excluding influential cases
-sensitivity_model <- lmer(boundary ~ education + length_res + income + in_efficacy + facilities + names + art + playgrounds + leadership + (1 | neighborhood_id), data = data[-influence(multilevel_model)$which, ])
+```{r}
+# Model without Low-estimate predictors:
+alt_model1 <- lmer(boundary ~ education + income + ethnicity + perceived_collective_efficacy + facilities + art + leadership + (1 | neighborhood_id), data = data)
 
-# Compare results with the original model
-anova(multilevel_model, sensitivity_model)
+# Individual-focused Model:
+alt_model2 <- lmer(boundary ~ age + education + income + perceived_collective_efficacy + (1 | neighborhood_id), data = data)
+
+# Interaction Effects:
+alt_model3 <- lmer(boundary ~ age * perceived_collective_efficacy + education + income + length_res + physical_disorder + facilities + names + art + playgrounds + leadership + (1 | neighborhood_id), data = data)
+
+# Random Slopes Model:
+alt_model4 <- lmer(boundary ~ age + education + income + perceived_collective_efficacy + (age + education + income + perceived_collective_efficacy | neighborhood_id), data = data)
+
+# Cross-Level Interactions:
+alt_model5 <- lmer(boundary ~ age + education + income + perceived_collective_efficacy + facilities + names + art + playgrounds + leadership + (age + education + income + perceived_collective_efficacy | neighborhood_id), data = data)
+
+# Non-linear Effects:
+data$age_squared <- data$age^2
+alt_model6 <- lmer(boundary ~ age + age_squared + education + income + perceived_collective_efficacy + (1 | neighborhood_id), data = data)
+
+# Nested Models:
+alt_model7 <- lmer(boundary ~ age + education + income + perceived_collective_efficacy + (1 | neighborhood_id) + (1 + age | neighborhood_id), data = data)
+
+# Compare models using AIC
+AIC_values <- AIC(multilevel_model, alt_model1, alt_model2, alt_model3, alt_model4, alt_model5, alt_model6, alt_model7)
+BIC_values <- BIC(multilevel_model, alt_model1, alt_model2, alt_model3, alt_model4, alt_model5, alt_model6, alt_model7)
+print(AIC_values)
+print(BIC_values)
 ```
 
-### 6. **Reporting and Visualization:**
+*After removing variables (`age, length_res, names, playgrounds, physical_disorder)` , my first adjusted model has one of the lower AIC/BIC, while also aligning with my theoretical framework and hypotheses.*
 
-``` r
-# Visualize the estimated coefficients
-dotplot(ranef(multilevel_model), main = "Random Effects")
+### Step 4: **Post-estimation Analyses:**
 
-# Generate a forest plot for fixed effects
-coefplot(multilevel_model, main = "Fixed Effects Coefficients")
+```{r}
+influencePlot(alt_model1, id.n = 5)
+
+# Calculate variance inflation factors (VIF)
+vif(alt_model1)
 ```
+
+### Step 5: **Reporting:**
+
+```{r}
+# Extract coefficients
+model_coefs <- coef(summary(alt_model1))
+model_coefs
+```
+
+-   *`art` and `leadership` show to have a strong influence on community boundaries and hence place identity.*
+-   It is difficult to make any strong claims due to the lack of reliability in the data, but further research could lead to groundbreaking information as to how interracial communities can form social cohesion.
 
 ### References
 

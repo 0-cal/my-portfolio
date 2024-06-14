@@ -98,18 +98,11 @@
 
 *Once you write a function, you can reuse it across different projects. This saves time and effort, as you don't need to rewrite the same code for similar tasks.*
 
-#### 7. **Encourage Best Practices**
-
-*Writing functions encourages good programming practices, such as documenting code and testing individual components. This can lead to more robust and error-free scripts.*
-
 ***Example of Using `function()` in R***
 
 ```{r}
 # Define a function to calculate the mean of a numeric vector
 calculate_mean <- function(numbers) {
-  if(!is.numeric(numbers)) {
-    stop("Input must be a numeric vector")
-  }
   mean_value <- mean(numbers)
   return(mean_value)
 }
