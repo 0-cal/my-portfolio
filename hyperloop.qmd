@@ -24,7 +24,7 @@ library(ggplot2)
 ### Step 3: Specify the LCA model
 
 ``` r
-formula <- cbind(tech_acceptance, perceived_safety, perceived_comfort, claustrophobia) ~ 1
+survey_data <- cbind(tech_acceptance, perceived_safety, perceived_comfort, claustrophobia) ~ 1
 ```
 
 ### Step 4: Run the LCA for different numbers of classes and compare models
@@ -36,7 +36,7 @@ lca_models <- list()
 aic_values <- numeric()
 bic_values <- numeric()
 
-for (nclass in 1:5) { # Adjust range as needed
+for (nclass in 1:4) { 
   lca_model <- poLCA(formula, data = survey_data, nclass = nclass, maxiter = 1000, na.rm = TRUE)
   lca_models[[nclass]] <- lca_model
   aic_values[nclass] <- lca_model$aic

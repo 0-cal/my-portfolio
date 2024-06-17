@@ -13,7 +13,11 @@ Hi there! I'm Owen, a passionate data enthusiast, R programmer, and lifelong lea
 
 ## Dive into My R Projects
 
-Explore my portfolio of R projects, where I showcase my data analysis, visualization, and programming skills. From data wrangling and exploratory analysis to data storytelling, each project tells a unique story.
+Explore my portfolio of R projects, where I showcase my data analysis, visualization, and programming skills.
+
+## Learn R
+
+Come view the "Learn R" section of my portfolio! If you're new to R, you've come to the right place. Here, I provide beginner-friendly tutorials and resources to help you navigate the basics of R programming.
 
 ## Connect with Me
 

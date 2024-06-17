@@ -126,19 +126,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About Me</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about-me" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">About Me</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-about-me">    
+        <li>
+    <a class="dropdown-item" href="./about.html">
+ <span class="dropdown-text">My Resume</span></a>
   </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-my-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">My Projects</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-my-projects">    
-        <li>
-    <a class="dropdown-item" href="./begin.html">
- <span class="dropdown-text">For Beginners</span></a>
-  </li>  
         <li>
     <a class="dropdown-item" href="./hyperloop.html">
  <span class="dropdown-text">Latent Class Analysis</span></a>
@@ -153,8 +156,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="./timeseries.html">
- <span class="dropdown-text">Time Series</span></a>
+ <span class="dropdown-text">Time Series Analysis</span></a>
   </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-learn-r" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Learn R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-learn-r">    
+        <li>
+    <a class="dropdown-item" href="./begin.html">
+ <span class="dropdown-text">For Beginners</span></a>
+  </li>  
+        <li class="dropdown-header">Building Websites (coming soon)</li>
+        <li class="dropdown-header">Building Packages (coming soon)</li>
     </ul>
   </li>
 </ul>
@@ -226,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="step-3-specify-the-lca-model" class="level3">
 <h3 class="anchored" data-anchor-id="step-3-specify-the-lca-model">Step 3: Specify the LCA model</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>formula <span class="ot">&lt;-</span> <span class="fu">cbind</span>(tech_acceptance, perceived_safety, perceived_comfort, claustrophobia) <span class="sc">~</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>survey_data <span class="ot">&lt;-</span> <span class="fu">cbind</span>(tech_acceptance, perceived_safety, perceived_comfort, claustrophobia) <span class="sc">~</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="step-4-run-the-lca-for-different-numbers-of-classes-and-compare-models" class="level3">
 <h3 class="anchored" data-anchor-id="step-4-run-the-lca-for-different-numbers-of-classes-and-compare-models">Step 4: Run the LCA for different numbers of classes and compare models</h3>
@@ -236,7 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>aic_values <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>bic_values <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (nclass <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) { <span class="co"># Adjust range as needed</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (nclass <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) { </span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  lca_model <span class="ot">&lt;-</span> <span class="fu">poLCA</span>(formula, <span class="at">data =</span> survey_data, <span class="at">nclass =</span> nclass, <span class="at">maxiter =</span> <span class="dv">1000</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  lca_models[[nclass]] <span class="ot">&lt;-</span> lca_model</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  aic_values[nclass] <span class="ot">&lt;-</span> lca_model<span class="sc">$</span>aic</span>

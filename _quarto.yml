@@ -8,19 +8,26 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - text: "About Me"
+        menu: 
+          - text: "My Resume"
+            href: about.qmd
       - text: "My Projects" 
         menu: 
-        - text: "For Beginners"
-          href: begin.qmd
         - text: "Latent Class Analysis"
           href: hyperloop.qmd
         - text: "Hierarchical Model"
           href: multilevel.qmd
         - text: "Bayesian Linear Regression"
           href: bayes.qmd
-        - text: "Time Series"
+        - text: "Time Series Analysis"
           href: timeseries.qmd
+      - text: "Learn R"
+        menu: 
+        - text: "For Beginners"
+          href: begin.qmd
+        - text: "Building Websites (coming soon)"
+        - text: "Building Packages (coming soon)"
     tools:
       - icon: github
         href: https://github.com/0-cal/my-portfolio

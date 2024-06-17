@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: "My Resume"
 ---
 
 ![](images/IMG_8998-01.JPG)
@@ -8,9 +8,23 @@ title: "About Me"
 
 *I am passionate about research and exploring the intersections of psychology, environmental science, econometrics, and more. My curiosity drives me to tackle a wide range of unique questions, always seeking to uncover new insights and solutions.*
 
-*I earned my Master's Degree in Environmental Psychology from the University of Groningen in 2023. Prior to that, I obtained a Bachelor's Degree in Psychology with a Statistics Minor from Virginia Polytechnic Institute and State University in 2021. Despite the minor designation, my interest in statistics is anything but minor; it has been a major focus of my academic and professional pursuits.*
+## Education 
 
-## Professional Experience:
+### MSc Environmental Psychology, University of Groningen
+
+09/2021 - 02/2023
+
+-   *Utilized theories from social, cognitive, and developmental psychology to assess the interplay between humans and the built and natural world*
+
+-   *Designed and tested interventions in real-world applications*
+
+-   *Learned advanced multilevel statistical techniques to analyze and understand complex social and behavioral systems*
+
+### BS Psychology and Statistics Minor, Virginia Polytech Institute and State University
+
+09/2017 - 06/2021
+
+## Professional Experience
 
 ### Junior Researcher at Hardt Hyperloop, Groningen, NL
 
@@ -36,7 +50,7 @@ title: "About Me"
 
 ![](images/IMG_5310-01.png)
 
-### Private Tutor in Statistics, **Self Employed,** Groningen, NL
+### Private Tutor in Statistics, Self Employed, Groningen, NL
 
 *Supported 16 bachelor students and 8 master's students in exam preparation and refining research methodology.*
 
@@ -44,7 +58,7 @@ title: "About Me"
 
 -   ***Teaching**: Simplified coursework material into understandable lessons*
 
-### Social and Climate Justice Researcher at **Virginia Climate Action,** Blacksburg, VA
+### Social and Climate Justice Researcher at Virginia Climate Action, Blacksburg, VA
 
 *An interdisciplinary team of researchers designed a climate action proposal for Virginia Polytech University, containing 15 transition pathways.*
 
@@ -56,9 +70,7 @@ title: "About Me"
 
 -   ***Collaborative Projects:** Built new green spaces on campus for students and installed a new waste distribution system at campus dining halls*
 
-![](images/IMG_0248.JPG)
-
-## Skills and Expertise:
+## Skills and Expertise
 
 ### Software
 
@@ -66,7 +78,7 @@ title: "About Me"
 
 ### Statistics
 
-*Set Theory and Logic, Regression, Multilevel Modelling, Psychometrics, Econometrics, Bayesian Statistics, Time Series*
+*Set Theory and Logic, Methods of Regression, Item Response Theory, Latent Class Analysis, Hierarchical Modelling, Econometrics, Bayesian Statistics, Time Series Analysis, Contingency Table Analysis*
 
 ### Psychology
 
@@ -84,13 +96,13 @@ title: "About Me"
 
 04/2023 - 03/2024
 
-Building Data Visualization Tools
+-   Building Data Visualization Tools
 
-Building R Packages
+-   Building R Packages
 
-Advanced R Programming
+-   Advanced R Programming
 
-The R Programming Environment
+-   The R Programming Environment
 
 ### Mathematical Biostatistics (Coursera Specialization)
 
@@ -98,17 +110,17 @@ The R Programming Environment
 
 09/2023 - 11/2023
 
-Probability Mass and Density Functions
+-   Probability Mass and Density Functions
 
-Bayesian Statistics
+-   Bayesian Statistics
 
-Bootstrapping Algorithms
+-   Bootstrapping Algorithms
 
-Geometric Means
+-   Geometric Means
 
 ![](images/IMG_9218.JPG)
 
-## Professional Presentations, Awards, and Conferences:
+## Professional Presentations, Awards, and Conferences
 
 **Professional Presentations**
 
@@ -134,7 +146,7 @@ Geometric Means
 
 -   North Carolina Applied Behavioral Association. 02/2019 Winston-Salem, NC, USA
 
-## Contact Information:
+## Contact Information
 
 Email: owen11callahan\@gmail.com
 

@@ -92,19 +92,22 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About Me</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about-me" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">About Me</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-about-me">    
+        <li>
+    <a class="dropdown-item" href="./about.html">
+ <span class="dropdown-text">My Resume</span></a>
   </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-my-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">My Projects</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-my-projects">    
-        <li>
-    <a class="dropdown-item" href="./begin.html">
- <span class="dropdown-text">For Beginners</span></a>
-  </li>  
         <li>
     <a class="dropdown-item" href="./hyperloop.html">
  <span class="dropdown-text">Latent Class Analysis</span></a>
@@ -119,8 +122,21 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="./timeseries.html">
- <span class="dropdown-text">Time Series</span></a>
+ <span class="dropdown-text">Time Series Analysis</span></a>
   </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-learn-r" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Learn R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-learn-r">    
+        <li>
+    <a class="dropdown-item" href="./begin.html">
+ <span class="dropdown-text">For Beginners</span></a>
+  </li>  
+        <li class="dropdown-header">Building Websites (coming soon)</li>
+        <li class="dropdown-header">Building Packages (coming soon)</li>
     </ul>
   </li>
 </ul>
@@ -143,6 +159,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a></li>
   <li><a href="#about-me" id="toc-about-me" class="nav-link" data-scroll-target="#about-me">About Me</a></li>
   <li><a href="#dive-into-my-r-projects" id="toc-dive-into-my-r-projects" class="nav-link" data-scroll-target="#dive-into-my-r-projects">Dive into My R Projects</a></li>
+  <li><a href="#learn-r" id="toc-learn-r" class="nav-link" data-scroll-target="#learn-r">Learn R</a></li>
   <li><a href="#connect-with-me" id="toc-connect-with-me" class="nav-link" data-scroll-target="#connect-with-me">Connect with Me</a></li>
   </ul>
 </nav>
@@ -179,7 +196,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="dive-into-my-r-projects" class="level2">
 <h2 class="anchored" data-anchor-id="dive-into-my-r-projects">Dive into My R Projects</h2>
-<p>Explore my portfolio of R projects, where I showcase my data analysis, visualization, and programming skills. From data wrangling and exploratory analysis to data storytelling, each project tells a unique story.</p>
+<p>Explore my portfolio of R projects, where I showcase my data analysis, visualization, and programming skills.</p>
+</section>
+<section id="learn-r" class="level2">
+<h2 class="anchored" data-anchor-id="learn-r">Learn R</h2>
+<p>Come view the “Learn R” section of my portfolio! If you’re new to R, you’ve come to the right place. Here, I provide beginner-friendly tutorials and resources to help you navigate the basics of R programming.</p>
 </section>
 <section id="connect-with-me" class="level2">
 <h2 class="anchored" data-anchor-id="connect-with-me">Connect with Me</h2>

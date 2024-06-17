@@ -126,19 +126,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About Me</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about-me" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">About Me</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-about-me">    
+        <li>
+    <a class="dropdown-item" href="./about.html">
+ <span class="dropdown-text">My Resume</span></a>
   </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-my-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">My Projects</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-my-projects">    
-        <li>
-    <a class="dropdown-item" href="./begin.html">
- <span class="dropdown-text">For Beginners</span></a>
-  </li>  
         <li>
     <a class="dropdown-item" href="./hyperloop.html">
  <span class="dropdown-text">Latent Class Analysis</span></a>
@@ -153,8 +156,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="./timeseries.html">
- <span class="dropdown-text">Time Series</span></a>
+ <span class="dropdown-text">Time Series Analysis</span></a>
   </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-learn-r" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Learn R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-learn-r">    
+        <li>
+    <a class="dropdown-item" href="./begin.html">
+ <span class="dropdown-text">For Beginners</span></a>
+  </li>  
+        <li class="dropdown-header">Building Websites (coming soon)</li>
+        <li class="dropdown-header">Building Packages (coming soon)</li>
     </ul>
   </li>
 </ul>
@@ -294,8 +310,8 @@ make: *** [foo.o] Error 1</code></pre>
 <pre><code>
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 Chain 1: 
-Chain 1: Gradient evaluation took 3.5e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.35 seconds.
+Chain 1: Gradient evaluation took 3.4e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.34 seconds.
 Chain 1: Adjust your expectations accordingly!
 Chain 1: 
 Chain 1: 
@@ -312,15 +328,15 @@ Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
-Chain 1:  Elapsed Time: 0.041 seconds (Warm-up)
-Chain 1:                0.025 seconds (Sampling)
-Chain 1:                0.066 seconds (Total)
+Chain 1:  Elapsed Time: 0.045 seconds (Warm-up)
+Chain 1:                0.024 seconds (Sampling)
+Chain 1:                0.069 seconds (Total)
 Chain 1: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
 Chain 2: 
-Chain 2: Gradient evaluation took 1.3e-05 seconds
-Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.13 seconds.
+Chain 2: Gradient evaluation took 8e-06 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.08 seconds.
 Chain 2: Adjust your expectations accordingly!
 Chain 2: 
 Chain 2: 
@@ -337,15 +353,15 @@ Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 2: 
-Chain 2:  Elapsed Time: 0.04 seconds (Warm-up)
-Chain 2:                0.025 seconds (Sampling)
+Chain 2:  Elapsed Time: 0.042 seconds (Warm-up)
+Chain 2:                0.023 seconds (Sampling)
 Chain 2:                0.065 seconds (Total)
 Chain 2: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
 Chain 3: 
-Chain 3: Gradient evaluation took 2.7e-05 seconds
-Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.27 seconds.
+Chain 3: Gradient evaluation took 1.3e-05 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.13 seconds.
 Chain 3: Adjust your expectations accordingly!
 Chain 3: 
 Chain 3: 
@@ -362,15 +378,15 @@ Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 3: 
-Chain 3:  Elapsed Time: 0.044 seconds (Warm-up)
-Chain 3:                0.026 seconds (Sampling)
-Chain 3:                0.07 seconds (Total)
+Chain 3:  Elapsed Time: 0.041 seconds (Warm-up)
+Chain 3:                0.025 seconds (Sampling)
+Chain 3:                0.066 seconds (Total)
 Chain 3: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
 Chain 4: 
-Chain 4: Gradient evaluation took 1e-05 seconds
-Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.1 seconds.
+Chain 4: Gradient evaluation took 1.1e-05 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.11 seconds.
 Chain 4: Adjust your expectations accordingly!
 Chain 4: 
 Chain 4: 
@@ -387,9 +403,9 @@ Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 4: 
-Chain 4:  Elapsed Time: 0.053 seconds (Warm-up)
-Chain 4:                0.026 seconds (Sampling)
-Chain 4:                0.079 seconds (Total)
+Chain 4:  Elapsed Time: 0.038 seconds (Warm-up)
+Chain 4:                0.025 seconds (Sampling)
+Chain 4:                0.063 seconds (Total)
 Chain 4: </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print a summary of the fitted model, we can assess our estimates and our credible intervals</span></span>
@@ -404,15 +420,15 @@ Formula: heart_rate ~ physical_activity + age + weight + gender
 
 Regression Coefficients:
                   Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept            75.68      9.83    56.27    94.82 1.00     5426     3217
-physical_activity    -0.06      0.12    -0.29     0.18 1.00     5140     2734
-age                   0.05      0.05    -0.04     0.14 1.00     5078     2936
-weight                0.01      0.09    -0.18     0.19 1.00     5406     2989
-genderMale           -0.83      1.77    -4.29     2.60 1.00     5067     2752
+Intercept            75.86      9.76    56.20    94.89 1.00     5079     3155
+physical_activity    -0.06      0.12    -0.30     0.17 1.00     5157     2697
+age                   0.05      0.05    -0.05     0.14 1.00     5641     3059
+weight                0.01      0.10    -0.18     0.20 1.00     5089     3275
+genderMale           -0.91      1.78    -4.34     2.63 1.00     5399     3040
 
 Further Distributional Parameters:
       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sigma    10.69      0.64     9.51    12.00 1.00     5108     2671
+sigma    10.70      0.63     9.53    12.01 1.00     5167     2820
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential

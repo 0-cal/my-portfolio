@@ -126,19 +126,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About Me</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about-me" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">About Me</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-about-me">    
+        <li>
+    <a class="dropdown-item" href="./about.html">
+ <span class="dropdown-text">My Resume</span></a>
   </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-my-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">My Projects</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-my-projects">    
-        <li>
-    <a class="dropdown-item" href="./begin.html">
- <span class="dropdown-text">For Beginners</span></a>
-  </li>  
         <li>
     <a class="dropdown-item" href="./hyperloop.html">
  <span class="dropdown-text">Latent Class Analysis</span></a>
@@ -153,8 +156,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="./timeseries.html">
- <span class="dropdown-text">Time Series</span></a>
+ <span class="dropdown-text">Time Series Analysis</span></a>
   </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-learn-r" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Learn R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-learn-r">    
+        <li>
+    <a class="dropdown-item" href="./begin.html">
+ <span class="dropdown-text">For Beginners</span></a>
+  </li>  
+        <li class="dropdown-header">Building Websites (coming soon)</li>
+        <li class="dropdown-header">Building Packages (coming soon)</li>
     </ul>
   </li>
 </ul>
@@ -221,66 +237,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="packages" class="level3">
 <h3 class="anchored" data-anchor-id="packages">2. Packages</h3>
 <p><em>R packages are collections of functions, data, and documentation that extend the capabilities of base R, making it easier and more efficient to perform a wide range of tasks. Here’s a brief overview of what R packages can do for new learners:</em></p>
-<section id="simplify-complex-tasks" class="level4">
-<h4 class="anchored" data-anchor-id="simplify-complex-tasks">1. <strong>Simplify Complex Tasks</strong></h4>
-<p><em>Packages can simplify complex tasks into manageable functions. For instance, data visualization with <code>ggplot2</code> or data manipulation with <code>dplyr</code> breaks down intricate processes into straightforward commands.</em></p>
-</section>
-<section id="enhance-data-analysis" class="level4">
-<h4 class="anchored" data-anchor-id="enhance-data-analysis">2. <strong>Enhance Data Analysis</strong></h4>
-<p><em>Packages like <code>tidyverse</code> offer tools for data import, tidying, transformation, visualization, and modeling. These integrated tools follow a consistent philosophy, making data analysis more intuitive.</em></p>
-</section>
-<section id="provide-specialized-tools" class="level4">
-<h4 class="anchored" data-anchor-id="provide-specialized-tools">3. <strong>Provide Specialized Tools</strong></h4>
-<p><em>There are packages for almost every field and application, from bioinformatics (<code>Bioconductor</code>) to finance (<code>quantmod</code>). These packages provide specialized functions tailored to specific tasks, saving time and effort.</em></p>
-</section>
-<section id="improve-data-visualization" class="level4">
-<h4 class="anchored" data-anchor-id="improve-data-visualization">4. <strong>Improve Data Visualization</strong></h4>
-<p><em>Packages such as <code>ggplot2</code>, <code>plotly</code>, and <code>shiny</code> help create advanced and interactive data visualizations. This makes it easier to explore and communicate data insights.</em></p>
-</section>
-<section id="streamline-workflow" class="level4">
-<h4 class="anchored" data-anchor-id="streamline-workflow">5. <strong>Streamline Workflow</strong></h4>
-<p><em>Packages like <code>knitr</code> and <code>rmarkdown</code> allow for dynamic report generation, integrating code and its output in a single document. This streamlines the workflow from data analysis to reporting.</em></p>
-</section>
-<section id="access-vast-amounts-of-data" class="level4">
-<h4 class="anchored" data-anchor-id="access-vast-amounts-of-data">6. <strong>Access Vast Amounts of Data</strong></h4>
-<p><em>Packages like <code>dplyr</code> and <code>tidyr</code> help in efficiently handling and processing large datasets. This is particularly useful for big data applications where performance is crucial.</em></p>
-</section>
-<section id="encourage-reproducibility" class="level4">
-<h4 class="anchored" data-anchor-id="encourage-reproducibility">7. <strong>Encourage Reproducibility</strong></h4>
-<p><em>Using packages ensures that your code is reproducible. The functions are well-documented and tested, reducing the chances of errors and improving the reliability of your analysis.</em></p>
-</section>
-<section id="support-community-and-learning" class="level4">
-<h4 class="anchored" data-anchor-id="support-community-and-learning">8. <strong>Support Community and Learning</strong></h4>
-<p><em>The R community is robust, with packages often accompanied by comprehensive documentation, tutorials, and vignettes. This makes it easier for learners to understand and implement new techniques.</em></p>
-</section>
+<ul>
+<li><p><strong>Simplify Complex Tasks</strong></p>
+<ul>
+<li><em>Packages can simplify complex tasks into manageable functions. For instance, data visualization with <code>ggplot2</code> or data manipulation with <code>dplyr</code> breaks down intricate processes into straightforward commands.</em></li>
+</ul></li>
+<li><p><strong>Enhance Data Analysis</strong></p>
+<ul>
+<li><em>Packages like <code>tidyverse</code> offer tools for data import, tidying, transformation, visualization, and modeling. These integrated tools follow a consistent philosophy, making data analysis more intuitive.</em></li>
+</ul></li>
+<li><p><strong>Provide Specialized Tools</strong></p>
+<ul>
+<li><em>There are packages for almost every field and application, from bioinformatics (<code>Bioconductor</code>) to finance (<code>quantmod</code>). These packages provide specialized functions tailored to specific tasks, saving time and effort.</em></li>
+</ul></li>
+<li><p><strong>Improve Data Visualization</strong></p>
+<ul>
+<li><em>Packages such as <code>ggplot2</code>, <code>plotly</code>, and <code>shiny</code> help create advanced and interactive data visualizations. This makes it easier to explore and communicate data insights.</em></li>
+</ul></li>
+<li><p><strong>Streamline Workflow</strong></p>
+<ul>
+<li><em>Packages like <code>knitr</code> and <code>rmarkdown</code> allow for dynamic report generation, integrating code and its output in a single document. This streamlines the workflow from data analysis to reporting.</em></li>
+</ul></li>
+<li><p><strong>Access Vast Amounts of Data</strong></p>
+<ul>
+<li><em>Packages like <code>dplyr</code> and <code>tidyr</code> help in efficiently handling and processing large datasets. This is particularly useful for big data applications where performance is crucial.</em></li>
+</ul></li>
+</ul>
 </section>
 <section id="functions" class="level3">
 <h3 class="anchored" data-anchor-id="functions">3. Functions</h3>
 <p><em>When I learned how to create my own functions, I felt like the creative side of R expanded beyond my expectations. I could tailor a command to address exactly what I needed to perform on a given set of data.</em></p>
 <p><em>The <code>function()</code> command is a fundamental building block in R, enabling users to create their own functions. This is crucial for both simplifying repetitive tasks and organizing code in a clean, efficient manner. Here’s what the <code>function()</code> command can do for new learners using R:</em></p>
-<section id="encapsulate-repetitive-tasks" class="level4">
-<h4 class="anchored" data-anchor-id="encapsulate-repetitive-tasks">1. <strong>Encapsulate Repetitive Tasks</strong></h4>
-<p><em>Creating functions allows you to encapsulate repetitive code into reusable blocks. This reduces redundancy and makes your scripts more concise and readable. For example, if you frequently perform the same data transformation, you can write a function for it and call it whenever needed.</em></p>
-</section>
-<section id="organize-code" class="level4">
-<h4 class="anchored" data-anchor-id="organize-code">2. <strong>Organize Code</strong></h4>
-<p><em>Functions help in organizing code logically. By breaking down complex procedures into smaller, manageable functions, you make your code more modular and easier to debug and maintain.</em></p>
-</section>
-<section id="improve-readability" class="level4">
-<h4 class="anchored" data-anchor-id="improve-readability">3. <strong>Improve Readability</strong></h4>
-<p><em>Using functions can significantly enhance the readability of your code. Descriptive function names and clear parameter definitions help others (and your future self) understand the purpose and usage of the code more quickly.</em></p>
-</section>
-<section id="parameterization" class="level4">
-<h4 class="anchored" data-anchor-id="parameterization">4. <strong>Parameterization</strong></h4>
-<p><em>Functions allow you to use parameters to make your code more flexible. Instead of hard-coding values, you can pass different arguments to your functions, making them adaptable to various inputs and scenarios.</em></p>
-</section>
-<section id="enhance-reproducibility" class="level4">
-<h4 class="anchored" data-anchor-id="enhance-reproducibility">5. <strong>Enhance Reproducibility</strong></h4>
-<p><em>Functions contribute to reproducibility in your analyses. By encapsulating specific tasks, you ensure that the same operations can be repeated with different data or settings, leading to consistent results.</em></p>
-</section>
-<section id="promote-code-reuse" class="level4">
-<h4 class="anchored" data-anchor-id="promote-code-reuse">6. <strong>Promote Code Reuse</strong></h4>
-<p><em>Once you write a function, you can reuse it across different projects. This saves time and effort, as you don’t need to rewrite the same code for similar tasks.</em></p>
+<ul>
+<li><p><strong>Encapsulate Repetitive Tasks</strong></p>
+<ul>
+<li><em>Creating functions allows you to encapsulate repetitive code into reusable blocks. This reduces redundancy and makes your scripts more concise and readable. For example, if you frequently perform the same data transformation, you can write a function for it and call it whenever needed.</em></li>
+</ul></li>
+<li><p><strong>Organize Code</strong></p>
+<ul>
+<li><em>Functions help in organizing code logically. By breaking down complex procedures into smaller, manageable functions, you make your code more modular and easier to debug and maintain.</em></li>
+</ul></li>
+<li><p><strong>Improve Readability</strong></p>
+<ul>
+<li><em>Using functions can significantly enhance the readability of your code. Descriptive function names and clear parameter definitions help others (and your future self) understand the purpose and usage of the code more quickly.</em></li>
+</ul></li>
+<li><p><strong>Parameterization</strong></p>
+<ul>
+<li><em>Functions allow you to use parameters to make your code more flexible. Instead of hard-coding values, you can pass different arguments to your functions, making them adaptable to various inputs and scenarios.</em></li>
+</ul></li>
+<li><p><strong>Enhance Reproducibility</strong></p>
+<ul>
+<li><em>Functions contribute to reproducibility in your analyses. By encapsulating specific tasks, you ensure that the same operations can be repeated with different data or settings, leading to consistent results.</em></li>
+</ul></li>
+<li><p><strong>Promote Code Reuse</strong></p>
+<ul>
+<li><em>Once you write a function, you can reuse it across different projects. This saves time and effort, as you don’t need to rewrite the same code for similar tasks.</em></li>
+</ul></li>
+</ul>
 <p><strong><em>Example of Using <code>function()</code> in R</em></strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a function to calculate the mean of a numeric vector</span></span>
@@ -298,7 +311,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-</section>
 <section id="data-visualization" class="level3">
 <h3 class="anchored" data-anchor-id="data-visualization">4. Data Visualization</h3>
 <p><em>Let’s explore one of my favorite, and also one of the most essential packages in R, <code>ggplot2</code>.</em></p>
@@ -311,7 +323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpvZoTgh/downloaded_packages</code></pre>
+    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpxoPsky/downloaded_packages</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
