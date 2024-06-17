@@ -130,10 +130,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About Me</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./interest.html"> 
-<span class="menu-text">My Interests</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-my-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">My Projects</span>
@@ -153,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="./bayes.html">
- <span class="dropdown-text">Bayesian Testing</span></a>
+ <span class="dropdown-text">Bayesian Linear Regression</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./timeseries.html">
@@ -181,11 +177,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#project-description" id="toc-project-description" class="nav-link active" data-scroll-target="#project-description">Project Description</a>
   <ul class="collapse">
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
-  <li><a href="#step-1-install-and-load-necessary-packages" id="toc-step-1-install-and-load-necessary-packages" class="nav-link" data-scroll-target="#step-1-install-and-load-necessary-packages"><strong>Step 1: Install and load necessary packages</strong></a></li>
+  <li><a href="#step-1-install-and-load-necessary-packages" id="toc-step-1-install-and-load-necessary-packages" class="nav-link" data-scroll-target="#step-1-install-and-load-necessary-packages">Step 1: Install and load necessary packages</a></li>
   <li><a href="#step-2-exploratory-data-analysis" id="toc-step-2-exploratory-data-analysis" class="nav-link" data-scroll-target="#step-2-exploratory-data-analysis">Step 2: Exploratory Data Analysis</a></li>
-  <li><a href="#step-3-comparing-alternative-models" id="toc-step-3-comparing-alternative-models" class="nav-link" data-scroll-target="#step-3-comparing-alternative-models">Step 3: <strong>Comparing Alternative Models:</strong></a></li>
-  <li><a href="#step-4-post-estimation-analyses" id="toc-step-4-post-estimation-analyses" class="nav-link" data-scroll-target="#step-4-post-estimation-analyses">Step 4: <strong>Post-estimation Analyses:</strong></a></li>
-  <li><a href="#step-5-reporting" id="toc-step-5-reporting" class="nav-link" data-scroll-target="#step-5-reporting">Step 5: <strong>Reporting:</strong></a></li>
+  <li><a href="#step-3-comparing-alternative-models" id="toc-step-3-comparing-alternative-models" class="nav-link" data-scroll-target="#step-3-comparing-alternative-models">Step 3: Comparing Alternative Models:</a></li>
+  <li><a href="#step-4-post-estimation-analyses" id="toc-step-4-post-estimation-analyses" class="nav-link" data-scroll-target="#step-4-post-estimation-analyses">Step 4: Post-estimation Analyses:</a></li>
+  <li><a href="#step-5-reporting" id="toc-step-5-reporting" class="nav-link" data-scroll-target="#step-5-reporting">Step 5: Reporting:</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
@@ -209,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><em>Modern individualized lifestyles have forgotten the special nature of an intimate society (Kloos et al., 2012). Between 1970 and 2000, close-knit neighborhoods were more common, and they enriched our social lives with friendly routine discourse and spontaneous activities (Putnam, 2000). Residents were generally happier, safer, and healthier (Jordan, 1996). More importantly, they had place identities; a cognitive overlap with the self and the community (Turner et al., 2008). Strong place identities led people to treat neighbors like the self by embodying their problems and successes, which helped create a sense of social cohesion (Stevenson et al., 2019; Turner et al., 2008). However, in recent decades, there has been a noticeable decline in neighborhood engagement, contributing to increased social isolation among individuals (Kloos et al., 2012; Putnam, 2000). This trend is particularly pronounced in the Netherlands, where personal networks consist of fewer neighbors (Völker &amp; Flap, 2007).</em></p>
 <p><em>Social cohesion, often influenced by residents’ ethnic similarities (Van Kempen &amp; Bolt, 2009), facilitates the development of strong place identities (Putnam, 2000; Jordan, 1996). But in ethnically heterogeneous neighborhoods, individual differences create strenuous interactions that can lead to social dissolution (Stevenson et al., 2019), which is defined as the opposite of social cohesion (Chan et al., 2006). Social dissolution was found in Northern Ireland, where residents in religiously desegregated neighborhoods had trouble defining their place identities (Stevenson et al., 2019). With no sense of belonging, they struggle to form strong relationships with each other. More recently, Bektaş and Taşan-Kok (2020) found similar trends in the Kolenkit neighborhood located in Amsterdam, and residents placed most of the blame on the cultural differences. With increased migration on the rise in the Netherlands (Van Kempen &amp; Bolt, 2009), the inevitable reality of ethnically heterogeneous neighborhoods should reveal the criticality of place identity research.</em></p>
 <p><em>Policy interventions often overlook the individual-level processes (e.g., place identity), relying on social mixing policies that fail to address underlying issues (Bektaş &amp; Taşan-Kok, 2020; Van Kempen &amp; Bolt, 2009). In 2007, the Minister of Housing, Districts, and Integration prompted the integration of different social and ethnic groups into neighborhoods with confidence that designing innovative public spaces or identifying the perfect distribution of ethnicities per district would promote social cohesion (Van Kempen &amp; Bolt, 2009). However, direct intergroup contact does not always promote social cohesion, it can sometimes damage relationships even more by creating intergroup anxiety (Turner et al., 2008). Concerns raised by researchers in the Netherlands highlight the need for more nuanced approaches (Kleinhans 2004; Stolle &amp; Harell, 2013; Van Kempen &amp; Bolt, 2009; Völker &amp; Flap, 2007). For instance, Bektaş and Taşan-Kok (2020) found that the social mixing policies only led to superficial interactions that had little impact on social cohesion. Similarly, Stevenson et al.&nbsp;(2019) found that close proximity was insufficient to foster positive intergroup relationships, emphasizing the importance of developing place identity.</em></p>
-<p><em>My PhD proposal aims to complement the research conducted by Bektaş and Taşan-Kok (2020) and Stevenson et al.&nbsp;(2019) by studying the individual-level processes that undermine social cohesion in ethnically heterogeneous neighborhoods in the Netherlands. The problem at hand is the presence of unmeasured individual-level variables contributing to the social dissolution of these neighborhoods, thereby rendering contemporary evaluations of social cohesion inaccurate. This research seeks to address the following questions: (1) What reliable measures of social cohesion can capture the unexplained variability at the individual level? (2) What is the current state of residents’ place identity in ethnically heterogeneous neighborhoods? (3) How can multilevel evidence about individual and contextual variables shed light on social cohesion and intergroup anxiety? (4) What impact does neighborhood leadership have on reducing intergroup anxiety? (5) How do personalized neighborhood features influence place identity?<br>
+<p><em>My research proposal aims to complement Bektaş and Taşan-Kok (2020) and Stevenson et al.&nbsp;(2019) by studying the individual-level processes that undermine social cohesion in ethnically heterogeneous neighborhoods in the Netherlands. The problem at hand is the presence of unmeasured individual-level variables contributing to the social dissolution of these neighborhoods, thereby rendering contemporary evaluations of social cohesion inaccurate. This research seeks to address the following questions: (1) What reliable measures of social cohesion can capture the unexplained variability at the individual level? (2) What is the current state of residents’ place identity in ethnically heterogeneous neighborhoods? (3) How can multilevel evidence about individual and contextual variables shed light on social cohesion and intergroup anxiety? (4) What impact does neighborhood leadership have on reducing intergroup anxiety? (5) How do personalized neighborhood features influence place identity?<br>
 </em></p>
 <p><strong><em>Theoretical Approach</em></strong></p>
 <p><em>The principles of intergroup contact offer insights into the challenges faced by ethnically heterogeneous neighborhoods in maintaining social cohesion. Introducing an outgroup minority to an ingroup native community can trigger intergroup anxiety—a response rooted in negative expectations of rejection or discrimination during interactions (Turner et al., 2008). This anxiety can result in social isolation and narrowed attention (Van Kempen &amp; Bolt, 2009). While direct interactions do not invariably lead to positive attitudes, intergroup anxiety can be mitigated by factors like pre-established friendships. Pre-established friendships foster inclusivity and reduce uncertainty for outgroup members, facilitating positive contact (Turner et al., 2008). In the context of this proposal, the presence of inclusive members or leaders within the ingroup community, and showing interest in the outgroup culture, may mitigate intergroup anxiety.</em></p>
@@ -253,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="section"></h3>
 </section>
 <section id="step-1-install-and-load-necessary-packages" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-install-and-load-necessary-packages"><strong>Step 1: Install and load necessary packages</strong></h3>
+<h3 class="anchored" data-anchor-id="step-1-install-and-load-necessary-packages">Step 1: Install and load necessary packages</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">CRAN =</span> <span class="st">"https://cloud.r-project.org"</span>))</span>
@@ -261,19 +257,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpfqbYdB/downloaded_packages</code></pre>
+    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpX5gG1a/downloaded_packages</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"car"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpfqbYdB/downloaded_packages</code></pre>
+    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpX5gG1a/downloaded_packages</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpfqbYdB/downloaded_packages</code></pre>
+    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpX5gG1a/downloaded_packages</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -395,7 +391,7 @@ Use print(x, correlation=TRUE)  or
 </div>
 </section>
 <section id="step-3-comparing-alternative-models" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-comparing-alternative-models">Step 3: <strong>Comparing Alternative Models:</strong></h3>
+<h3 class="anchored" data-anchor-id="step-3-comparing-alternative-models">Step 3: Comparing Alternative Models:</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model without Low-estimate predictors:</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>alt_model1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> education <span class="sc">+</span> income <span class="sc">+</span> ethnicity <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> facilities <span class="sc">+</span> art <span class="sc">+</span> leadership <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span>
@@ -459,7 +455,7 @@ alt_model7       10 12956.07</code></pre>
 <p><em>After removing variables (<code>age, length_res, names, playgrounds, physical_disorder)</code> , my first adjusted model has one of the lower AIC/BIC, while also aligning with my theoretical framework and hypotheses.</em></p>
 </section>
 <section id="step-4-post-estimation-analyses" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-post-estimation-analyses">Step 4: <strong>Post-estimation Analyses:</strong></h3>
+<h3 class="anchored" data-anchor-id="step-4-post-estimation-analyses">Step 4: Post-estimation Analyses:</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">influencePlot</span>(alt_model1, <span class="at">id.n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -514,7 +510,7 @@ leadership                    1.045332  1        1.022415</code></pre>
 </div>
 </section>
 <section id="step-5-reporting" class="level3">
-<h3 class="anchored" data-anchor-id="step-5-reporting">Step 5: <strong>Reporting:</strong></h3>
+<h3 class="anchored" data-anchor-id="step-5-reporting">Step 5: Reporting:</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract coefficients</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>model_coefs <span class="ot">&lt;-</span> <span class="fu">coef</span>(<span class="fu">summary</span>(alt_model1))</span>

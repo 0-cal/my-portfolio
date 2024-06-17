@@ -18,7 +18,7 @@
 
 *Policy interventions often overlook the individual-level processes (e.g., place identity), relying on social mixing policies that fail to address underlying issues (Bektaş & Taşan-Kok, 2020; Van Kempen & Bolt, 2009). In 2007, the Minister of Housing, Districts, and Integration prompted the integration of different social and ethnic groups into neighborhoods with confidence that designing innovative public spaces or identifying the perfect distribution of ethnicities per district would promote social cohesion (Van Kempen & Bolt, 2009). However, direct intergroup contact does not always promote social cohesion, it can sometimes damage relationships even more by creating intergroup anxiety (Turner et al., 2008). Concerns raised by researchers in the Netherlands highlight the need for more nuanced approaches (Kleinhans 2004; Stolle & Harell, 2013; Van Kempen & Bolt, 2009; Völker & Flap, 2007). For instance, Bektaş and Taşan-Kok (2020) found that the social mixing policies only led to superficial interactions that had little impact on social cohesion. Similarly, Stevenson et al. (2019) found that close proximity was insufficient to foster positive intergroup relationships, emphasizing the importance of developing place identity.*
 
-*My PhD proposal aims to complement the research conducted by Bektaş and Taşan-Kok (2020) and Stevenson et al. (2019) by studying the individual-level processes that undermine social cohesion in ethnically heterogeneous neighborhoods in the Netherlands. The problem at hand is the presence of unmeasured individual-level variables contributing to the social dissolution of these neighborhoods, thereby rendering contemporary evaluations of social cohesion inaccurate. This research seeks to address the following questions: (1) What reliable measures of social cohesion can capture the unexplained variability at the individual level? (2) What is the current state of residents' place identity in ethnically heterogeneous neighborhoods? (3) How can multilevel evidence about individual and contextual variables shed light on social cohesion and intergroup anxiety? (4) What impact does neighborhood leadership have on reducing intergroup anxiety? (5) How do personalized neighborhood features influence place identity?\
+*My research proposal aims to complement Bektaş and Taşan-Kok (2020) and Stevenson et al. (2019) by studying the individual-level processes that undermine social cohesion in ethnically heterogeneous neighborhoods in the Netherlands. The problem at hand is the presence of unmeasured individual-level variables contributing to the social dissolution of these neighborhoods, thereby rendering contemporary evaluations of social cohesion inaccurate. This research seeks to address the following questions: (1) What reliable measures of social cohesion can capture the unexplained variability at the individual level? (2) What is the current state of residents' place identity in ethnically heterogeneous neighborhoods? (3) How can multilevel evidence about individual and contextual variables shed light on social cohesion and intergroup anxiety? (4) What impact does neighborhood leadership have on reducing intergroup anxiety? (5) How do personalized neighborhood features influence place identity?\
 *
 
 ***Theoretical Approach***
@@ -74,7 +74,7 @@
 
 ### 
 
-### **Step 1: Install and load necessary packages** 
+### Step 1: Install and load necessary packages
 
 ```{r}
 # Load necessary libraries
@@ -118,7 +118,7 @@ fixed_effects <- fixef(multilevel_model)
 print(fixed_effects)
 ```
 
-### Step 3: **Comparing Alternative Models:**
+### Step 3: Comparing Alternative Models:
 
 ```{r}
 # Model without Low-estimate predictors:
@@ -152,7 +152,7 @@ print(BIC_values)
 
 *After removing variables (`age, length_res, names, playgrounds, physical_disorder)` , my first adjusted model has one of the lower AIC/BIC, while also aligning with my theoretical framework and hypotheses.*
 
-### Step 4: **Post-estimation Analyses:**
+### Step 4: Post-estimation Analyses:
 
 ```{r}
 influencePlot(alt_model1, id.n = 5)
@@ -161,7 +161,7 @@ influencePlot(alt_model1, id.n = 5)
 vif(alt_model1)
 ```
 
-### Step 5: **Reporting:**
+### Step 5: Reporting:
 
 ```{r}
 # Extract coefficients

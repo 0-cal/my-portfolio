@@ -130,10 +130,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About Me</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./interest.html"> 
-<span class="menu-text">My Interests</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-my-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">My Projects</span>
@@ -153,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="./bayes.html">
- <span class="dropdown-text">Bayesian Testing</span></a>
+ <span class="dropdown-text">Bayesian Linear Regression</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./timeseries.html">
@@ -178,9 +174,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#step-1-install-and-load-necessary-packages" id="toc-step-1-install-and-load-necessary-packages" class="nav-link active" data-scroll-target="#step-1-install-and-load-necessary-packages"><strong>Step 1: Install and load necessary packages</strong></a></li>
-  <li><a href="#step-2-bayesian-linear-regression" id="toc-step-2-bayesian-linear-regression" class="nav-link" data-scroll-target="#step-2-bayesian-linear-regression">Step 2: Bayesian Linear Regression</a></li>
-  <li><a href="#step-3-results-interpretation-and-reporting" id="toc-step-3-results-interpretation-and-reporting" class="nav-link" data-scroll-target="#step-3-results-interpretation-and-reporting">Step 3: Results Interpretation and Reporting</a></li>
+  <li><a href="#project-description" id="toc-project-description" class="nav-link active" data-scroll-target="#project-description">Project Description</a>
+  <ul class="collapse">
+  <li><a href="#step-1-install-and-load-necessary-packages" id="toc-step-1-install-and-load-necessary-packages" class="nav-link" data-scroll-target="#step-1-install-and-load-necessary-packages">Step 1: Install and load necessary packages</a></li>
+  <li><a href="#step-2-create-the-bayesian-linear-regression" id="toc-step-2-create-the-bayesian-linear-regression" class="nav-link" data-scroll-target="#step-2-create-the-bayesian-linear-regression">Step 2: Create the Bayesian Linear Regression</a></li>
+  <li><a href="#step-3-data-visualization" id="toc-step-3-data-visualization" class="nav-link" data-scroll-target="#step-3-data-visualization">Step 3: Data Visualization</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -190,23 +189,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<section id="project-description" class="level1">
+<h1>Project Description</h1>
+<p><em>Bayesian analysis is a statistical approach that interprets probability as a measure of belief or confidence in an event occurring. It allows us to update our beliefs about parameters of interest based on evidence (data) as it becomes available. This is a field of Statistics that I am constantly trying to learn more about.</em></p>
+<p><em>Considering my love for exercise and health, I found a dataset on physical activity and heart rate to use for a Bayesian analysis. I am interested in exploring the relationship between exercise and heart rate, which calls for a linear regression approach. To perform a Bayesian linear regression, I will use the <code>brms</code> package in R. This package provides an interface to fit complex Bayesian models using the probabilistic programming language Stan. Stan’s efficient Hamiltonian Monte Carlo (HMC) algorithms can sample from the posterior distribution of the model parameters.</em></p>
+<p><em>I could not have learned some of these steps by myself. An amazing resource to check out is <code>bayesrulesbook.com</code>; it will teach you so much about the Bayesian philosophy and techniques. If you curious about where I learned some of the steps below, check out Chapter 6!</em></p>
 <section id="step-1-install-and-load-necessary-packages" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-install-and-load-necessary-packages"><strong>Step 1: Install and load necessary packages</strong></h3>
+<h3 class="anchored" data-anchor-id="step-1-install-and-load-necessary-packages">Step 1: Install and load necessary packages</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">CRAN =</span> <span class="st">"https://cloud.r-project.org"</span>))</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"bayesplot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-The downloaded binary packages are in
-    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpxDlaYb/downloaded_packages</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"brms"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-The downloaded binary packages are in
-    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpxDlaYb/downloaded_packages</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: Rcpp</code></pre>
 </div>
@@ -224,7 +216,7 @@ Attaching package: 'brms'</code></pre>
 
     ar</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>This is bayesplot version 1.11.1</code></pre>
 </div>
@@ -251,38 +243,8 @@ Attaching package: 'bayesplot'</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed for reproducibility</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate data for 100 individuals</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">145</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate random values for physical activity level (in minutes)</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>physical_activity <span class="ot">&lt;-</span> <span class="fu">rpois</span>(n, <span class="at">lambda =</span> <span class="dv">60</span>)</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate random values for heart rate (in beats per minute)</span></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>heart_rate <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">75</span>, <span class="at">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate random values for age (in years)</span></span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">18</span><span class="sc">:</span><span class="dv">80</span>, n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate random values for weight (in kilograms)</span></span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>weight <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate random values for gender (1 = male, 2 = female)</span></span>
-<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame</span></span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">physical_activity =</span> physical_activity,</span>
-<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">heart_rate =</span> heart_rate,</span>
-<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> age,</span>
-<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">weight =</span> weight,</span>
-<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">gender =</span> <span class="fu">factor</span>(gender, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>))</span>
-<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a><span class="co"># View the first few rows of the dataset</span></span>
-<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"exercise_data.csv"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  physical_activity heart_rate age   weight gender
 1                55   66.32434  22 66.45458   Male
@@ -294,18 +256,36 @@ Attaching package: 'bayesplot'</code></pre>
 </div>
 </div>
 </section>
-<section id="step-2-bayesian-linear-regression" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-bayesian-linear-regression">Step 2: Bayesian Linear Regression</h3>
-<p>I am interested in assessing the relationship between exercise and heart rate.</p>
+<section id="step-2-create-the-bayesian-linear-regression" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-create-the-bayesian-linear-regression">Step 2: Create the Bayesian Linear Regression</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In this example, we'll model heart rate as a function of physical activity, age, weight, and gender</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  heart_rate <span class="sc">~</span> physical_activity <span class="sc">+</span> age <span class="sc">+</span> weight <span class="sc">+</span> gender,</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> data,</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">gaussian</span>()  <span class="co"># Assuming heart rate follows a Gaussian (normal) distribution</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can model heart rate as a function of physical activity, age, weight, and gender</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  heart_rate <span class="sc">~</span> physical_activity <span class="sc">+</span> age <span class="sc">+</span> weight <span class="sc">+</span> gender,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> data,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">gaussian</span>(), <span class="co"># Assuming heart rate follows a Gaussian normal distribution</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">set_prior</span>(<span class="st">"normal(0, 10)"</span>, <span class="at">class =</span> <span class="st">"b"</span>)) <span class="co"># set a normal prior of M = 0 and SD = 10</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Compiling Stan program...</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Trying to compile a simple C file</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Running /Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB foo.c
+using C compiler: ‘Apple clang version 15.0.0 (clang-1500.1.0.2.5)’
+using SDK: ‘MacOSX14.2.sdk’
+clang -arch x86_64 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG   -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/Rcpp/include/"  -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/"  -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/unsupported"  -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/BH/include" -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/src/"  -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/"  -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppParallel/include/"  -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include" -DEIGEN_NO_DEBUG  -DBOOST_DISABLE_ASSERTS  -DBOOST_PENDING_INTEGER_LOG2_HPP  -DSTAN_THREADS  -DUSE_STANC3 -DSTRICT_R_HEADERS  -DBOOST_PHOENIX_NO_VARIADIC_EXPRESSION  -D_HAS_AUTO_PTR_ETC=0  -include '/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/stan/math/prim/fun/Eigen.hpp'  -D_REENTRANT -DRCPP_PARALLEL_USE_TBB=1   -I/opt/R/x86_64/include    -fPIC  -falign-functions=64 -Wall -g -O2  -c foo.c -o foo.o
+In file included from &lt;built-in&gt;:1:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/stan/math/prim/fun/Eigen.hpp:22:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/Dense:1:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/Core:19:
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:679:10: fatal error: 'cmath' file not found
+#include &lt;cmath&gt;
+         ^~~~~~~
+1 error generated.
+make: *** [foo.o] Error 1</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Start sampling</code></pre>
@@ -314,8 +294,8 @@ Attaching package: 'bayesplot'</code></pre>
 <pre><code>
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 Chain 1: 
-Chain 1: Gradient evaluation took 2.9e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.29 seconds.
+Chain 1: Gradient evaluation took 3.5e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.35 seconds.
 Chain 1: Adjust your expectations accordingly!
 Chain 1: 
 Chain 1: 
@@ -332,15 +312,15 @@ Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
-Chain 1:  Elapsed Time: 0.044 seconds (Warm-up)
-Chain 1:                0.022 seconds (Sampling)
+Chain 1:  Elapsed Time: 0.041 seconds (Warm-up)
+Chain 1:                0.025 seconds (Sampling)
 Chain 1:                0.066 seconds (Total)
 Chain 1: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
 Chain 2: 
-Chain 2: Gradient evaluation took 6e-06 seconds
-Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.06 seconds.
+Chain 2: Gradient evaluation took 1.3e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.13 seconds.
 Chain 2: Adjust your expectations accordingly!
 Chain 2: 
 Chain 2: 
@@ -358,14 +338,14 @@ Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 2: 
 Chain 2:  Elapsed Time: 0.04 seconds (Warm-up)
-Chain 2:                0.023 seconds (Sampling)
-Chain 2:                0.063 seconds (Total)
+Chain 2:                0.025 seconds (Sampling)
+Chain 2:                0.065 seconds (Total)
 Chain 2: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
 Chain 3: 
-Chain 3: Gradient evaluation took 7e-06 seconds
-Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.07 seconds.
+Chain 3: Gradient evaluation took 2.7e-05 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.27 seconds.
 Chain 3: Adjust your expectations accordingly!
 Chain 3: 
 Chain 3: 
@@ -382,15 +362,15 @@ Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 3: 
-Chain 3:  Elapsed Time: 0.039 seconds (Warm-up)
-Chain 3:                0.025 seconds (Sampling)
-Chain 3:                0.064 seconds (Total)
+Chain 3:  Elapsed Time: 0.044 seconds (Warm-up)
+Chain 3:                0.026 seconds (Sampling)
+Chain 3:                0.07 seconds (Total)
 Chain 3: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
 Chain 4: 
-Chain 4: Gradient evaluation took 9e-06 seconds
-Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.09 seconds.
+Chain 4: Gradient evaluation took 1e-05 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.1 seconds.
 Chain 4: Adjust your expectations accordingly!
 Chain 4: 
 Chain 4: 
@@ -407,13 +387,13 @@ Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 4: 
-Chain 4:  Elapsed Time: 0.039 seconds (Warm-up)
-Chain 4:                0.022 seconds (Sampling)
-Chain 4:                0.061 seconds (Total)
+Chain 4:  Elapsed Time: 0.053 seconds (Warm-up)
+Chain 4:                0.026 seconds (Sampling)
+Chain 4:                0.079 seconds (Total)
 Chain 4: </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print a summary of the fitted model</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print a summary of the fitted model, we can assess our estimates and our credible intervals</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> Family: gaussian 
   Links: mu = identity; sigma = identity 
@@ -424,158 +404,82 @@ Formula: heart_rate ~ physical_activity + age + weight + gender
 
 Regression Coefficients:
                   Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept            74.76      9.73    55.99    93.57 1.00     5020     3108
-physical_activity    -0.06      0.12    -0.29     0.17 1.00     4815     3149
-age                   0.05      0.05    -0.04     0.14 1.00     4233     3039
-weight                0.01      0.10    -0.18     0.19 1.00     4778     3415
-genderFemale          0.86      1.80    -2.72     4.37 1.00     5894     3139
+Intercept            75.68      9.83    56.27    94.82 1.00     5426     3217
+physical_activity    -0.06      0.12    -0.29     0.18 1.00     5140     2734
+age                   0.05      0.05    -0.04     0.14 1.00     5078     2936
+weight                0.01      0.09    -0.18     0.19 1.00     5406     2989
+genderMale           -0.83      1.77    -4.29     2.60 1.00     5067     2752
 
 Further Distributional Parameters:
       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sigma    10.69      0.66     9.53    12.07 1.00     4700     3075
+sigma    10.69      0.64     9.51    12.00 1.00     5108     2671
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
 scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the posterior distributions of model parameters</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="bayes_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
 </div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="bayes_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><em>Now, lets compute our means and credible intervals.</em></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract posterior summary</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>posterior_summary <span class="ot">&lt;-</span> <span class="fu">posterior_summary</span>(model)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract posterior means from the summary</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>posterior_means <span class="ot">&lt;-</span> <span class="fu">fixef</span>(model)</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>posterior_means <span class="ot">&lt;-</span> posterior_means[, <span class="st">"Estimate"</span>]</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify prior means (assuming a normal prior with mean 0)</span></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>prior_means <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(posterior_means))</span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute credible intervals for posterior means</span></span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>posterior_quantiles <span class="ot">&lt;-</span> <span class="fu">quantile</span>(model<span class="sc">$</span>posterior, <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))</span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign the quantiles to posterior credible intervals</span></span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>posterior_ci <span class="ot">&lt;-</span> posterior_quantiles</span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute credible intervals for prior means</span></span>
-<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>prior_ci <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="cn">NA</span>)  <span class="co"># Prior distribution centered at 0, so credible intervals are NA</span></span>
-<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Test for difference between posterior and prior means</span></span>
-<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>difference_test <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(posterior_ci[<span class="dv">1</span>] <span class="sc">&gt;</span> prior_ci[<span class="dv">2</span>] <span class="sc">|</span> posterior_ci[<span class="dv">2</span>] <span class="sc">&lt;</span> prior_ci[<span class="dv">1</span>],</span>
-<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Significant difference"</span>, <span class="st">"No significant difference"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p><em><strong>Important Note:</strong> Credible intervals crossing through 0 in Bayesian analysis indicate uncertainty or lack of evidence for a nonzero effect. They prompt careful consideration of the implications for your research question and the need for further investigation or interpretation in light of these findings.</em></p>
 </section>
-<section id="step-3-results-interpretation-and-reporting" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-results-interpretation-and-reporting">Step 3: Results Interpretation and Reporting</h3>
+<section id="step-3-data-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-data-visualization">Step 3: Data Visualization</h3>
+<ul>
+<li><p><em><strong>Trace Plots</strong>: Displays the sampled values of the parameters over iterations of the Markov Chain Monte Carlo (MCMC) sampling.</em></p>
+<ul>
+<li><em><strong>Interpretation</strong>: Look for a “fuzzy caterpillar” appearance where the chains mix well and cover the parameter space evenly. This suggests good mixing and convergence. If the chains show trends or don’t mix well, it indicates poor convergence and potential issues with the sampling process.</em></li>
+</ul></li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract summary of the posterior distribution</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>posterior_summary <span class="ot">&lt;-</span> <span class="fu">summary</span>(model)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract posterior means and credible intervals</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>posterior_summary_table <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(posterior_summary<span class="sc">$</span>fixed)</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract only the mean and credible intervals</span></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>posterior_summary_table <span class="ot">&lt;-</span> posterior_summary_table[, <span class="fu">c</span>(<span class="st">"Estimate"</span>, <span class="st">"Est.Error"</span>)]</span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename the columns for clarity</span></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(posterior_summary_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Posterior_Mean"</span>, <span class="st">"Posterior_Std_Dev"</span>)</span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Add parameter names</span></span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>posterior_summary_table<span class="sc">$</span>Parameter <span class="ot">&lt;-</span> <span class="fu">rownames</span>(posterior_summary_table)</span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute credible intervals</span></span>
-<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>posterior_summary_table<span class="sc">$</span>Posterior_CI_Lower <span class="ot">&lt;-</span> posterior_summary_table<span class="sc">$</span>Posterior_Mean <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> posterior_summary_table<span class="sc">$</span>Posterior_Std_Dev</span>
-<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>posterior_summary_table<span class="sc">$</span>Posterior_CI_Upper <span class="ot">&lt;-</span> posterior_summary_table<span class="sc">$</span>Posterior_Mean <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> posterior_summary_table<span class="sc">$</span>Posterior_Std_Dev</span>
-<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify prior means (assuming a normal prior with mean 0)</span></span>
-<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>prior_means <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">nrow</span>(posterior_summary_table))</span>
-<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a summary table</span></span>
-<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>summary_table <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">Parameter =</span> posterior_summary_table<span class="sc">$</span>Parameter,</span>
-<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">Posterior_Mean =</span> posterior_summary_table<span class="sc">$</span>Posterior_Mean,</span>
-<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">Posterior_CI_Lower =</span> posterior_summary_table<span class="sc">$</span>Posterior_CI_Lower,</span>
-<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">Posterior_CI_Upper =</span> posterior_summary_table<span class="sc">$</span>Posterior_CI_Upper, <span class="at">Difference_Test =</span> <span class="fu">ifelse</span>(posterior_summary_table<span class="sc">$</span>Posterior_CI_Lower <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">|</span> posterior_summary_table<span class="sc">$</span>Posterior_CI_Upper <span class="sc">&lt;</span> <span class="dv">0</span>,</span>
-<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"Significant difference"</span>, <span class="st">"No significant difference"</span>)</span>
-<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(summary_table, <span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Trace Plots</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>trace_plot <span class="ot">&lt;-</span> <span class="fu">mcmc_trace</span>(model, <span class="at">size =</span> .<span class="dv">1</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(trace_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 18%">
-<col style="width: 15%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 26%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: right;">Posterior_Mean</th>
-<th style="text-align: right;">Posterior_CI_Lower</th>
-<th style="text-align: right;">Posterior_CI_Upper</th>
-<th style="text-align: left;">Difference_Test</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Intercept</td>
-<td style="text-align: right;">74.7606824</td>
-<td style="text-align: right;">55.6925657</td>
-<td style="text-align: right;">93.8287990</td>
-<td style="text-align: left;">Significant difference</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">physical_activity</td>
-<td style="text-align: right;">-0.0589222</td>
-<td style="text-align: right;">-0.2906713</td>
-<td style="text-align: right;">0.1728269</td>
-<td style="text-align: left;">No significant difference</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">age</td>
-<td style="text-align: right;">0.0492531</td>
-<td style="text-align: right;">-0.0437480</td>
-<td style="text-align: right;">0.1422542</td>
-<td style="text-align: left;">No significant difference</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">weight</td>
-<td style="text-align: right;">0.0090074</td>
-<td style="text-align: right;">-0.1782019</td>
-<td style="text-align: right;">0.1962167</td>
-<td style="text-align: left;">No significant difference</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">genderFemale</td>
-<td style="text-align: right;">0.8638651</td>
-<td style="text-align: right;">-2.6675074</td>
-<td style="text-align: right;">4.3952376</td>
-<td style="text-align: left;">No significant difference</td>
-</tr>
-</tbody>
-</table>
+<div>
+<figure class="figure">
+<p><img src="bayes_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p><em><strong>Density Plots</strong>: Shows the posterior distributions of the parameters.</em></p>
+<ul>
+<li><em><strong>Interpretation</strong>: These should be smooth and unimodal. Multiple peaks might indicate issues with convergence or that the model has not properly identified the posterior distribution.</em></li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Density Plots (Posterior distributions)</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_dens</span>(model) <span class="sc">+</span> </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">yaxis_text</span>(<span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="bayes_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p><em><strong>Density Overlay Plot</strong>: Compares the density of the observed data to the density of the data generated by the model.</em></p>
+<ul>
+<li><em><strong>Interpretation</strong>: The observed data (usually shown in a solid line) should ideally lie within the range of the simulated data (shaded area or dashed lines). If the observed data fall outside this range, it may indicate that the model does not fit the data well.</em></li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Posterior Predictive Checks (Density Overlay)</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>pp_check_plot <span class="ot">&lt;-</span> <span class="fu">pp_check</span>(model, <span class="at">ndraws =</span> <span class="dv">100</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(pp_check_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="bayes_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

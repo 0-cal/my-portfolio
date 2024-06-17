@@ -11,10 +11,6 @@ output: html_document
 
 Hi there! I'm Owen, a passionate data enthusiast, R programmer, and lifelong learner. Here you'll find information about my background, skills, and education. Whether you're a potential employer, colleague, or collaborator, I'm excited to share my journey with you.
 
-## Discover My Interests
-
-Beyond data and programming, I'm passionate about teaching and activism. From nature and sports to culinary arts and history, there's more to me than just data! Get to know the person behind the code.
-
 ## Dive into My R Projects
 
 Explore my portfolio of R projects, where I showcase my data analysis, visualization, and programming skills. From data wrangling and exploratory analysis to data storytelling, each project tells a unique story.

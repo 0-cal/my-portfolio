@@ -9,8 +9,6 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - text: "My Interests"
-        href: interest.qmd
       - text: "My Projects" 
         menu: 
         - text: "For Beginners"
@@ -19,7 +17,7 @@ website:
           href: hyperloop.qmd
         - text: "Hierarchical Model"
           href: multilevel.qmd
-        - text: "Bayesian Testing"
+        - text: "Bayesian Linear Regression"
           href: bayes.qmd
         - text: "Time Series"
           href: timeseries.qmd
