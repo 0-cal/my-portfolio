@@ -8,7 +8,7 @@ title: "My Resume"
 
 *I am passionate about research and exploring the intersections of psychology, environmental science, econometrics, and more. My curiosity drives me to tackle a wide range of unique questions, always seeking to uncover new insights and solutions.*
 
-## Education 
+## Education
 
 ### MSc Environmental Psychology, University of Groningen
 
@@ -26,7 +26,9 @@ title: "My Resume"
 
 ## Professional Experience
 
-### Junior Researcher at Hardt Hyperloop, Groningen, NL
+### UX Researcher at Hardt Hyperloop, Groningen, NL
+
+04/2022 - 11/2022
 
 *Research lab focused on studying the user perceptions of a simulated hyperloop train, aimed at promoting sustainable transportation usage.*
 
@@ -37,6 +39,8 @@ title: "My Resume"
 -   ***Presentations:** Presented item structure and regression graphics to company members, and was interviewed by HiveMobility*
 
 ### Student Researcher at the Center for Applied Behavioral Systems, Blacksburg, VA
+
+01/2018 - 05/2021
 
 *A center for intervention and community-based research techniques.*
 
@@ -52,29 +56,19 @@ title: "My Resume"
 
 ### Private Tutor in Statistics, Self Employed, Groningen, NL
 
+09/2021 - Present
+
 *Supported 16 bachelor students and 8 master's students in exam preparation and refining research methodology.*
 
 -   ***Subject Knowledge**: Instructed on topics in bachelor and master level statistics*
 
 -   ***Teaching**: Simplified coursework material into understandable lessons*
 
-### Social and Climate Justice Researcher at Virginia Climate Action, Blacksburg, VA
-
-*An interdisciplinary team of researchers designed a climate action proposal for Virginia Polytech University, containing 15 transition pathways.*
-
--   ***Data Analysis:** filtered energy datasets using R and performed content analysis using Atlas*
-
--   ***Teaching:** Created educational videos detailing the transition pathways for university students*
-
--   ***Independent Projects:** Computed lifecycle analysis that included the social justice costs and benefits of procured systems, as well as photovoltaic system decommissioning*
-
--   ***Collaborative Projects:** Built new green spaces on campus for students and installed a new waste distribution system at campus dining halls*
-
 ## Skills and Expertise
 
 ### Software
 
-*R, Python, Atlas, SPSS, Microsoft Excel*
+*R, Atlas, SPSS, Microsoft Office*
 
 ### Statistics
 
