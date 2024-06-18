@@ -1,48 +1,12 @@
 # Project Description
 
-*This is a research project I developed during my Master's Degree in Environmental Psychology. It includes an introduction and a hierarchical model that explores the cross-level dynamics within communities in the Netherlands.*
+*This is a research project I developed during my Master's Degree in Environmental Psychology. It includes a hierarchical model that explores the cross-level dynamics within communities in the Netherlands.*
 
 *I am still motivated about executing this project in a practical setting because it addresses contemporary challenges in ethnically heterogeneous neighborhoods and provides an unique approach to understanding social cohesion. It assesses the individual-level, cognitive processes in neighborhood behavior through spatial measurement, which can offer alternative evidence for policymakers' views toward contextual level action (e.g., developing economically vital cities, demolition, and housing renovation) (Van Kempen & Bolt, 2009). By bridging the gap between individual-level processes and neighborhood dynamics, this research has the potential to inform policy interventions and community development initiatives.*
 
-***Title: How Individual Level Processes Undermine Social Cohesion in Ethnically Heterogeneous Neighborhoods***
+-   ***Outcome Variable***
 
-***Abstract***
-
-*Current research on ethnically heterogeneous neighborhoods lacks individual-level variables, limiting evaluations of social cohesion. Building upon Bektaş and Taşan-Kok (2020), this proposal integrates psychological constructs like place identity and intergroup anxiety to enhance the current framework. By utilizing cognitive mapping techniques, I aim to provide a more comprehensive understanding of social cohesion at the intersection of individual and neighborhood factors. Through hierarchical modeling, this study seeks to assess cross-level interactions and variability across ethnically heterogeneous neighborhoods in the Netherlands.*\
-
-***Introduction***
-
-*Modern individualized lifestyles have forgotten the special nature of an intimate society (Kloos et al., 2012). Between 1970 and 2000, close-knit neighborhoods were more common, and they enriched our social lives with friendly routine discourse and spontaneous activities (Putnam, 2000). Residents were generally happier, safer, and healthier (Jordan, 1996). More importantly, they had place identities; a cognitive overlap with the self and the community (Turner et al., 2008). Strong place identities led people to treat neighbors like the self by embodying their problems and successes, which helped create a sense of social cohesion (Stevenson et al., 2019; Turner et al., 2008). However, in recent decades, there has been a noticeable decline in neighborhood engagement, contributing to increased social isolation among individuals (Kloos et al., 2012; Putnam, 2000). This trend is particularly pronounced in the Netherlands, where personal networks consist of fewer neighbors (Völker & Flap, 2007).*
-
-*Social cohesion, often influenced by residents' ethnic similarities (Van Kempen & Bolt, 2009), facilitates the development of strong place identities (Putnam, 2000; Jordan, 1996). But in ethnically heterogeneous neighborhoods, individual differences create strenuous interactions that can lead to social dissolution (Stevenson et al., 2019), which is defined as the opposite of social cohesion (Chan et al., 2006). Social dissolution was found in Northern Ireland, where residents in religiously desegregated neighborhoods had trouble defining their place identities (Stevenson et al., 2019). With no sense of belonging, they struggle to form strong relationships with each other. More recently, Bektaş and Taşan-Kok (2020) found similar trends in the Kolenkit neighborhood located in Amsterdam, and residents placed most of the blame on the cultural differences. With increased migration on the rise in the Netherlands (Van Kempen & Bolt, 2009), the inevitable reality of ethnically heterogeneous neighborhoods should reveal the criticality of place identity research.*
-
-*Policy interventions often overlook the individual-level processes (e.g., place identity), relying on social mixing policies that fail to address underlying issues (Bektaş & Taşan-Kok, 2020; Van Kempen & Bolt, 2009). In 2007, the Minister of Housing, Districts, and Integration prompted the integration of different social and ethnic groups into neighborhoods with confidence that designing innovative public spaces or identifying the perfect distribution of ethnicities per district would promote social cohesion (Van Kempen & Bolt, 2009). However, direct intergroup contact does not always promote social cohesion, it can sometimes damage relationships even more by creating intergroup anxiety (Turner et al., 2008). Concerns raised by researchers in the Netherlands highlight the need for more nuanced approaches (Kleinhans 2004; Stolle & Harell, 2013; Van Kempen & Bolt, 2009; Völker & Flap, 2007). For instance, Bektaş and Taşan-Kok (2020) found that the social mixing policies only led to superficial interactions that had little impact on social cohesion. Similarly, Stevenson et al. (2019) found that close proximity was insufficient to foster positive intergroup relationships, emphasizing the importance of developing place identity.*
-
-*My research proposal aims to complement Bektaş and Taşan-Kok (2020) and Stevenson et al. (2019) by studying the individual-level processes that undermine social cohesion in ethnically heterogeneous neighborhoods in the Netherlands. The problem at hand is the presence of unmeasured individual-level variables contributing to the social dissolution of these neighborhoods, thereby rendering contemporary evaluations of social cohesion inaccurate. This research seeks to address the following questions: (1) What reliable measures of social cohesion can capture the unexplained variability at the individual level? (2) What is the current state of residents' place identity in ethnically heterogeneous neighborhoods? (3) How can multilevel evidence about individual and contextual variables shed light on social cohesion and intergroup anxiety? (4) What impact does neighborhood leadership have on reducing intergroup anxiety? (5) How do personalized neighborhood features influence place identity?\
-*
-
-***Theoretical Approach***
-
-*The principles of intergroup contact offer insights into the challenges faced by ethnically heterogeneous neighborhoods in maintaining social cohesion. Introducing an outgroup minority to an ingroup native community can trigger intergroup anxiety---a response rooted in negative expectations of rejection or discrimination during interactions (Turner et al., 2008). This anxiety can result in social isolation and narrowed attention (Van Kempen & Bolt, 2009). While direct interactions do not invariably lead to positive attitudes, intergroup anxiety can be mitigated by factors like pre-established friendships. Pre-established friendships foster inclusivity and reduce uncertainty for outgroup members, facilitating positive contact (Turner et al., 2008). In the context of this proposal, the presence of inclusive members or leaders within the ingroup community, and showing interest in the outgroup culture, may mitigate intergroup anxiety.*
-
-*Strong place identities emerge when residents feel a sense of belonging, aided by emotional ties to neighborhood features (Peng et al., 2020; Stevenson et al., 2019). Measuring place identity has multiple avenues, and some suggest that one or two-item scales are adequate (Peng et al., 2020). In community-based research, small-item scales may be a preferable method that would lead to more responses (Pretty et al., 2003).*
-
-*Measuring social cohesion poses challenges, as direct inquiries about neighbors may only capture part of the picture (Bektaş & Taşan-Kok, 2020). Cognitive mapping offers a promising avenue to understand residents' spatial perceptions (Campbell et al., 2009). Coulton et al. (2013) applied this strategy when studying the effect a neighborhood has on individuals in America, where residents drew boundaries around their perceived neighborhood on a blank map of their district, reflecting disagreements between them. In regards to intergroup anxiety, strong neighborhood ties can be assessed by studying mutual trust (Bektaş & Taşan-Kok, 2020; Stolle & Harell, 2013; Turner et al., 2008). For example, measuring residents' perceived boundary of trust in regards to theft may reveal previously unexplained variability in intergroup anxiety.\
-*
-
-***Individual Predictors***
-
-*At the individual level, disparities in education, length of residency in the neighborhood, and income have been linked to social dissolution (Coulton et al., 2013; Stevenson et al., 2019; Van Kempen & Bolt, 2009), potentially affecting perceived boundaries. Additionally, Coulton et al. (2013) advocate for assessing individual perceptions of collective efficacy---a measure of confidence in neighborhood action (Sampson et al., 1997). Collective efficacy encompasses the belief that others will contribute, influencing one's engagement in community activities (Kloos et al., 2012).*
-
-***Contextual Predictors***
-
-*At the contextual level, neighborhood characteristics, which help develop place identity, are also associated with positive intergroup attitudes (Stevenson et al., 2019). People generally prefer to live in orderly areas that contain operational facilities (Coulton et al., 2013). Personalizing neighborhood features such as community names (Stevenson et al., 2019; Taylor et al., 1984), local art (Lowe, 2000), or playgrounds (Kloos et al., 2012) can help people develop place identities toward their neighborhood. As mentioned, intergroup friendships and/or leadership can impact an outgroup member's sense of belonging. Inclusive leadership, as a contextual level predictor, may shape intergroup attitudes. However, it is critical to note that individual-level processes can still influence these features. For example, public spaces can be effective because they provide an area for close interactions (Easterbrook et al., 2015), but this can be less effective in intergroup settings (Völker & Flap, 2007). Exploring cross-level interactions would help clear up some of the contradictions in the literature.*
-
-***Procedure***
-
-*Residents will be asked to draw their perceived neighborhood scale (social cohesion) and perceived trust in neighbors (intergroup anxiety) on a blank map of the district. This can be completed through a door-to-door survey or an online questionnaire. More specifically, they will draw a boundary on a map that encompasses their neighborhood boundaries and the perceived space in which they would feel safe leaving their personal belongings unattended for 24 hours, excluding individuals from outside their neighborhood who could potentially be involved in theft.*
-
-*GIS software can be used to estimate residuals when analyzing mapping data, as suggested by Coulton et al. (2013). Alternatively, R programming, supported by packages such as "ggmap," "choroplethr," and "choroplethrMaps," can be utilized for this purpose. Given my extensive familiarity with R software, it will be the chosen tool for analysis.*
+    -   *`boundary`: combined value of perceived neighborhood scale and perceived trust in neighbors*
 
 -   ***Demographics**:*
 
@@ -72,9 +36,38 @@
 
     -   *`names`, `art`, `playgrounds`: Dichotomous variables generated using `rbinom`.*
 
-### 
+### Step 1: Load Mapping data
 
-### Step 1: Install and load necessary packages
+```{r}
+# Load the libraries
+library(sf)
+library(ggplot2)
+library(dplyr)
+library(geojsonio)
+library(sp)
+
+# Read the GeoJSON file
+map_data <- geojson_read("map_data.geojson", what = "sp")
+
+# Convert to sf object for easier handling
+map_sf <- st_as_sf(map_data)
+
+# Calculate the area of each drawn boundary
+map_sf <- map_sf %>%
+  mutate(area = st_area(geometry))
+
+# Convert area to numeric
+map_sf$area <- as.numeric(map_sf$area)
+
+# Plot a sample of the boundaries
+ggplot(data = map_sf) +
+  geom_sf() +
+  theme_minimal() +
+  labs(title = "Neighborhood Boundaries",
+       caption = "Generated for demonstration purposes")
+```
+
+### Step 2: Load Survey Data
 
 ```{r}
 # Load necessary libraries
@@ -88,9 +81,15 @@ library(ggplot2)
 
 # Load the dataset
 data <- read.csv("multilevel_model_data.csv")
+
+# Merge datasets
+# Create the `id` column
+data$id <- 1:nrow(data)
+data <- data %>%
+  left_join(map_sf %>% select(id, area), by = "id")
 ```
 
-### Step 2: Exploratory Data Analysis
+### Step 3: Exploratory Data Analysis
 
 *Before I compare the models, let's take a look at the full model and understand out data a bit better.*
 
@@ -118,7 +117,7 @@ fixed_effects <- fixef(multilevel_model)
 print(fixed_effects)
 ```
 
-### Step 3: Comparing Alternative Models:
+### Step 4: Comparing Alternative Models:
 
 ```{r}
 # Model without Low-estimate predictors:
@@ -152,7 +151,7 @@ print(BIC_values)
 
 *After removing variables (`age, length_res, names, playgrounds, physical_disorder)` , my first adjusted model has one of the lower AIC/BIC, while also aligning with my theoretical framework and hypotheses.*
 
-### Step 4: Post-estimation Analyses:
+### Step 5: Post-estimation Analyses:
 
 ```{r}
 influencePlot(alt_model1, id.n = 5)
@@ -161,16 +160,13 @@ influencePlot(alt_model1, id.n = 5)
 vif(alt_model1)
 ```
 
-### Step 5: Reporting:
+### Step 6: Reporting:
 
 ```{r}
 # Extract coefficients
 model_coefs <- coef(summary(alt_model1))
 model_coefs
 ```
-
--   *`art` and `leadership` show to have a strong influence on community boundaries and hence place identity.*
--   It is difficult to make any strong claims due to the lack of reliability in the data, but further research could lead to groundbreaking information as to how interracial communities can form social cohesion.
 
 ### References
 

@@ -6,7 +6,7 @@
 
 *By the end of the semester, our perception of RStudio had completely changed. Tessa helped us realize that it wasn't some dark abyss from which no student returns; it was a powerful tool that made statistics easier to compute. We bid farewell to the daunting equations we were accustomed to and began computing statistical techniques at a rapid pace. To this day, every one of my classmates continues to use RStudio with excitement and without fear. This software is truly your best friend if you use it wisely.*
 
-## My Learning Journey
+## Learning R
 
 1.  *Asking for Help*
 
@@ -238,9 +238,11 @@ joined_data <- data1 %>%
 print(joined_data)
 ```
 
-### 5. Building Functions
+### 5. Functions
 
 *When I learned how to create my own functions, I felt like the creative side of R expanded beyond my expectations. I could tailor a command to address exactly what I needed to perform on a given set of data.*
+
+#### 1. Building Functions
 
 *The `function()` command is a fundamental building block in R, enabling users to create their own functions. This is crucial for both simplifying repetitive tasks and organizing code in a clean, efficient manner. Here's what the `function()` command can do for new learners using R:*
 
@@ -281,6 +283,131 @@ calculate_mean <- function(numbers) {
 sample_data <- c(4, 8, 15, 16, 23, 42)
 average <- calculate_mean(sample_data)
 print(average)
+```
+
+#### 2. Correlation Analysis
+
+Correlation measures the strength and direction of the relationship between two variables.
+
+```{r}
+# Correlation matrix
+cor_matrix <- cor(mtcars)
+print(cor_matrix)
+
+# Correlation between two variables
+cor(mtcars$mpg, mtcars$hp)
+```
+
+#### 3. Linear Regression
+
+Linear regression models the relationship between a dependent variable and one or more independent variables.
+
+```{r}
+# Simple linear regression
+model <- lm(mpg ~ hp, data = mtcars)
+summary(model)
+
+# Multiple linear regression
+model2 <- lm(mpg ~ hp + wt, data = mtcars)
+summary(model2)
+```
+
+#### 4. ANOVA (Analysis of Variance)
+
+ANOVA tests the difference in means among groups.
+
+```{r}
+# One-way ANOVA
+anova_model <- aov(mpg ~ as.factor(cyl), data = mtcars)
+summary(anova_model)
+
+# Two-way ANOVA
+anova_model2 <- aov(mpg ~ as.factor(cyl) + as.factor(gear), data = mtcars)
+summary(anova_model2)
+```
+
+#### 5. T-tests
+
+T-tests compare the means of two groups.
+
+```{r}
+# One-sample t-test
+t.test(mtcars$mpg, mu = 20)
+# Two-sample t-test
+t.test(mpg ~ as.factor(am), data = mtcars)
+```
+
+#### 6. Chi-Square Test
+
+Chi-square tests are used for categorical data to test relationships between variables.
+
+```{r}
+# Create a contingency table
+table_data <- table(mtcars$cyl, mtcars$gear)
+
+# Chi-square test
+chisq.test(table_data)
+```
+
+#### 7. Principal Component Analysis (PCA)
+
+PCA reduces the dimensionality of the data while preserving as much variance as possible. An excellent tutorial on PCA can be found by clicking this link: [https://www.youtube.com/watch?](https://www.youtube.com/watch?v=FgakZw6K1QQ)
+
+```{r}
+# Perform PCA
+pca_result <- prcomp(mtcars, scale. = TRUE)
+
+# Summary of PCA
+summary(pca_result)
+```
+
+#### 8. K-Means Clustering
+
+K-means clustering groups data into k clusters.
+
+```{r}
+# Perform K-means clustering on the mtcars dataset
+set.seed(123)
+kmeans_result <- kmeans(mtcars[, c("mpg", "hp")], centers = 3)
+
+# Add cluster results to the original mtcars data
+mtcars$cluster <- as.factor(kmeans_result$cluster)
+
+# Print the first few rows to check the results
+head(mtcars)
+```
+
+#### 9. Logistic Regression
+
+Logistic regression models the probability of a binary outcome.
+
+```{r}
+# Logistic regression
+logit_model <- glm(am ~ hp + wt, data = mtcars, family = binomial)
+summary(logit_model)
+```
+
+#### 10. Time Series Analysis
+
+```{r}
+# Decomposition
+
+# Sample time series data
+ts_data <- ts(AirPassengers, frequency = 12)
+
+# Decompose the time series
+decomposed <- decompose(ts_data)
+plot(decomposed)
+
+# Forecasting
+
+# Install and load the forecast package
+library(forecast)
+
+# Fit an ARIMA model
+fit <- auto.arima(ts_data)
+forecasted <- forecast(fit, h = 12)
+plot(forecasted)
 ```
 
 ### 6. Data Visualization

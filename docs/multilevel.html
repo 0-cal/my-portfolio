@@ -192,12 +192,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#project-description" id="toc-project-description" class="nav-link active" data-scroll-target="#project-description">Project Description</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
-  <li><a href="#step-1-install-and-load-necessary-packages" id="toc-step-1-install-and-load-necessary-packages" class="nav-link" data-scroll-target="#step-1-install-and-load-necessary-packages">Step 1: Install and load necessary packages</a></li>
-  <li><a href="#step-2-exploratory-data-analysis" id="toc-step-2-exploratory-data-analysis" class="nav-link" data-scroll-target="#step-2-exploratory-data-analysis">Step 2: Exploratory Data Analysis</a></li>
-  <li><a href="#step-3-comparing-alternative-models" id="toc-step-3-comparing-alternative-models" class="nav-link" data-scroll-target="#step-3-comparing-alternative-models">Step 3: Comparing Alternative Models:</a></li>
-  <li><a href="#step-4-post-estimation-analyses" id="toc-step-4-post-estimation-analyses" class="nav-link" data-scroll-target="#step-4-post-estimation-analyses">Step 4: Post-estimation Analyses:</a></li>
-  <li><a href="#step-5-reporting" id="toc-step-5-reporting" class="nav-link" data-scroll-target="#step-5-reporting">Step 5: Reporting:</a></li>
+  <li><a href="#step-1-load-mapping-data" id="toc-step-1-load-mapping-data" class="nav-link" data-scroll-target="#step-1-load-mapping-data">Step 1: Load Mapping data</a></li>
+  <li><a href="#step-2-load-survey-data" id="toc-step-2-load-survey-data" class="nav-link" data-scroll-target="#step-2-load-survey-data">Step 2: Load Survey Data</a></li>
+  <li><a href="#step-3-exploratory-data-analysis" id="toc-step-3-exploratory-data-analysis" class="nav-link" data-scroll-target="#step-3-exploratory-data-analysis">Step 3: Exploratory Data Analysis</a></li>
+  <li><a href="#step-4-comparing-alternative-models" id="toc-step-4-comparing-alternative-models" class="nav-link" data-scroll-target="#step-4-comparing-alternative-models">Step 4: Comparing Alternative Models:</a></li>
+  <li><a href="#step-5-post-estimation-analyses" id="toc-step-5-post-estimation-analyses" class="nav-link" data-scroll-target="#step-5-post-estimation-analyses">Step 5: Post-estimation Analyses:</a></li>
+  <li><a href="#step-6-reporting" id="toc-step-6-reporting" class="nav-link" data-scroll-target="#step-6-reporting">Step 6: Reporting:</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
@@ -211,31 +211,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="project-description" class="level1">
 <h1>Project Description</h1>
-<p><em>This is a research project I developed during my Master’s Degree in Environmental Psychology. It includes an introduction and a hierarchical model that explores the cross-level dynamics within communities in the Netherlands.</em></p>
+<p><em>This is a research project I developed during my Master’s Degree in Environmental Psychology. It includes a hierarchical model that explores the cross-level dynamics within communities in the Netherlands.</em></p>
 <p><em>I am still motivated about executing this project in a practical setting because it addresses contemporary challenges in ethnically heterogeneous neighborhoods and provides an unique approach to understanding social cohesion. It assesses the individual-level, cognitive processes in neighborhood behavior through spatial measurement, which can offer alternative evidence for policymakers’ views toward contextual level action (e.g., developing economically vital cities, demolition, and housing renovation) (Van Kempen &amp; Bolt, 2009). By bridging the gap between individual-level processes and neighborhood dynamics, this research has the potential to inform policy interventions and community development initiatives.</em></p>
-<p><strong><em>Title: How Individual Level Processes Undermine Social Cohesion in Ethnically Heterogeneous Neighborhoods</em></strong></p>
-<p><strong><em>Abstract</em></strong></p>
-<p><em>Current research on ethnically heterogeneous neighborhoods lacks individual-level variables, limiting evaluations of social cohesion. Building upon Bektaş and Taşan-Kok (2020), this proposal integrates psychological constructs like place identity and intergroup anxiety to enhance the current framework. By utilizing cognitive mapping techniques, I aim to provide a more comprehensive understanding of social cohesion at the intersection of individual and neighborhood factors. Through hierarchical modeling, this study seeks to assess cross-level interactions and variability across ethnically heterogeneous neighborhoods in the Netherlands.</em><br>
-</p>
-<p><strong><em>Introduction</em></strong></p>
-<p><em>Modern individualized lifestyles have forgotten the special nature of an intimate society (Kloos et al., 2012). Between 1970 and 2000, close-knit neighborhoods were more common, and they enriched our social lives with friendly routine discourse and spontaneous activities (Putnam, 2000). Residents were generally happier, safer, and healthier (Jordan, 1996). More importantly, they had place identities; a cognitive overlap with the self and the community (Turner et al., 2008). Strong place identities led people to treat neighbors like the self by embodying their problems and successes, which helped create a sense of social cohesion (Stevenson et al., 2019; Turner et al., 2008). However, in recent decades, there has been a noticeable decline in neighborhood engagement, contributing to increased social isolation among individuals (Kloos et al., 2012; Putnam, 2000). This trend is particularly pronounced in the Netherlands, where personal networks consist of fewer neighbors (Völker &amp; Flap, 2007).</em></p>
-<p><em>Social cohesion, often influenced by residents’ ethnic similarities (Van Kempen &amp; Bolt, 2009), facilitates the development of strong place identities (Putnam, 2000; Jordan, 1996). But in ethnically heterogeneous neighborhoods, individual differences create strenuous interactions that can lead to social dissolution (Stevenson et al., 2019), which is defined as the opposite of social cohesion (Chan et al., 2006). Social dissolution was found in Northern Ireland, where residents in religiously desegregated neighborhoods had trouble defining their place identities (Stevenson et al., 2019). With no sense of belonging, they struggle to form strong relationships with each other. More recently, Bektaş and Taşan-Kok (2020) found similar trends in the Kolenkit neighborhood located in Amsterdam, and residents placed most of the blame on the cultural differences. With increased migration on the rise in the Netherlands (Van Kempen &amp; Bolt, 2009), the inevitable reality of ethnically heterogeneous neighborhoods should reveal the criticality of place identity research.</em></p>
-<p><em>Policy interventions often overlook the individual-level processes (e.g., place identity), relying on social mixing policies that fail to address underlying issues (Bektaş &amp; Taşan-Kok, 2020; Van Kempen &amp; Bolt, 2009). In 2007, the Minister of Housing, Districts, and Integration prompted the integration of different social and ethnic groups into neighborhoods with confidence that designing innovative public spaces or identifying the perfect distribution of ethnicities per district would promote social cohesion (Van Kempen &amp; Bolt, 2009). However, direct intergroup contact does not always promote social cohesion, it can sometimes damage relationships even more by creating intergroup anxiety (Turner et al., 2008). Concerns raised by researchers in the Netherlands highlight the need for more nuanced approaches (Kleinhans 2004; Stolle &amp; Harell, 2013; Van Kempen &amp; Bolt, 2009; Völker &amp; Flap, 2007). For instance, Bektaş and Taşan-Kok (2020) found that the social mixing policies only led to superficial interactions that had little impact on social cohesion. Similarly, Stevenson et al.&nbsp;(2019) found that close proximity was insufficient to foster positive intergroup relationships, emphasizing the importance of developing place identity.</em></p>
-<p><em>My research proposal aims to complement Bektaş and Taşan-Kok (2020) and Stevenson et al.&nbsp;(2019) by studying the individual-level processes that undermine social cohesion in ethnically heterogeneous neighborhoods in the Netherlands. The problem at hand is the presence of unmeasured individual-level variables contributing to the social dissolution of these neighborhoods, thereby rendering contemporary evaluations of social cohesion inaccurate. This research seeks to address the following questions: (1) What reliable measures of social cohesion can capture the unexplained variability at the individual level? (2) What is the current state of residents’ place identity in ethnically heterogeneous neighborhoods? (3) How can multilevel evidence about individual and contextual variables shed light on social cohesion and intergroup anxiety? (4) What impact does neighborhood leadership have on reducing intergroup anxiety? (5) How do personalized neighborhood features influence place identity?<br>
-</em></p>
-<p><strong><em>Theoretical Approach</em></strong></p>
-<p><em>The principles of intergroup contact offer insights into the challenges faced by ethnically heterogeneous neighborhoods in maintaining social cohesion. Introducing an outgroup minority to an ingroup native community can trigger intergroup anxiety—a response rooted in negative expectations of rejection or discrimination during interactions (Turner et al., 2008). This anxiety can result in social isolation and narrowed attention (Van Kempen &amp; Bolt, 2009). While direct interactions do not invariably lead to positive attitudes, intergroup anxiety can be mitigated by factors like pre-established friendships. Pre-established friendships foster inclusivity and reduce uncertainty for outgroup members, facilitating positive contact (Turner et al., 2008). In the context of this proposal, the presence of inclusive members or leaders within the ingroup community, and showing interest in the outgroup culture, may mitigate intergroup anxiety.</em></p>
-<p><em>Strong place identities emerge when residents feel a sense of belonging, aided by emotional ties to neighborhood features (Peng et al., 2020; Stevenson et al., 2019). Measuring place identity has multiple avenues, and some suggest that one or two-item scales are adequate (Peng et al., 2020). In community-based research, small-item scales may be a preferable method that would lead to more responses (Pretty et al., 2003).</em></p>
-<p><em>Measuring social cohesion poses challenges, as direct inquiries about neighbors may only capture part of the picture (Bektaş &amp; Taşan-Kok, 2020). Cognitive mapping offers a promising avenue to understand residents’ spatial perceptions (Campbell et al., 2009). Coulton et al.&nbsp;(2013) applied this strategy when studying the effect a neighborhood has on individuals in America, where residents drew boundaries around their perceived neighborhood on a blank map of their district, reflecting disagreements between them. In regards to intergroup anxiety, strong neighborhood ties can be assessed by studying mutual trust (Bektaş &amp; Taşan-Kok, 2020; Stolle &amp; Harell, 2013; Turner et al., 2008). For example, measuring residents’ perceived boundary of trust in regards to theft may reveal previously unexplained variability in intergroup anxiety.<br>
-</em></p>
-<p><strong><em>Individual Predictors</em></strong></p>
-<p><em>At the individual level, disparities in education, length of residency in the neighborhood, and income have been linked to social dissolution (Coulton et al., 2013; Stevenson et al., 2019; Van Kempen &amp; Bolt, 2009), potentially affecting perceived boundaries. Additionally, Coulton et al.&nbsp;(2013) advocate for assessing individual perceptions of collective efficacy—a measure of confidence in neighborhood action (Sampson et al., 1997). Collective efficacy encompasses the belief that others will contribute, influencing one’s engagement in community activities (Kloos et al., 2012).</em></p>
-<p><strong><em>Contextual Predictors</em></strong></p>
-<p><em>At the contextual level, neighborhood characteristics, which help develop place identity, are also associated with positive intergroup attitudes (Stevenson et al., 2019). People generally prefer to live in orderly areas that contain operational facilities (Coulton et al., 2013). Personalizing neighborhood features such as community names (Stevenson et al., 2019; Taylor et al., 1984), local art (Lowe, 2000), or playgrounds (Kloos et al., 2012) can help people develop place identities toward their neighborhood. As mentioned, intergroup friendships and/or leadership can impact an outgroup member’s sense of belonging. Inclusive leadership, as a contextual level predictor, may shape intergroup attitudes. However, it is critical to note that individual-level processes can still influence these features. For example, public spaces can be effective because they provide an area for close interactions (Easterbrook et al., 2015), but this can be less effective in intergroup settings (Völker &amp; Flap, 2007). Exploring cross-level interactions would help clear up some of the contradictions in the literature.</em></p>
-<p><strong><em>Procedure</em></strong></p>
-<p><em>Residents will be asked to draw their perceived neighborhood scale (social cohesion) and perceived trust in neighbors (intergroup anxiety) on a blank map of the district. This can be completed through a door-to-door survey or an online questionnaire. More specifically, they will draw a boundary on a map that encompasses their neighborhood boundaries and the perceived space in which they would feel safe leaving their personal belongings unattended for 24 hours, excluding individuals from outside their neighborhood who could potentially be involved in theft.</em></p>
-<p><em>GIS software can be used to estimate residuals when analyzing mapping data, as suggested by Coulton et al.&nbsp;(2013). Alternatively, R programming, supported by packages such as “ggmap,” “choroplethr,” and “choroplethrMaps,” can be utilized for this purpose. Given my extensive familiarity with R software, it will be the chosen tool for analysis.</em></p>
 <ul>
+<li><p><strong><em>Outcome Variable</em></strong></p>
+<ul>
+<li><em><code>boundary</code>: combined value of perceived neighborhood scale and perceived trust in neighbors</em></li>
+</ul></li>
 <li><p><em><strong>Demographics</strong>:</em></p>
 <ul>
 <li><p><em><code>age</code>: Normally distributed continuous variable.</em></p></li>
@@ -261,55 +243,136 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><em><code>names</code>, <code>art</code>, <code>playgrounds</code>: Dichotomous variables generated using <code>rbinom</code>.</em></li>
 </ul></li>
 </ul>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section"></h3>
-</section>
-<section id="step-1-install-and-load-necessary-packages" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-install-and-load-necessary-packages">Step 1: Install and load necessary packages</h3>
+<section id="step-1-load-mapping-data" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-load-mapping-data">Step 1: Load Mapping data</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">CRAN =</span> <span class="st">"https://cloud.r-project.org"</span>))</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lme4"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geojsonio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Registered S3 method overwritten by 'geojsonsf':
+  method        from   
+  print.geojson geojson</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'geojsonio'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:base':
+
+    pretty</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sp)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the GeoJSON file</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>map_data <span class="ot">&lt;-</span> <span class="fu">geojson_read</span>(<span class="st">"map_data.geojson"</span>, <span class="at">what =</span> <span class="st">"sp"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to sf object for easier handling</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>map_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(map_data)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the area of each drawn boundary</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>map_sf <span class="ot">&lt;-</span> map_sf <span class="sc">%&gt;%</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">area =</span> <span class="fu">st_area</span>(geometry))</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert area to numeric</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>map_sf<span class="sc">$</span>area <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(map_sf<span class="sc">$</span>area)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot a sample of the boundaries</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> map_sf) <span class="sc">+</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Neighborhood Boundaries"</span>,</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Generated for demonstration purposes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="multilevel_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-load-survey-data" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-load-survey-data">Step 2: Load Survey Data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">CRAN =</span> <span class="st">"https://cloud.r-project.org"</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lme4"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpoFqTig/downloaded_packages</code></pre>
+    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//Rtmpnle3ow/downloaded_packages</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"car"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"car"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpoFqTig/downloaded_packages</code></pre>
+    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//Rtmpnle3ow/downloaded_packages</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpoFqTig/downloaded_packages</code></pre>
+    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//Rtmpnle3ow/downloaded_packages</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: Matrix</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: carData</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"multilevel_model_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'car'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    recode</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"multilevel_model_data.csv"</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge datasets</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the `id` column</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>id <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(map_sf <span class="sc">%&gt;%</span> <span class="fu">select</span>(id, area), <span class="at">by =</span> <span class="st">"id"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="step-2-exploratory-data-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-exploratory-data-analysis">Step 2: Exploratory Data Analysis</h3>
+<section id="step-3-exploratory-data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-exploratory-data-analysis">Step 3: Exploratory Data Analysis</h3>
 <p><em>Before I compare the models, let’s take a look at the full model and understand out data a bit better.</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the multilevel model</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>multilevel_model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> ethnicity <span class="sc">+</span> length_res <span class="sc">+</span> physical_disorder <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> facilities <span class="sc">+</span> names <span class="sc">+</span> art <span class="sc">+</span> playgrounds <span class="sc">+</span> leadership <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary of the model</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(multilevel_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the multilevel model</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>multilevel_model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> ethnicity <span class="sc">+</span> length_res <span class="sc">+</span> physical_disorder <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> facilities <span class="sc">+</span> names <span class="sc">+</span> art <span class="sc">+</span> playgrounds <span class="sc">+</span> leadership <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary of the model</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(multilevel_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by REML ['lmerMod']
 Formula: boundary ~ age + education + income + ethnicity + length_res +  
@@ -353,39 +416,39 @@ Correlation matrix not shown by default, as p = 15 &gt; 12.
 Use print(x, correlation=TRUE)  or
     vcov(x)        if you need it</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check normality of residuals</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(multilevel_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check normality of residuals</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(multilevel_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="multilevel_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="multilevel_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check homoscedasticity</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">residuals</span>(multilevel_model) <span class="sc">~</span> <span class="fu">fitted</span>(multilevel_model))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check homoscedasticity</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">residuals</span>(multilevel_model) <span class="sc">~</span> <span class="fu">fitted</span>(multilevel_model))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="multilevel_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="multilevel_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check linearity (if applicable)</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Example for a continuous predictor age</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data<span class="sc">$</span>age, <span class="fu">residuals</span>(multilevel_model))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check linearity (if applicable)</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Example for a continuous predictor age</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data<span class="sc">$</span>age, <span class="fu">residuals</span>(multilevel_model))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="multilevel_files/figure-html/unnamed-chunk-2-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="multilevel_files/figure-html/unnamed-chunk-3-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract fixed effects estimates</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>fixed_effects <span class="ot">&lt;-</span> <span class="fu">fixef</span>(multilevel_model)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Interpretation of fixed effects</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fixed_effects)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract fixed effects estimates</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>fixed_effects <span class="ot">&lt;-</span> <span class="fu">fixef</span>(multilevel_model)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Interpretation of fixed effects</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fixed_effects)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                  (Intercept)                           age 
                  49.019346235                  -0.009148289 
@@ -406,44 +469,44 @@ Use print(x, correlation=TRUE)  or
 </div>
 </div>
 </section>
-<section id="step-3-comparing-alternative-models" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-comparing-alternative-models">Step 3: Comparing Alternative Models:</h3>
+<section id="step-4-comparing-alternative-models" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-comparing-alternative-models">Step 4: Comparing Alternative Models:</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model without Low-estimate predictors:</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>alt_model1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> education <span class="sc">+</span> income <span class="sc">+</span> ethnicity <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> facilities <span class="sc">+</span> art <span class="sc">+</span> leadership <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Individual-focused Model:</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>alt_model2 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Interaction Effects:</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>alt_model3 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">*</span> perceived_collective_efficacy <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> length_res <span class="sc">+</span> physical_disorder <span class="sc">+</span> facilities <span class="sc">+</span> names <span class="sc">+</span> art <span class="sc">+</span> playgrounds <span class="sc">+</span> leadership <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Random Slopes Model:</span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>alt_model4 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> (age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model without Low-estimate predictors:</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>alt_model1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> education <span class="sc">+</span> income <span class="sc">+</span> ethnicity <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> facilities <span class="sc">+</span> art <span class="sc">+</span> leadership <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Individual-focused Model:</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>alt_model2 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Interaction Effects:</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>alt_model3 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">*</span> perceived_collective_efficacy <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> length_res <span class="sc">+</span> physical_disorder <span class="sc">+</span> facilities <span class="sc">+</span> names <span class="sc">+</span> art <span class="sc">+</span> playgrounds <span class="sc">+</span> leadership <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Random Slopes Model:</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>alt_model4 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> (age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>boundary (singular) fit: see help('isSingular')</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cross-Level Interactions:</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>alt_model5 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> facilities <span class="sc">+</span> names <span class="sc">+</span> art <span class="sc">+</span> playgrounds <span class="sc">+</span> leadership <span class="sc">+</span> (age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cross-Level Interactions:</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>alt_model5 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> facilities <span class="sc">+</span> names <span class="sc">+</span> art <span class="sc">+</span> playgrounds <span class="sc">+</span> leadership <span class="sc">+</span> (age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>boundary (singular) fit: see help('isSingular')</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Non-linear Effects:</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>age_squared <span class="ot">&lt;-</span> data<span class="sc">$</span>age<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>alt_model6 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> age_squared <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Non-linear Effects:</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>age_squared <span class="ot">&lt;-</span> data<span class="sc">$</span>age<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>alt_model6 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> age_squared <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Some predictor variables are on very different scales: consider
 rescaling</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nested Models:</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>alt_model7 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> age <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nested Models:</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>alt_model7 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(boundary <span class="sc">~</span> age <span class="sc">+</span> education <span class="sc">+</span> income <span class="sc">+</span> perceived_collective_efficacy <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> neighborhood_id) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> age <span class="sc">|</span> neighborhood_id), <span class="at">data =</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>boundary (singular) fit: see help('isSingular')</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare models using AIC</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>AIC_values <span class="ot">&lt;-</span> <span class="fu">AIC</span>(multilevel_model, alt_model1, alt_model2, alt_model3, alt_model4, alt_model5, alt_model6, alt_model7)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>BIC_values <span class="ot">&lt;-</span> <span class="fu">BIC</span>(multilevel_model, alt_model1, alt_model2, alt_model3, alt_model4, alt_model5, alt_model6, alt_model7)</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(AIC_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare models using AIC</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>AIC_values <span class="ot">&lt;-</span> <span class="fu">AIC</span>(multilevel_model, alt_model1, alt_model2, alt_model3, alt_model4, alt_model5, alt_model6, alt_model7)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>BIC_values <span class="ot">&lt;-</span> <span class="fu">BIC</span>(multilevel_model, alt_model1, alt_model2, alt_model3, alt_model4, alt_model5, alt_model6, alt_model7)</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(AIC_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 df      AIC
 multilevel_model 17 12911.40
@@ -455,7 +518,7 @@ alt_model5       26 12924.87
 alt_model6        8 12907.87
 alt_model7       10 12901.39</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(BIC_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(BIC_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 df      BIC
 multilevel_model 17 13004.35
@@ -470,10 +533,10 @@ alt_model7       10 12956.07</code></pre>
 </div>
 <p><em>After removing variables (<code>age, length_res, names, playgrounds, physical_disorder)</code> , my first adjusted model has one of the lower AIC/BIC, while also aligning with my theoretical framework and hypotheses.</em></p>
 </section>
-<section id="step-4-post-estimation-analyses" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-post-estimation-analyses">Step 4: Post-estimation Analyses:</h3>
+<section id="step-5-post-estimation-analyses" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-post-estimation-analyses">Step 5: Post-estimation Analyses:</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">influencePlot</span>(alt_model1, <span class="at">id.n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">influencePlot</span>(alt_model1, <span class="at">id.n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in plot.window(...): "id.n" is not a graphical parameter</code></pre>
 </div>
@@ -499,7 +562,7 @@ graphical parameter</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="multilevel_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="multilevel_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -511,8 +574,8 @@ graphical parameter</code></pre>
 1411 -0.8990109 0.016199316 0.0013308205
 1606 -0.6344288 0.014523900 0.0005932024</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate variance inflation factors (VIF)</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(alt_model1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate variance inflation factors (VIF)</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(alt_model1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                  GVIF Df GVIF^(1/(2*Df))
 education                     1.003845  1        1.001921
@@ -525,12 +588,12 @@ leadership                    1.045332  1        1.022415</code></pre>
 </div>
 </div>
 </section>
-<section id="step-5-reporting" class="level3">
-<h3 class="anchored" data-anchor-id="step-5-reporting">Step 5: Reporting:</h3>
+<section id="step-6-reporting" class="level3">
+<h3 class="anchored" data-anchor-id="step-6-reporting">Step 6: Reporting:</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract coefficients</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>model_coefs <span class="ot">&lt;-</span> <span class="fu">coef</span>(<span class="fu">summary</span>(alt_model1))</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>model_coefs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract coefficients</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>model_coefs <span class="ot">&lt;-</span> <span class="fu">coef</span>(<span class="fu">summary</span>(alt_model1))</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>model_coefs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                Estimate Std. Error    t value
 (Intercept)                   48.5442001  1.2528175 38.7480213
@@ -545,10 +608,6 @@ art                            0.8218169  0.5516168  1.4898330
 leadership                     0.7168449  0.5260312  1.3627422</code></pre>
 </div>
 </div>
-<ul>
-<li><em><code>art</code> and <code>leadership</code> show to have a strong influence on community boundaries and hence place identity.</em></li>
-<li>It is difficult to make any strong claims due to the lack of reliability in the data, but further research could lead to groundbreaking information as to how interracial communities can form social cohesion.</li>
-</ul>
 </section>
 <section id="references" class="level3">
 <h3 class="anchored" data-anchor-id="references">References</h3>
