@@ -2,7 +2,7 @@
 
 *This is a research project I developed during my Master's Degree in Environmental Psychology. It includes a hierarchical model that explores the cross-level dynamics within communities in the Netherlands.*
 
-*I am still motivated about executing this project in a practical setting because it addresses contemporary challenges in ethnically heterogeneous neighborhoods and provides an unique approach to understanding social cohesion. It assesses the individual-level, cognitive processes in neighborhood behavior through spatial measurement, which can offer alternative evidence for policymakers' views toward contextual level action (e.g., developing economically vital cities, demolition, and housing renovation) (Van Kempen & Bolt, 2009). By bridging the gap between individual-level processes and neighborhood dynamics, this research has the potential to inform policy interventions and community development initiatives.*
+*I am still motivated about executing this project again in a different setting because it addresses contemporary challenges in ethnically heterogeneous neighborhoods and provides an unique approach to understanding social cohesion. It assesses the individual-level, cognitive processes in neighborhood behavior through spatial measurement, which can offer alternative evidence for policymakers' views toward contextual level action (e.g., developing economically vital cities, demolition, and housing renovation) (Van Kempen & Bolt, 2009). By bridging the gap between individual-level processes and neighborhood dynamics, this research has the potential to inform policy interventions and community development initiatives.*
 
 -   ***Outcome Variable***
 
@@ -12,9 +12,9 @@
 
     -   *`age`: Normally distributed continuous variable.*
 
-    -   *`education`: Dichotomous variable generated using `rbinom` with a probability of 0.6 for university education.*
+    -   *`education`: Dichotomous variable*
 
-    -   *`income`: Ordinal variable sampled from 1 to 5.*
+    -   *`income`: Ordinal variable from 1 to 5.*
 
     -   *`ethnicity`: Categorical variable sampled from four categories "A", "B", "C", and "D".*
 
@@ -22,7 +22,7 @@
 
 -   ***Physical Disorder**:*
 
-    -   *`physical_disorder`: Ordinal variable sampled from 1 to 5.*
+    -   *`physical_disorder`: Ordinal variable from 1 to 5.*
 
 -   ***Perceived Collective Efficacy**:*
 
@@ -30,11 +30,11 @@
 
 -   ***Intergroup Leader**:*
 
-    -   *`leadership`: Dichotomous variable generated using `rbinom`.*
+    -   *`leadership`: Dichotomous variable.*
 
 -   ***Personalized Features**:*
 
-    -   *`names`, `art`, `playgrounds`: Dichotomous variables generated using `rbinom`.*
+    -   *`names`, `art`, `playgrounds`: Dichotomous variables*
 
 ### Step 1: Load Mapping data
 
@@ -63,8 +63,7 @@ map_sf$area <- as.numeric(map_sf$area)
 ggplot(data = map_sf) +
   geom_sf() +
   theme_minimal() +
-  labs(title = "Neighborhood Boundaries",
-       caption = "Generated for demonstration purposes")
+  labs(title = "Neighborhood Boundaries")
 ```
 
 ### Step 2: Load Survey Data
