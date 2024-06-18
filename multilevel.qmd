@@ -82,7 +82,6 @@ library(ggplot2)
 data <- read.csv("multilevel_model_data.csv")
 
 # Merge datasets
-# Create the `id` column
 data$id <- 1:nrow(data)
 data <- data %>%
   left_join(map_sf %>% select(id, area), by = "id")

@@ -212,7 +212,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="project-description" class="level1">
 <h1>Project Description</h1>
 <p><em>This is a research project I developed during my Master’s Degree in Environmental Psychology. It includes a hierarchical model that explores the cross-level dynamics within communities in the Netherlands.</em></p>
-<p><em>I am still motivated about executing this project in a practical setting because it addresses contemporary challenges in ethnically heterogeneous neighborhoods and provides an unique approach to understanding social cohesion. It assesses the individual-level, cognitive processes in neighborhood behavior through spatial measurement, which can offer alternative evidence for policymakers’ views toward contextual level action (e.g., developing economically vital cities, demolition, and housing renovation) (Van Kempen &amp; Bolt, 2009). By bridging the gap between individual-level processes and neighborhood dynamics, this research has the potential to inform policy interventions and community development initiatives.</em></p>
+<p><em>I am still motivated about executing this project again in a different setting because it addresses contemporary challenges in ethnically heterogeneous neighborhoods and provides an unique approach to understanding social cohesion. It assesses the individual-level, cognitive processes in neighborhood behavior through spatial measurement, which can offer alternative evidence for policymakers’ views toward contextual level action (e.g., developing economically vital cities, demolition, and housing renovation) (Van Kempen &amp; Bolt, 2009). By bridging the gap between individual-level processes and neighborhood dynamics, this research has the potential to inform policy interventions and community development initiatives.</em></p>
 <ul>
 <li><p><strong><em>Outcome Variable</em></strong></p>
 <ul>
@@ -221,14 +221,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><em><strong>Demographics</strong>:</em></p>
 <ul>
 <li><p><em><code>age</code>: Normally distributed continuous variable.</em></p></li>
-<li><p><em><code>education</code>: Dichotomous variable generated using <code>rbinom</code> with a probability of 0.6 for university education.</em></p></li>
-<li><p><em><code>income</code>: Ordinal variable sampled from 1 to 5.</em></p></li>
+<li><p><em><code>education</code>: Dichotomous variable</em></p></li>
+<li><p><em><code>income</code>: Ordinal variable from 1 to 5.</em></p></li>
 <li><p><em><code>ethnicity</code>: Categorical variable sampled from four categories “A”, “B”, “C”, and “D”.</em></p></li>
 <li><p><em><code>length_res</code>: Normally distributed continuous variable for length of residency.</em></p></li>
 </ul></li>
 <li><p><em><strong>Physical Disorder</strong>:</em></p>
 <ul>
-<li><em><code>physical_disorder</code>: Ordinal variable sampled from 1 to 5.</em></li>
+<li><em><code>physical_disorder</code>: Ordinal variable from 1 to 5.</em></li>
 </ul></li>
 <li><p><em><strong>Perceived Collective Efficacy</strong>:</em></p>
 <ul>
@@ -236,11 +236,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li><p><em><strong>Intergroup Leader</strong>:</em></p>
 <ul>
-<li><em><code>leadership</code>: Dichotomous variable generated using <code>rbinom</code>.</em></li>
+<li><em><code>leadership</code>: Dichotomous variable.</em></li>
 </ul></li>
 <li><p><em><strong>Personalized Features</strong>:</em></p>
 <ul>
-<li><em><code>names</code>, <code>art</code>, <code>playgrounds</code>: Dichotomous variables generated using <code>rbinom</code>.</em></li>
+<li><em><code>names</code>, <code>art</code>, <code>playgrounds</code>: Dichotomous variables</em></li>
 </ul></li>
 </ul>
 <section id="step-1-load-mapping-data" class="level3">
@@ -301,8 +301,7 @@ Attaching package: 'geojsonio'</code></pre>
 <span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> map_sf) <span class="sc">+</span></span>
 <span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
 <span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Neighborhood Boundaries"</span>,</span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Generated for demonstration purposes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Neighborhood Boundaries"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -321,19 +320,19 @@ Attaching package: 'geojsonio'</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//Rtmpnle3ow/downloaded_packages</code></pre>
+    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpMMFKu3/downloaded_packages</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"car"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//Rtmpnle3ow/downloaded_packages</code></pre>
+    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpMMFKu3/downloaded_packages</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//Rtmpnle3ow/downloaded_packages</code></pre>
+    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpMMFKu3/downloaded_packages</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -358,10 +357,9 @@ Attaching package: 'car'</code></pre>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"multilevel_model_data.csv"</span>)</span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge datasets</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the `id` column</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>id <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data)</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(map_sf <span class="sc">%&gt;%</span> <span class="fu">select</span>(id, area), <span class="at">by =</span> <span class="st">"id"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>id <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(map_sf <span class="sc">%&gt;%</span> <span class="fu">select</span>(id, area), <span class="at">by =</span> <span class="st">"id"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="step-3-exploratory-data-analysis" class="level3">
