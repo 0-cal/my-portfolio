@@ -16,12 +16,12 @@ website:
         menu: 
         - text: "Latent Class Analysis"
           href: hyperloop.qmd
+        - text: "Environmental Econometrics"
+          href: timeseries.qmd          
         - text: "Hierarchical Model"
           href: multilevel.qmd
         - text: "Bayesian Linear Regression"
           href: bayes.qmd
-        - text: "Time Series Analysis"
-          href: timeseries.qmd
       - text: "Learn R"
         menu: 
         - text: "For Beginners"

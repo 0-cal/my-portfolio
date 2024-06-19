@@ -1,60 +1,191 @@
-### 1. Install and Load Necessary Packages
+# Tuna Prices Dataset
 
-``` r
-install.packages("fpp2")
-install.packages("TTR")
+*Dataset retrieved from TCASHION on Kaggle (*<https://www.kaggle.com/datasets/tcashion/tokyo-wholesale-tuna-prices/code>)
+
+*The Tsukiji fish market, which operated until 2018, was the largest wholesale fish market in the world, specializing in sashimi tunas.*
+
+*This dataset is ideal for econometric modeling.*
+
+***Species Covered:***
+
+-   *Bluefin Tuna*
+
+-   *Southern Bluefin Tuna*
+
+-   *Bigeye Tuna*
+
+***Measures***
+
+-   *Quantity - Metric tonnes (i.e, 1000 kilograms)*
+
+-   *Price - Yen / kilogram*
+
+### 1. Install and Load Packages
+
+```{r}
+options(repos = c(CRAN = "https://cloud.r-project.org"))
 library(fpp2)
 library(TTR)
-data("elecdemand")
+library(forecast)
+library(tseries)
+library(lubridate)
+library(tidyverse)
 ```
 
-### 2. Plot the Time Series Data
+### 2. Plot Quantity and Price
 
-``` r
-autoplot(elecdemand[, "Demand"], main = "Electricity Demand in Victoria, Australia",
-         xlab = "Time", ylab = "Demand (MW)", col = "blue")
+```{r}
+tuna<-read.csv("/Users/owencallahan/Desktop/R/tokyo_wholesale_tuna_prices.csv")
+
+# Combine month and year collumn
+tuna <- tuna %>%
+  mutate(date = make_date(year, month))
+
+# Sort the data by date
+tuna <- tuna %>% arrange(date)
+
+# Plot Quantity over Time
+tuna_quantity <- tuna %>%
+  filter(measure == "Quantity")
+
+ggplot(tuna_quantity, aes(x = date, y = value)) +
+  geom_line() +
+  labs(title = "Tuna Quantity Over Time", x = "Date", y = "Quantity") +
+  theme_minimal()
+
+# Plot Price over Time
+tuna_price <- tuna %>%
+  filter(measure == "Price")
+
+ggplot(tuna_price, aes(x = date, y = value)) +
+  geom_line() +
+  labs(title = "Tuna Prices Over Time", x = "Date", y = "Price") +
+  theme_minimal()
 ```
 
-### 3. Experiment with Different Window Sizes
+### 3. Model Selection
 
-``` r
-# Calculate moving averages with different window sizes
-moving_avg_24 <- SMA(elecdemand[, "Demand"], n = 24)  # 12 hours
-moving_avg_96 <- SMA(elecdemand[, "Demand"], n = 96)  # 48 hours
-moving_avg_192 <- SMA(elecdemand[, "Demand"], n = 192)  # 96 hours
+-   ***Trend:** Look for any long-term movements or patterns in the data.*
 
-# Plot original data and moving averages with different window sizes
-plot(elecdemand[, "Demand"], type = "l", col = "blue", main = "Electricity Demand with Moving Averages",
-     xlab = "Time", ylab = "Demand (MW)")
-lines(moving_avg_24, col = "red", lty = 2)
-lines(moving_avg_96, col = "green", lty = 3)
-lines(moving_avg_192, col = "orange", lty = 4)
-legend("topright", legend = c("Original Data", "24-period MA", "96-period MA", "192-period MA"),
-       col = c("blue", "red", "green", "orange"), lty = c(1, 2, 3, 4), lwd = 2)
+-   ***Seasonality:** Check for repeating patterns at fixed intervals*
+
+-   ***Randomness:** Assess if there are irregular fluctuations or noise.*
+
+***Decomposition:** helps in separating a time series into its components:*
+
+-   ***When to Use:***
+
+    -   *If there is a clear trend and/or seasonal pattern in the data, decomposition can help isolate these components for better analysis and forecasting.*
+
+***Moving Average Smoothing:** is used to reduce short-term fluctuations in the data:*
+
+-   ***When to Use:***
+
+    -   *To smooth out irregular fluctuations or noise in the data, making underlying patterns more apparent.*
+
+***Exponential Smoothing:** assigns exponentially decreasing weights to older observations:*
+
+-   ***When to Use:***
+
+    -   *When the data has no clear trend or seasonality but exhibits random fluctuations.*
+
+    -   *For short-term forecasting where recent data points are more relevant.*
+
+```{r}
+# Quantity
+ts_quan <- ts(tuna_quantity$value, start = 2003, end = 2017,frequency = 12)  
+decomposed1 <- decompose(ts_quan)
+plot(decomposed1)
+
+# Price
+ts_price <- ts(tuna_price$value, start = 2003, end = 2017, frequency = 12)  
+decomposed2 <- decompose(ts_price)
+plot(decomposed2) 
 ```
 
-### 4. Create and Plot the Moving Average Model
+***Key Takeaways***
 
-``` r
-# Calculate the moving average with a window size of 48 (24 hours, since data is half-hourly)
-moving_avg <- SMA(elecdemand[, "Demand"], n = 48)
+-   ***Seasonal Component:** Appears consistent, suggesting recurring patterns at regular intervals.*
 
-# Plot the original time series and the moving average
-plot(elecdemand[, "Demand"], type = "l", col = "blue", main = "Electricity Demand with Moving Average",
-     xlab = "Time", ylab = "Demand (MW)")
-lines(moving_avg, col = "red")
-legend("topright", legend = c("Original Data", "48-period MA"), col = c("blue", "red"), lty = 1, lwd = 2)
+-   ***Trend Component:** Appears less predictable, indicating potential long-term shifts or fluctuations that are not easily captured by a simple pattern.*
+
+-   ***Random Component:** Shows variability, indicating unexplained fluctuations or noise in the data.*
+
+### 4. Test for Stationarity
+
+*The ADF test is a statistical test that assesses whether a time series is stationary. Stationarity means that the statistical properties of a time series (such as mean, variance, and autocorrelation) do not change over time.*
+
+-   *A more negative ADF statistic indicates stronger evidence for stationarity.*
+
+```{r}
+# Perform ADF test
+adf_test <- adf.test(ts_price)
+print(adf_test)
+
+adf_test <- adf.test(ts_quan)
+print(adf_test)
 ```
 
-### 5. Evaluate Model Performance
+***Key Takeaways***
 
-``` r
-# Calculate Mean Absolute Error (MAE)
-mae <- mean(abs(elecdemand[, "Demand"] - moving_avg), na.rm = TRUE)
+-   *Price model is not stationary*
 
-# Calculate Root Mean Squared Error (RMSE)
-rmse <- sqrt(mean((elecdemand[, "Demand"] - moving_avg)^2, na.rm = TRUE))
+-   *Quantity model is not stationary*
 
-print(paste("Mean Absolute Error (MAE):", round(mae, 2)))
-print(paste("Root Mean Squared Error (RMSE):", round(rmse, 2)))
+### 5. Fit an ARIMA model
+
+```{r}
+# Fit an ARIMA model using auto.arima for automatic model selection
+fit_price <- auto.arima(ts_price)
+fit_quan <- auto.arima(ts_quan)
+
+# Summary of the ARIMA model
+summary(fit_price)
+summary(fit_quan)
+
+# Forecasting Price
+fore_price <- forecast(fit_price, h = 12)  # Forecasting 12 periods ahead
+autoplot(fore_price) +
+  labs(title = "Forecasted Tuna Prices using ARIMA", x = "Date", y = "Price") +
+  theme_minimal()
+
+# Forecasting Quantity
+fore_quan <- forecast(fit_quan, h = 12)  # Forecasting 12 periods ahead
+autoplot(fore_quan) +
+  labs(title = "Forecasted Tuna Prices using ARIMA", x = "Date", y = "Price") +
+  theme_minimal()
 ```
+
+### 6. Evaluate Results
+
+-   ***Residual Plot:** Inspect the plot to ensure the residuals are centered around zero and exhibit constant variance. If there are patterns or trends in the residuals, it suggests that the model may need improvement.*
+
+-   ***Mean Squared Error (MSE):** A smaller MSE indicates that the model’s predictions are closer to the actual values, implying better model performance.*
+
+```{r}
+# Calculate residuals
+residuals_p <- residuals(fit_price)
+residuals_q <- residuals(fit_quan)
+
+# Plot residuals
+autoplot(residuals_p) + 
+  labs(title = "Price Residuals of ARIMA Model", x = "Date", y = "Residuals") +
+  theme_minimal()
+
+autoplot(residuals_q) + 
+  labs(title = "Quanitity Residuals of ARIMA Model", x = "Date", y = "Residuals") +
+  theme_minimal()
+
+# Calculate MSE
+mse_p <- mean(residuals_p^2)
+print(paste("Mean Squared Error: ", mse_p))
+
+mse_q <- mean(residuals_q^2)
+print(paste("Mean Squared Error: ", mse_q))
+```
+
+***Key Takeaways***
+
+-   *The residuals are centered around zero, but there is noticeable heteroscedasticity, particularly with greater variation observed in the early 2000s.*
+
+-   *The mean squared error (MSE) indicates room for improvement; adding more parameters may be essential to develop a more precise model for predicting price and quantity.*

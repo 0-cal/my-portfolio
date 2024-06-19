@@ -147,16 +147,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Latent Class Analysis</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./timeseries.html">
+ <span class="dropdown-text">Environmental Econometrics</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./multilevel.html">
  <span class="dropdown-text">Hierarchical Model</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./bayes.html">
  <span class="dropdown-text">Bayesian Linear Regression</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./timeseries.html">
- <span class="dropdown-text">Time Series Analysis</span></a>
   </li>  
     </ul>
   </li>
@@ -190,11 +190,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#install-and-load-necessary-packages" id="toc-install-and-load-necessary-packages" class="nav-link active" data-scroll-target="#install-and-load-necessary-packages">1. Install and Load Necessary Packages</a></li>
-  <li><a href="#plot-the-time-series-data" id="toc-plot-the-time-series-data" class="nav-link" data-scroll-target="#plot-the-time-series-data">2. Plot the Time Series Data</a></li>
-  <li><a href="#experiment-with-different-window-sizes" id="toc-experiment-with-different-window-sizes" class="nav-link" data-scroll-target="#experiment-with-different-window-sizes">3. Experiment with Different Window Sizes</a></li>
-  <li><a href="#create-and-plot-the-moving-average-model" id="toc-create-and-plot-the-moving-average-model" class="nav-link" data-scroll-target="#create-and-plot-the-moving-average-model">4. Create and Plot the Moving Average Model</a></li>
-  <li><a href="#evaluate-model-performance" id="toc-evaluate-model-performance" class="nav-link" data-scroll-target="#evaluate-model-performance">5. Evaluate Model Performance</a></li>
+  <li><a href="#tuna-prices-dataset" id="toc-tuna-prices-dataset" class="nav-link active" data-scroll-target="#tuna-prices-dataset">Tuna Prices Dataset</a>
+  <ul class="collapse">
+  <li><a href="#install-and-load-packages" id="toc-install-and-load-packages" class="nav-link" data-scroll-target="#install-and-load-packages">1. Install and Load Packages</a></li>
+  <li><a href="#plot-quantity-and-price" id="toc-plot-quantity-and-price" class="nav-link" data-scroll-target="#plot-quantity-and-price">2. Plot Quantity and Price</a></li>
+  <li><a href="#model-selection" id="toc-model-selection" class="nav-link" data-scroll-target="#model-selection">3. Model Selection</a></li>
+  <li><a href="#test-for-stationarity" id="toc-test-for-stationarity" class="nav-link" data-scroll-target="#test-for-stationarity">4. Test for Stationarity</a></li>
+  <li><a href="#fit-an-arima-model" id="toc-fit-an-arima-model" class="nav-link" data-scroll-target="#fit-an-arima-model">5. Fit an ARIMA model</a></li>
+  <li><a href="#evaluate-results" id="toc-evaluate-results" class="nav-link" data-scroll-target="#evaluate-results">6. Evaluate Results</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -204,58 +208,332 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="install-and-load-necessary-packages" class="level3">
-<h3 class="anchored" data-anchor-id="install-and-load-necessary-packages">1. Install and Load Necessary Packages</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"fpp2"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"TTR"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fpp2)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TTR)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"elecdemand"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="tuna-prices-dataset" class="level1">
+<h1>Tuna Prices Dataset</h1>
+<p><em>Dataset retrieved from TCASHION on Kaggle (</em><a href="https://www.kaggle.com/datasets/tcashion/tokyo-wholesale-tuna-prices/code" class="uri">https://www.kaggle.com/datasets/tcashion/tokyo-wholesale-tuna-prices/code</a>)</p>
+<p><em>The Tsukiji fish market, which operated until 2018, was the largest wholesale fish market in the world, specializing in sashimi tunas.</em></p>
+<p><em>This dataset is ideal for econometric modeling.</em></p>
+<p><strong><em>Species Covered:</em></strong></p>
+<ul>
+<li><p><em>Bluefin Tuna</em></p></li>
+<li><p><em>Southern Bluefin Tuna</em></p></li>
+<li><p><em>Bigeye Tuna</em></p></li>
+</ul>
+<p><strong><em>Measures</em></strong></p>
+<ul>
+<li><p><em>Quantity - Metric tonnes (i.e, 1000 kilograms)</em></p></li>
+<li><p><em>Price - Yen / kilogram</em></p></li>
+</ul>
+<section id="install-and-load-packages" class="level3">
+<h3 class="anchored" data-anchor-id="install-and-load-packages">1. Install and Load Packages</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">CRAN =</span> <span class="st">"https://cloud.r-project.org"</span>))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fpp2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Registered S3 method overwritten by 'quantmod':
+  method            from
+  as.zoo.data.frame zoo </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching packages ────────────────────────────────────────────── fpp2 2.5 ──</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ ggplot2   3.5.1      ✔ fma       2.5   
+✔ forecast  8.22.0     ✔ expsmooth 2.3   </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code></code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TTR)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forecast)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tseries)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'lubridate'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr   1.1.4     ✔ stringr 1.5.1
+✔ forcats 1.0.0     ✔ tibble  3.2.1
+✔ purrr   1.0.2     ✔ tidyr   1.3.1
+✔ readr   2.1.5     </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
 </section>
-<section id="plot-the-time-series-data" class="level3">
-<h3 class="anchored" data-anchor-id="plot-the-time-series-data">2. Plot the Time Series Data</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(elecdemand[, <span class="st">"Demand"</span>], <span class="at">main =</span> <span class="st">"Electricity Demand in Victoria, Australia"</span>,</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">xlab =</span> <span class="st">"Time"</span>, <span class="at">ylab =</span> <span class="st">"Demand (MW)"</span>, <span class="at">col =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="plot-quantity-and-price" class="level3">
+<h3 class="anchored" data-anchor-id="plot-quantity-and-price">2. Plot Quantity and Price</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>tuna<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"/Users/owencallahan/Desktop/R/tokyo_wholesale_tuna_prices.csv"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine month and year collumn</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>tuna <span class="ot">&lt;-</span> tuna <span class="sc">%&gt;%</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">make_date</span>(year, month))</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort the data by date</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>tuna <span class="ot">&lt;-</span> tuna <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(date)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Quantity over Time</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>tuna_quantity <span class="ot">&lt;-</span> tuna <span class="sc">%&gt;%</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(measure <span class="sc">==</span> <span class="st">"Quantity"</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tuna_quantity, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value)) <span class="sc">+</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Tuna Quantity Over Time"</span>, <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Quantity"</span>) <span class="sc">+</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="timeseries_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Price over Time</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>tuna_price <span class="ot">&lt;-</span> tuna <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(measure <span class="sc">==</span> <span class="st">"Price"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tuna_price, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> value)) <span class="sc">+</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Tuna Prices Over Time"</span>, <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Price"</span>) <span class="sc">+</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="timeseries_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="experiment-with-different-window-sizes" class="level3">
-<h3 class="anchored" data-anchor-id="experiment-with-different-window-sizes">3. Experiment with Different Window Sizes</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate moving averages with different window sizes</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>moving_avg_24 <span class="ot">&lt;-</span> <span class="fu">SMA</span>(elecdemand[, <span class="st">"Demand"</span>], <span class="at">n =</span> <span class="dv">24</span>)  <span class="co"># 12 hours</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>moving_avg_96 <span class="ot">&lt;-</span> <span class="fu">SMA</span>(elecdemand[, <span class="st">"Demand"</span>], <span class="at">n =</span> <span class="dv">96</span>)  <span class="co"># 48 hours</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>moving_avg_192 <span class="ot">&lt;-</span> <span class="fu">SMA</span>(elecdemand[, <span class="st">"Demand"</span>], <span class="at">n =</span> <span class="dv">192</span>)  <span class="co"># 96 hours</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot original data and moving averages with different window sizes</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(elecdemand[, <span class="st">"Demand"</span>], <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">main =</span> <span class="st">"Electricity Demand with Moving Averages"</span>,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Time"</span>, <span class="at">ylab =</span> <span class="st">"Demand (MW)"</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(moving_avg_24, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(moving_avg_96, <span class="at">col =</span> <span class="st">"green"</span>, <span class="at">lty =</span> <span class="dv">3</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(moving_avg_192, <span class="at">col =</span> <span class="st">"orange"</span>, <span class="at">lty =</span> <span class="dv">4</span>)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">"Original Data"</span>, <span class="st">"24-period MA"</span>, <span class="st">"96-period MA"</span>, <span class="st">"192-period MA"</span>),</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>, <span class="st">"green"</span>, <span class="st">"orange"</span>), <span class="at">lty =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="model-selection" class="level3">
+<h3 class="anchored" data-anchor-id="model-selection">3. Model Selection</h3>
+<ul>
+<li><p><em><strong>Trend:</strong> Look for any long-term movements or patterns in the data.</em></p></li>
+<li><p><em><strong>Seasonality:</strong> Check for repeating patterns at fixed intervals</em></p></li>
+<li><p><em><strong>Randomness:</strong> Assess if there are irregular fluctuations or noise.</em></p></li>
+</ul>
+<p><em><strong>Decomposition:</strong> helps in separating a time series into its components:</em></p>
+<ul>
+<li><p><strong><em>When to Use:</em></strong></p>
+<ul>
+<li><em>If there is a clear trend and/or seasonal pattern in the data, decomposition can help isolate these components for better analysis and forecasting.</em></li>
+</ul></li>
+</ul>
+<p><em><strong>Moving Average Smoothing:</strong> is used to reduce short-term fluctuations in the data:</em></p>
+<ul>
+<li><p><strong><em>When to Use:</em></strong></p>
+<ul>
+<li><em>To smooth out irregular fluctuations or noise in the data, making underlying patterns more apparent.</em></li>
+</ul></li>
+</ul>
+<p><em><strong>Exponential Smoothing:</strong> assigns exponentially decreasing weights to older observations:</em></p>
+<ul>
+<li><p><strong><em>When to Use:</em></strong></p>
+<ul>
+<li><p><em>When the data has no clear trend or seasonality but exhibits random fluctuations.</em></p></li>
+<li><p><em>For short-term forecasting where recent data points are more relevant.</em></p></li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Quantity</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>ts_quan <span class="ot">&lt;-</span> <span class="fu">ts</span>(tuna_quantity<span class="sc">$</span>value, <span class="at">start =</span> <span class="dv">2003</span>, <span class="at">end =</span> <span class="dv">2017</span>,<span class="at">frequency =</span> <span class="dv">12</span>)  </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>decomposed1 <span class="ot">&lt;-</span> <span class="fu">decompose</span>(ts_quan)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(decomposed1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="timeseries_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Price</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>ts_price <span class="ot">&lt;-</span> <span class="fu">ts</span>(tuna_price<span class="sc">$</span>value, <span class="at">start =</span> <span class="dv">2003</span>, <span class="at">end =</span> <span class="dv">2017</span>, <span class="at">frequency =</span> <span class="dv">12</span>)  </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>decomposed2 <span class="ot">&lt;-</span> <span class="fu">decompose</span>(ts_price)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(decomposed2) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="timeseries_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong><em>Key Takeaways</em></strong></p>
+<ul>
+<li><p><em><strong>Seasonal Component:</strong> Appears consistent, suggesting recurring patterns at regular intervals.</em></p></li>
+<li><p><em><strong>Trend Component:</strong> Appears less predictable, indicating potential long-term shifts or fluctuations that are not easily captured by a simple pattern.</em></p></li>
+<li><p><em><strong>Random Component:</strong> Shows variability, indicating unexplained fluctuations or noise in the data.</em></p></li>
+</ul>
 </section>
-<section id="create-and-plot-the-moving-average-model" class="level3">
-<h3 class="anchored" data-anchor-id="create-and-plot-the-moving-average-model">4. Create and Plot the Moving Average Model</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the moving average with a window size of 48 (24 hours, since data is half-hourly)</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>moving_avg <span class="ot">&lt;-</span> <span class="fu">SMA</span>(elecdemand[, <span class="st">"Demand"</span>], <span class="at">n =</span> <span class="dv">48</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the original time series and the moving average</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(elecdemand[, <span class="st">"Demand"</span>], <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">main =</span> <span class="st">"Electricity Demand with Moving Average"</span>,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Time"</span>, <span class="at">ylab =</span> <span class="st">"Demand (MW)"</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(moving_avg, <span class="at">col =</span> <span class="st">"red"</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">"Original Data"</span>, <span class="st">"48-period MA"</span>), <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>), <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="test-for-stationarity" class="level3">
+<h3 class="anchored" data-anchor-id="test-for-stationarity">4. Test for Stationarity</h3>
+<p><em>The ADF test is a statistical test that assesses whether a time series is stationary. Stationarity means that the statistical properties of a time series (such as mean, variance, and autocorrelation) do not change over time.</em></p>
+<ul>
+<li><em>A more negative ADF statistic indicates stronger evidence for stationarity.</em></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform ADF test</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>adf_test <span class="ot">&lt;-</span> <span class="fu">adf.test</span>(ts_price)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(adf_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Augmented Dickey-Fuller Test
+
+data:  ts_price
+Dickey-Fuller = -2.7664, Lag order = 5, p-value = 0.2563
+alternative hypothesis: stationary</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>adf_test <span class="ot">&lt;-</span> <span class="fu">adf.test</span>(ts_quan)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(adf_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Augmented Dickey-Fuller Test
+
+data:  ts_quan
+Dickey-Fuller = -3.0099, Lag order = 5, p-value = 0.1547
+alternative hypothesis: stationary</code></pre>
+</div>
+</div>
+<p><strong><em>Key Takeaways</em></strong></p>
+<ul>
+<li><p><em>Price model is not stationary</em></p></li>
+<li><p><em>Quantity model is not stationary</em></p></li>
+</ul>
 </section>
-<section id="evaluate-model-performance" class="level3">
-<h3 class="anchored" data-anchor-id="evaluate-model-performance">5. Evaluate Model Performance</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Mean Absolute Error (MAE)</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>mae <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">abs</span>(elecdemand[, <span class="st">"Demand"</span>] <span class="sc">-</span> moving_avg), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Root Mean Squared Error (RMSE)</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>rmse <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((elecdemand[, <span class="st">"Demand"</span>] <span class="sc">-</span> moving_avg)<span class="sc">^</span><span class="dv">2</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Mean Absolute Error (MAE):"</span>, <span class="fu">round</span>(mae, <span class="dv">2</span>)))</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Root Mean Squared Error (RMSE):"</span>, <span class="fu">round</span>(rmse, <span class="dv">2</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="fit-an-arima-model" class="level3">
+<h3 class="anchored" data-anchor-id="fit-an-arima-model">5. Fit an ARIMA model</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit an ARIMA model using auto.arima for automatic model selection</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>fit_price <span class="ot">&lt;-</span> <span class="fu">auto.arima</span>(ts_price)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>fit_quan <span class="ot">&lt;-</span> <span class="fu">auto.arima</span>(ts_quan)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary of the ARIMA model</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit_price)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Series: ts_price 
+ARIMA(0,0,0)(0,1,1)[12] with drift 
+
+Coefficients:
+         sma1    drift
+      -0.8494  -1.3377
+s.e.   0.0865   0.8690
+
+sigma^2 = 235806:  log likelihood = -1200.48
+AIC=2406.96   AICc=2407.12   BIC=2416.13
+
+Training set error measures:
+                   ME     RMSE      MAE       MPE     MAPE     MASE        ACF1
+Training set 12.06902 465.0506 303.0941 -3.201486 13.59532 0.840122 -0.05292377</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit_quan)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Series: ts_quan 
+ARIMA(0,0,0)(1,1,0)[12] with drift 
+
+Coefficients:
+         sar1   drift
+      -0.4004  0.1308
+s.e.   0.0729  0.6294
+
+sigma^2 = 16957:  log likelihood = -987.28
+AIC=1980.57   AICc=1980.72   BIC=1989.73
+
+Training set error measures:
+                    ME     RMSE      MAE      MPE     MAPE      MASE
+Training set 0.9639297 124.7093 87.62616 -578.987 607.8686 0.9004508
+                    ACF1
+Training set -0.01891516</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Forecasting Price</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>fore_price <span class="ot">&lt;-</span> <span class="fu">forecast</span>(fit_price, <span class="at">h =</span> <span class="dv">12</span>)  <span class="co"># Forecasting 12 periods ahead</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(fore_price) <span class="sc">+</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Forecasted Tuna Prices using ARIMA"</span>, <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Price"</span>) <span class="sc">+</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="timeseries_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Forecasting Quantity</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>fore_quan <span class="ot">&lt;-</span> <span class="fu">forecast</span>(fit_quan, <span class="at">h =</span> <span class="dv">12</span>)  <span class="co"># Forecasting 12 periods ahead</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(fore_quan) <span class="sc">+</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Forecasted Tuna Prices using ARIMA"</span>, <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Price"</span>) <span class="sc">+</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="timeseries_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="evaluate-results" class="level3">
+<h3 class="anchored" data-anchor-id="evaluate-results">6. Evaluate Results</h3>
+<ul>
+<li><p><em><strong>Residual Plot:</strong> Inspect the plot to ensure the residuals are centered around zero and exhibit constant variance. If there are patterns or trends in the residuals, it suggests that the model may need improvement.</em></p></li>
+<li><p><em><strong>Mean Squared Error (MSE):</strong> A smaller MSE indicates that the model’s predictions are closer to the actual values, implying better model performance.</em></p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate residuals</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>residuals_p <span class="ot">&lt;-</span> <span class="fu">residuals</span>(fit_price)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>residuals_q <span class="ot">&lt;-</span> <span class="fu">residuals</span>(fit_quan)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot residuals</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(residuals_p) <span class="sc">+</span> </span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Price Residuals of ARIMA Model"</span>, <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Residuals"</span>) <span class="sc">+</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="timeseries_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(residuals_q) <span class="sc">+</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Quanitity Residuals of ARIMA Model"</span>, <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Residuals"</span>) <span class="sc">+</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="timeseries_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate MSE</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>mse_p <span class="ot">&lt;-</span> <span class="fu">mean</span>(residuals_p<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Mean Squared Error: "</span>, mse_p))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Mean Squared Error:  216272.090598326"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>mse_q <span class="ot">&lt;-</span> <span class="fu">mean</span>(residuals_q<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Mean Squared Error: "</span>, mse_q))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Mean Squared Error:  15552.4060066718"</code></pre>
+</div>
+</div>
+<p><strong><em>Key Takeaways</em></strong></p>
+<ul>
+<li><p><em>The residuals are centered around zero, but there is noticeable heteroscedasticity, particularly with greater variation observed in the early 2000s.</em></p></li>
+<li><p><em>The mean squared error (MSE) indicates room for improvement; adding more parameters may be essential to develop a more precise model for predicting price and quantity.</em></p></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
