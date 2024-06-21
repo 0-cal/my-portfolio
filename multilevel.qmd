@@ -36,49 +36,33 @@
 
     -   *`names`, `art`, `playgrounds`: Dichotomous variables*
 
-### Step 1: Load Mapping data
+### 1. Load Packages and Data
 
 ```{r}
-# Load the libraries
+# Load libraries
+options(repos = c(CRAN = "https://cloud.r-project.org"))
 library(sf)
 library(ggplot2)
 library(dplyr)
 library(geojsonio)
 library(sp)
+library(lme4)
+library(car)
+library(ggplot2)
 
-# Read the GeoJSON file
+# Read the GeoJSON mapping file
 map_data <- geojson_read("map_data.geojson", what = "sp")
 
-# Convert to sf object for easier handling
 map_sf <- st_as_sf(map_data)
 
 # Calculate the area of each drawn boundary
 map_sf <- map_sf %>%
   mutate(area = st_area(geometry))
-
-# Convert area to numeric
 map_sf$area <- as.numeric(map_sf$area)
-
-# Plot a sample of the boundaries
-ggplot(data = map_sf) +
-  geom_sf() +
-  theme_minimal() +
-  labs(title = "Neighborhood Boundaries")
 ```
 
-### Step 2: Load Survey Data
-
 ```{r}
-# Load necessary libraries
-options(repos = c(CRAN = "https://cloud.r-project.org"))
-install.packages("lme4")
-install.packages("car")
-install.packages("ggplot2")
-library(lme4)
-library(car)
-library(ggplot2)
-
-# Load the dataset
+# Load the survey dataset
 data <- read.csv("multilevel_model_data.csv")
 
 # Merge datasets
@@ -87,35 +71,27 @@ data <- data %>%
   left_join(map_sf %>% select(id, area), by = "id")
 ```
 
-### Step 3: Exploratory Data Analysis
+### 2. Exploratory Data Analysis
 
-*Before I compare the models, let's take a look at the full model and understand out data a bit better.*
+*Before I compare the models, let's take a look at the full model and understand our data a bit better.*
 
 ```{r}
 # Fit the multilevel model
 multilevel_model <- lmer(boundary ~ age + education + income + ethnicity + length_res + physical_disorder + perceived_collective_efficacy + facilities + names + art + playgrounds + leadership + (1 | neighborhood_id), data = data)
-
-# Print summary of the model
 summary(multilevel_model)
 
-# Check normality of residuals
+# Normality of residuals
 plot(multilevel_model)
 
-# Check homoscedasticity
+# Homoscedasticity
 plot(residuals(multilevel_model) ~ fitted(multilevel_model))
 
-# Check linearity (if applicable)
-# Example for a continuous predictor age
-plot(data$age, residuals(multilevel_model))
-
-# Extract fixed effects estimates
+# Fixed effects estimates
 fixed_effects <- fixef(multilevel_model)
-
-# Interpretation of fixed effects
 print(fixed_effects)
 ```
 
-### Step 4: Comparing Alternative Models:
+### 3. Model Selection
 
 ```{r}
 # Model without Low-estimate predictors:
@@ -149,61 +125,16 @@ print(BIC_values)
 
 *After removing variables (`age, length_res, names, playgrounds, physical_disorder)` , my first adjusted model has one of the lower AIC/BIC, while also aligning with my theoretical framework and hypotheses.*
 
-### Step 5: Post-estimation Analyses:
+### 4. Results
 
 ```{r}
+# Plot Cooks D estimates with influence plot
 influencePlot(alt_model1, id.n = 5)
 
-# Calculate variance inflation factors (VIF)
+# Calculate variance inflation factors
 vif(alt_model1)
-```
 
-### Step 6: Reporting:
-
-```{r}
 # Extract coefficients
 model_coefs <- coef(summary(alt_model1))
 model_coefs
 ```
-
-### References
-
-*Bektaş, Y., & Taşan-Kok, T. (2020). Love thy neighbor? Remnants of the social-mix policy in the Kolenkit neighborhood, Amsterdam. Journal of Housing and the Built Environment, 35, 743-761.*
-
-*Campbell, E., Henly, J. R., Elliott, D. S., & Irwin, K. (2009). Subjective constructions of neighborhood boundaries: lessons from a qualitative study of four neighborhoods. Journal of Urban Affairs, 31(4), 461-490.*
-
-*Chan, J., To, H. P., & Chan, E. (2006). Reconsidering social cohesion: Developing a definition and analytical framework for empirical research. Social Indicators Research, 75, 273-302.*
-
-*Coulton, C. J., Jennings, M. Z., & Chan, T. (2013). How big is my neighborhood? Individual and contextual effects on perceptions of neighborhood scale. American Journal of Community Psychology, 51(1-2), 140-150.*
-
-*Easterbrook, M. J., & Vignoles, V. L. (2015). When friendship formation goes down the toilet: Design features of shared accommodation influence interpersonal bonds and well‐being. British Journal of Social Psychology, 54(1), 125-139.*
-
-*Jordan, B. (1996). A theory of poverty & social exclusion.*
-
-*Kleinhans, R. (2004). Social implications of housing diversification in urban renewal: A review of recent literature. Journal of Housing and the Built Environment, 19, 367-390.*
-
-*Kloos, B., Hill, J., Thomas, E., Wandersman, A., Elias, M. J., & Dalton, J. H. (2012). Community psychology. Belmont, CA: Cengage Learning.*
-
-*Lowe, S. S. (2000). Creating community: Art for community development. Journal of Contemporary Ethnography, 29(3), 357-386.*
-
-*Lynch, S. M., & Bartlett, B. (2019). Bayesian statistics in sociology: Past, present, and future. Annual Review of Sociology, 45, 47-68.*
-
-*Peng, J., Strijker, D., & Wu, Q. (2020). Place identity: How far have we come in exploring its meanings?. Frontiers in Psychology, 11, 503569.*
-
-*Pretty, G. H., Chipuer, H. M., & Bramston, P. (2003). Sense of place amongst adolescents and adults in two rural Australian towns: The discriminating features of place attachment, sense of community and place dependence in relation to place identity. Journal of environmental psychology, 23(3), 273-287.*
-
-*Putnam, R. D. (2000). Bowling alone: The collapse and revival of American community. Simon and Schuster.*
-
-*Putnam, R. D. (2007). E pluribus unum: Diversity and community in the twenty‐first century the 2006 Johan Skytte Prize Lecture. Scandinavian Political Studies, 30(2), 137-174.*
-
-*Stevenson, C., Easterbrook, M., Harkin, L., McNamara, N., Kellezi, B., & Shuttleworth, I. (2019). Neighborhood identity helps residents cope with residential diversification: Contact in increasingly mixed neighborhoods of Northern Ireland. Political Psychology, 40(2), 277-295.*
-
-*Stolle, D., & Harell, A. (2013). Social capital and ethno-racial diversity: Learning to trust in an immigrant society. Political Studies, 61(1), 42-66.*
-
-*Taylor, R. B., Gottfredson, S. D., & Brower, S. (1984). Neighborhood naming as an index of attachment to place. Population and Environment, 7, 103-125.*
-
-*Turner, R. N., Hewstone, M., Voci, A., & Vonofakou, C. (2008). A test of the extended intergroup contact hypothesis: The mediating role of intergroup anxiety, perceived ingroup and outgroup norms, and inclusion of the outgroup in the self. Journal of Personality and Social Psychology, 95(4), 843.*
-
-*Van Kempen, R., & Bolt, G. (2009). Social cohesion, social mix, and urban policies in the Netherlands. Journal of Housing and the Built Environment, 24, 457-475.*
-
-*Völker, B., & Flap, H. (2007). Sixteen million neighbors: A multilevel study of the role of neighbors in the personal networks of the Dutch. Urban Affairs Review, 43(2), 256-284.*

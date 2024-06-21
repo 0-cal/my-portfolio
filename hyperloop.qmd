@@ -8,29 +8,23 @@ title: "Measuring Perceptions of the Hyperloop"
 
 *We recruited residents in Groningen to participate in the VR simulation and complete questionnaires. Four main constructs---technology acceptance, perceived safety, perceived comfort, and claustrophobia---were identified for latent class analysis. This model will be instrumental in classifying users in future simulated hyperloop studies.*
 
-### Step 1: Install and load necessary packages
+*The dataframe named* `survey_data` *contains columns:* `tech_acceptance`, `perceived_safety`, `perceived_comfort`, *and* `claustrophobia`. *Unfortunately, due to privacy laws, I cannot share the data on this platform. I can only provide my code for analyzing the survey data collected at Hardt Hyperloop.*
+
+### 1. Install Packages
 
 ``` r
-install.packages("poLCA")
-install.packages("ggplot2")
 library(poLCA)
 library(ggplot2)
 ```
 
-### Step 2: Prepare your data
-
-*The dataframe named* `survey_data` *contains columns:* `tech_acceptance`, `perceived_safety`, `perceived_comfort`, *and* `claustrophobia`. *Unfortunately, due to privacy laws, I cannot share the data on this platform. I can only provide my code for analyzing the survey data collected at Hardt Hyperloop.*
-
-### Step 3: Specify the LCA model
+### 2. Model Development
 
 ``` r
 survey_data <- cbind(tech_acceptance, perceived_safety, perceived_comfort, claustrophobia) ~ 1
 ```
 
-### Step 4: Run the LCA for different numbers of classes and compare models
-
 ``` r
-# Fit the models with different numbers of classes
+# Fit model
 set.seed(123) # For reproducibility
 lca_models <- list()
 aic_values <- numeric()
@@ -53,7 +47,7 @@ comparison <- data.frame(
 print(comparison)
 ```
 
-### Step 5: Plot AIC and BIC for model comparison
+### 3. Plot AIC and BIC
 
 ``` r
 ggplot(comparison, aes(x = Classes)) +
@@ -66,24 +60,22 @@ ggplot(comparison, aes(x = Classes)) +
   theme_minimal()
 ```
 
-### Step 6: Select the best model based on AIC/BIC and interpret parameters
+### 4. Model Selection
 
 ``` r
-# Select the best model (assuming the lowest BIC is preferred)
 best_nclass <- which.min(bic_values)
 best_model <- lca_models[[best_nclass]]
 
-# Summary of the best model
 summary(best_model)
 
-# Print class probabilities
+# Class Probabilities
 print(best_model$P)
 
-# Print item-response probabilities
+# Item-response Probabilities
 print(best_model$probs)
 ```
 
-### Step 7: Graph the item-response probabilities for the best model
+### 5. Plotting Item Structures
 
 ``` r
 # Create a data frame for plotting

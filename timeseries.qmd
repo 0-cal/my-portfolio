@@ -1,4 +1,8 @@
-# Tuna Prices Dataset
+# Building an ARIMA Model for Tuna Fisheries
+
+*This was a project I worked on in my Masters program in Environmental Psychology. It was one of my favorite projects and I felt like I learned a ton from the experience.*
+
+*The best resource I found that helped me understand the process of this analysis was in an online book (Gijón Air Pollution - An exercise of visualization and forecasting). Check out chapter 8 for ARIMA models! (*<https://bookdown.org/sergioberdiales/tfm-kschool_gijon_air_pollution/forecasting-models-arima.html>)
 
 *Dataset retrieved from TCASHION on Kaggle (*<https://www.kaggle.com/datasets/tcashion/tokyo-wholesale-tuna-prices/code>)
 
@@ -41,10 +45,10 @@ tuna<-read.csv("/Users/owencallahan/Desktop/R/tokyo_wholesale_tuna_prices.csv")
 tuna <- tuna %>%
   mutate(date = make_date(year, month))
 
-# Sort the data by date
+# Sort data by date
 tuna <- tuna %>% arrange(date)
 
-# Plot Quantity over Time
+# Plot Quantity
 tuna_quantity <- tuna %>%
   filter(measure == "Quantity")
 
@@ -53,7 +57,7 @@ ggplot(tuna_quantity, aes(x = date, y = value)) +
   labs(title = "Tuna Quantity Over Time", x = "Date", y = "Quantity") +
   theme_minimal()
 
-# Plot Price over Time
+# Plot Price
 tuna_price <- tuna %>%
   filter(measure == "Price")
 
@@ -118,7 +122,7 @@ plot(decomposed2)
 -   *A more negative ADF statistic indicates stronger evidence for stationarity.*
 
 ```{r}
-# Perform ADF test
+# ADF test
 adf_test <- adf.test(ts_price)
 print(adf_test)
 
@@ -135,22 +139,22 @@ print(adf_test)
 ### 5. Fit an ARIMA model
 
 ```{r}
-# Fit an ARIMA model using auto.arima for automatic model selection
+# Fit model
 fit_price <- auto.arima(ts_price)
 fit_quan <- auto.arima(ts_quan)
 
-# Summary of the ARIMA model
+# Summary
 summary(fit_price)
 summary(fit_quan)
 
 # Forecasting Price
-fore_price <- forecast(fit_price, h = 12)  # Forecasting 12 periods ahead
+fore_price <- forecast(fit_price, h = 12)
 autoplot(fore_price) +
   labs(title = "Forecasted Tuna Prices using ARIMA", x = "Date", y = "Price") +
   theme_minimal()
 
 # Forecasting Quantity
-fore_quan <- forecast(fit_quan, h = 12)  # Forecasting 12 periods ahead
+fore_quan <- forecast(fit_quan, h = 12) 
 autoplot(fore_quan) +
   labs(title = "Forecasted Tuna Prices using ARIMA", x = "Date", y = "Price") +
   theme_minimal()
@@ -163,7 +167,7 @@ autoplot(fore_quan) +
 -   ***Mean Squared Error (MSE):** A smaller MSE indicates that the model’s predictions are closer to the actual values, implying better model performance.*
 
 ```{r}
-# Calculate residuals
+# Residuals
 residuals_p <- residuals(fit_price)
 residuals_q <- residuals(fit_quan)
 
@@ -176,16 +180,212 @@ autoplot(residuals_q) +
   labs(title = "Quanitity Residuals of ARIMA Model", x = "Date", y = "Residuals") +
   theme_minimal()
 
-# Calculate MSE
-mse_p <- mean(residuals_p^2)
-print(paste("Mean Squared Error: ", mse_p))
+# Calculate performance metrics
+MSE_p <- mean(residuals_p^2)
+RMSE_p <- sqrt(MSE_p)
+MAE_p <- mean(abs(residuals_p))
 
-mse_q <- mean(residuals_q^2)
-print(paste("Mean Squared Error: ", mse_q))
+MSE_q <- mean(residuals_q^2)
+RMSE_q <- sqrt(MSE_q)
+MAE_q <- mean(abs(residuals_q))
+
+# R-squared
+SS_total <- sum((ts_price - mean(ts_price))^2)
+SS_residual <- sum(residuals_p^2)
+R_squared_p <- 1 - (SS_residual / SS_total)
+
+SS_total_q <- sum((ts_quan - mean(ts_quan))^2)
+SS_residual_q <- sum(residuals_q^2)
+R_squared_q <- 1 - (SS_residual_q / SS_total_q)
+
+cat("MSE:", MSE_p, "\n")
+cat("RMSE:", RMSE_p, "\n")
+cat("MAE:", MAE_p, "\n")
+cat("R-squared:", R_squared_p, "\n")
+
+cat("MSE:", MSE_q, "\n")
+cat("RMSE:", RMSE_q, "\n")
+cat("MAE:", MAE_q, "\n")
+cat("R-squared:", R_squared_q, "\n")
 ```
 
 ***Key Takeaways***
 
--   *The residuals are centered around zero, but there is noticeable heteroscedasticity, particularly with greater variation observed in the early 2000s.*
+-   ***Price Model:***
 
--   *The mean squared error (MSE) indicates room for improvement; adding more parameters may be essential to develop a more precise model for predicting price and quantity.*
+    -   *The price model shows moderate explanatory power (R² = 0.657), but the high MSE and RMSE indicate that the residuals are substantial, suggesting potential improvements or alternative modeling techniques might be needed.*
+
+-   ***Quantity Model:***
+
+    -   *The quantity model shows better performance with higher R² (0.775) and lower error metrics (MSE, RMSE, MAE), indicating a good fit and more accurate predictions compared to the price model.*
+
+### 7. Exploratory Data Analysis with Different Species
+
+```{r}
+bt_price <- tuna %>%
+  filter(measure == "Price",
+         species == "Bluefin Tuna")
+ts_bt <- ts(bt_price$value, start = 2003, end = 2017, frequency = 12)  
+decomposed3 <- decompose(ts_bt)
+plot(decomposed3) 
+
+sbt_price <- tuna %>%
+  filter(measure == "Price",
+         species == "Southern Bluefin Tuna")
+ts_sbt <- ts(sbt_price$value, start = 2003, end = 2017, frequency = 12)  
+decomposed4 <- decompose(ts_sbt)
+plot(decomposed4) 
+
+bgt_price <- tuna %>%
+  filter(measure == "Price",
+         species == "Bigeye Tuna")
+ts_bgt <- ts(bgt_price$value, start = 2003, end = 2017, frequency = 12)  
+decomposed5 <- decompose(ts_bgt)
+plot(decomposed5) 
+```
+
+***Key Takeaways***
+
+-   ***Seasonal Component:** Appears consistent, suggesting recurring patterns at regular intervals.*
+
+-   ***Trend Component:** Bluefin Tuna has a predictable trend, however* Southern Bluefin and Bigeye Tuna *appears less predictable, both indicating potential long-term jump in price over time.*
+
+-   ***Random Component:** Shows variability, indicating unexplained fluctuations or noise in the data.*
+
+```{r}
+# Quickly check for stationarity
+adf.test(ts_bt)
+adf.test(ts_sbt)
+adf.test(ts_bgt)
+```
+
+***Key Takeaways***
+
+-   ***Bluefin Tuna:** Stationary*
+
+-   **Southern Bluefin*:*** *Non-Stationary*
+
+-   **Bigeye Tuna*:*** *Stationary*
+
+```{r}
+# Fit model
+fit_bt <- auto.arima(ts_bt)
+fit_sbt <- auto.arima(ts_sbt)
+fit_bgt <- auto.arima(ts_bgt)
+
+summary(fit_bt)
+
+# Forecasting Different Specices
+fore_price3 <- forecast(fit_bt, h = 12) 
+autoplot(fore_price3) +
+  labs(title = "Forecasted Bluefin Tuna Prices using ARIMA", x = "Date", y = "Price") +
+  theme_minimal()
+
+fore_price4 <- forecast(fit_sbt, h = 12) 
+autoplot(fore_price4) +
+  labs(title = "Forecasted Southern Bluefin Tuna Prices using ARIMA", x = "Date", y = "Price") +
+  theme_minimal()
+
+fore_price5 <- forecast(fit_bgt, h = 12)
+autoplot(fore_price5) +
+  labs(title = "Forecasted Bigeye Tuna Prices using ARIMA", x = "Date", y = "Price") +
+  theme_minimal()
+```
+
+```{r}
+# Residuals
+residuals_1 <- residuals(fit_bt)
+residuals_2 <- residuals(fit_sbt)
+residuals_3 <- residuals(fit_bgt)
+
+# Plot residuals
+autoplot(residuals_1) + 
+  labs(title = "Bluefin Tuna Residuals of ARIMA Model", x = "Date", y = "Residuals") +
+  theme_minimal()
+
+autoplot(residuals_2) + 
+  labs(title = "Southern Bluefin Tuna Residuals of ARIMA Model", x = "Date", y = "Residuals") +
+  theme_minimal()
+
+autoplot(residuals_3) + 
+  labs(title = "Bigeye Tuna Residuals of ARIMA Model", x = "Date", y = "Residuals") +
+  theme_minimal()
+```
+
+### 8. Model Improvement
+
+```{r}
+# Price model
+fit_price1 <- auto.arima(ts_price, stepwise = FALSE, approximation = FALSE)
+
+# Quantity model
+fit_quantity1 <- auto.arima(ts_quan, stepwise = FALSE, approximation = FALSE)
+
+# Generate forecasts and calculate residuals again
+fore_price <- forecast(fit_price1, h = 12)
+residuals_p1 <- residuals(fit_price1)
+
+fore_quantity <- forecast(fit_quantity1, h = 12)
+residuals_q1 <- residuals(fit_quantity1)
+
+# Performance metrics
+MSE_p1 <- mean(residuals_p1^2)
+RMSE_p1 <- sqrt(MSE_p1)
+MAE_p1 <- mean(abs(residuals_p1))
+SS_total_p1 <- sum((ts_price - mean(ts_price))^2)
+SS_residual_p1 <- sum(residuals_p1^2)
+R_squared_p1 <- 1 - (SS_residual_p1 / SS_total_p1)
+
+MSE_q1 <- mean(residuals_q1^2)
+RMSE_q1 <- sqrt(MSE_q1)
+MAE_q1 <- mean(abs(residuals_q1))
+SS_total_q1 <- sum((ts_quan - mean(ts_quan))^2)
+SS_residual_q1 <- sum(residuals_q1^2)
+R_squared_q1 <- 1 - (SS_residual_q1 / SS_total_q1)
+
+cat("Updated Metrics for Price Model\n")
+cat("MSE:", MSE_p1, "\n")
+cat("RMSE:", RMSE_p1, "\n")
+cat("MAE:", MAE_p1, "\n")
+cat("R-squared:", R_squared_p1, "\n")
+
+cat("Updated Metrics for Quantity Model\n")
+cat("MSE:", MSE_q1, "\n")
+cat("RMSE:", RMSE_q1, "\n")
+cat("MAE:", MAE_q1, "\n")
+cat("R-squared:", R_squared_q1, "\n")
+```
+
+### 9. Model Diagnostics
+
+```{r}
+# Plot residuals
+autoplot(residuals_p1) + 
+  labs(title = "Residuals of ARIMA Model for Price", x = "Date", y = "Residuals") +
+  theme_minimal()
+
+autoplot(residuals_q1) + 
+  labs(title = "Residuals of ARIMA Model for Quantity", x = "Date", y = "Residuals") +
+  theme_minimal()
+
+# ACF and PACF of residuals
+acf(residuals_p1, main="ACF of Residuals for Price")
+pacf(residuals_p1, main="PACF of Residuals for Price")
+
+acf(residuals_q1, main="ACF of Residuals for Quantity")
+pacf(residuals_q1, main="PACF of Residuals for Quantity")
+
+# Ljung-Box test for autocorrelation
+Box.test(residuals_p1, lag = 20, type = "Ljung-Box")
+Box.test(residuals_q1, lag = 20, type = "Ljung-Box")
+```
+
+*In this analysis, I aimed to model and forecast tuna prices and quantities using ARIMA models. After refining the models, there were significant improvements in the performance metrics for both the price and quantity models.*
+
+*The updated price model shows a substantial reduction in error metrics and an increase in explanatory power, with the R-squared value improving from 0.657 to 0.737. This indicates that the model now explains approximately 73.72% of the variance in the price data, suggesting a more accurate and reliable model.*
+
+*The quantity model also shows improved performance, with lower error metrics and a higher R-squared value, now at 0.86291. This indicates that the model explains about 86.29% of the variance in the quantity data.*
+
+*The p-values for both tests are significantly lower than 0.05, indicating that there is still some autocorrelation in the residuals, suggesting that the models could be further refined. However, the current models still provide a substantial improvement over the initial attempts.*
+
+*I am definitely not satisfied with the results, but I really enjoyed working on this project. I learned a lot time series analysis using R and I can't wait to design another model like this in the future.*

@@ -192,9 +192,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#project-description" id="toc-project-description" class="nav-link active" data-scroll-target="#project-description">Project Description</a>
   <ul class="collapse">
-  <li><a href="#step-1-install-and-load-necessary-packages" id="toc-step-1-install-and-load-necessary-packages" class="nav-link" data-scroll-target="#step-1-install-and-load-necessary-packages">Step 1: Install and load necessary packages</a></li>
-  <li><a href="#step-2-create-the-bayesian-linear-regression" id="toc-step-2-create-the-bayesian-linear-regression" class="nav-link" data-scroll-target="#step-2-create-the-bayesian-linear-regression">Step 2: Create the Bayesian Linear Regression</a></li>
-  <li><a href="#step-3-data-visualization" id="toc-step-3-data-visualization" class="nav-link" data-scroll-target="#step-3-data-visualization">Step 3: Data Visualization</a></li>
+  <li><a href="#load-packages-and-data" id="toc-load-packages-and-data" class="nav-link" data-scroll-target="#load-packages-and-data">1. Load Packages and Data</a></li>
+  <li><a href="#create-the-bayesian-linear-regression" id="toc-create-the-bayesian-linear-regression" class="nav-link" data-scroll-target="#create-the-bayesian-linear-regression">2. Create the Bayesian Linear Regression</a></li>
+  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">3. Data Visualization</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -207,11 +207,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="project-description" class="level1">
 <h1>Project Description</h1>
-<p><em>Bayesian analysis is a statistical approach that interprets probability as a measure of belief or confidence in an event occurring. It allows us to update our beliefs about parameters of interest based on evidence (data) as it becomes available. This is a field of Statistics that I am constantly trying to learn more about.</em></p>
-<p><em>Considering my love for exercise and health, I found a dataset on physical activity and heart rate to use for a Bayesian analysis. I am interested in exploring the relationship between exercise and heart rate, which calls for a linear regression approach. To perform a Bayesian linear regression, I will use the <code>brms</code> package in R. This package provides an interface to fit complex Bayesian models using the probabilistic programming language Stan. Stan’s efficient Hamiltonian Monte Carlo (HMC) algorithms can sample from the posterior distribution of the model parameters.</em></p>
+<p><em>Considering my love for exercise and health, I found a dataset on physical activity and heart rate to use for a Bayesian analysis. I am interested in exploring the relationship between exercise and heart rate, which calls for a linear regression approach. To perform a Bayesian linear regression, I will use the <code>brms</code> package in R. This package provides an interface to fit complex Bayesian models using the probabilistic programming language Stan. Stan’s efficient Hamiltonian Monte Carlo algorithms can sample from the posterior distribution of the model parameters.</em></p>
 <p><em>I could not have learned some of these steps by myself. An amazing resource to check out is <code>bayesrulesbook.com</code>; it will teach you so much about the Bayesian philosophy and techniques. If you curious about where I learned some of the steps below, check out Chapter 6!</em></p>
-<section id="step-1-install-and-load-necessary-packages" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-install-and-load-necessary-packages">Step 1: Install and load necessary packages</h3>
+<section id="load-packages-and-data" class="level3">
+<h3 class="anchored" data-anchor-id="load-packages-and-data">1. Load Packages and Data</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">CRAN =</span> <span class="st">"https://cloud.r-project.org"</span>))</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -272,14 +271,14 @@ Attaching package: 'bayesplot'</code></pre>
 </div>
 </div>
 </section>
-<section id="step-2-create-the-bayesian-linear-regression" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-create-the-bayesian-linear-regression">Step 2: Create the Bayesian Linear Regression</h3>
+<section id="create-the-bayesian-linear-regression" class="level3">
+<h3 class="anchored" data-anchor-id="create-the-bayesian-linear-regression">2. Create the Bayesian Linear Regression</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can model heart rate as a function of physical activity, age, weight, and gender</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  heart_rate <span class="sc">~</span> physical_activity <span class="sc">+</span> age <span class="sc">+</span> weight <span class="sc">+</span> gender,</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> data,</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">gaussian</span>(), <span class="co"># Assuming heart rate follows a Gaussian normal distribution</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">gaussian</span>(),</span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">set_prior</span>(<span class="st">"normal(0, 10)"</span>, <span class="at">class =</span> <span class="st">"b"</span>)) <span class="co"># set a normal prior of M = 0 and SD = 10</span></span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -311,14 +310,14 @@ Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
 Chain 1:  Elapsed Time: 0.046 seconds (Warm-up)
-Chain 1:                0.026 seconds (Sampling)
-Chain 1:                0.072 seconds (Total)
+Chain 1:                0.027 seconds (Sampling)
+Chain 1:                0.073 seconds (Total)
 Chain 1: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
 Chain 2: 
-Chain 2: Gradient evaluation took 1.5e-05 seconds
-Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.15 seconds.
+Chain 2: Gradient evaluation took 9e-06 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.09 seconds.
 Chain 2: Adjust your expectations accordingly!
 Chain 2: 
 Chain 2: 
@@ -335,15 +334,15 @@ Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 2: 
-Chain 2:  Elapsed Time: 0.045 seconds (Warm-up)
-Chain 2:                0.028 seconds (Sampling)
-Chain 2:                0.073 seconds (Total)
+Chain 2:  Elapsed Time: 0.041 seconds (Warm-up)
+Chain 2:                0.025 seconds (Sampling)
+Chain 2:                0.066 seconds (Total)
 Chain 2: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
 Chain 3: 
-Chain 3: Gradient evaluation took 1.5e-05 seconds
-Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.15 seconds.
+Chain 3: Gradient evaluation took 1.1e-05 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.11 seconds.
 Chain 3: Adjust your expectations accordingly!
 Chain 3: 
 Chain 3: 
@@ -360,15 +359,15 @@ Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 3: 
-Chain 3:  Elapsed Time: 0.053 seconds (Warm-up)
-Chain 3:                0.027 seconds (Sampling)
-Chain 3:                0.08 seconds (Total)
+Chain 3:  Elapsed Time: 0.043 seconds (Warm-up)
+Chain 3:                0.025 seconds (Sampling)
+Chain 3:                0.068 seconds (Total)
 Chain 3: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
 Chain 4: 
-Chain 4: Gradient evaluation took 6e-06 seconds
-Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.06 seconds.
+Chain 4: Gradient evaluation took 1.6e-05 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.16 seconds.
 Chain 4: Adjust your expectations accordingly!
 Chain 4: 
 Chain 4: 
@@ -385,9 +384,9 @@ Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 4: 
-Chain 4:  Elapsed Time: 0.046 seconds (Warm-up)
+Chain 4:  Elapsed Time: 0.047 seconds (Warm-up)
 Chain 4:                0.026 seconds (Sampling)
-Chain 4:                0.072 seconds (Total)
+Chain 4:                0.073 seconds (Total)
 Chain 4: </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print a summary of the fitted model, we can assess our estimates and our credible intervals</span></span>
@@ -402,29 +401,29 @@ Formula: heart_rate ~ physical_activity + age + weight + gender
 
 Regression Coefficients:
                   Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept            75.71      9.86    57.03    95.99 1.00     5179     2838
-physical_activity    -0.06      0.12    -0.29     0.17 1.00     6076     3315
-age                   0.05      0.05    -0.05     0.14 1.00     5294     2659
-weight                0.01      0.10    -0.18     0.19 1.00     5133     2853
-genderMale           -0.83      1.75    -4.21     2.60 1.00     5933     3091
+Intercept            75.49      9.66    56.36    94.11 1.00     5658     2916
+physical_activity    -0.06      0.12    -0.30     0.17 1.00     5615     3162
+age                   0.05      0.05    -0.04     0.14 1.00     5671     3058
+weight                0.01      0.10    -0.17     0.20 1.00     5710     2958
+genderMale           -0.86      1.78    -4.43     2.55 1.00     5389     2898
 
 Further Distributional Parameters:
       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sigma    10.70      0.64     9.56    12.06 1.00     4850     3158
+sigma    10.69      0.65     9.46    12.11 1.00     4934     2318
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
 scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
 </div>
-<p><em><strong>Important Note:</strong> Credible intervals crossing through 0 in Bayesian analysis indicate uncertainty or lack of evidence for a nonzero effect. They prompt careful consideration of the implications for your research question and the need for further investigation or interpretation in light of these findings.</em></p>
+<p><em><strong>Important Note:</strong> Credible intervals crossing through 0 in Bayesian analysis indicate uncertainty or lack of evidence for a nonzero effect. Also, a replication of this study may reveal different conclusions.</em></p>
 </section>
-<section id="step-3-data-visualization" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-data-visualization">Step 3: Data Visualization</h3>
+<section id="data-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="data-visualization">3. Data Visualization</h3>
 <ul>
-<li><p><em><strong>Trace Plots</strong>: Displays the sampled values of the parameters over iterations of the Markov Chain Monte Carlo (MCMC) sampling.</em></p>
+<li><p><em><strong>Trace Plots</strong>: Displays the sampled values of the parameters over iterations of the Markov Chain Monte Carlo sampling.</em></p>
 <ul>
-<li><em><strong>Interpretation</strong>: Look for a “fuzzy caterpillar” appearance where the chains mix well and cover the parameter space evenly. This suggests good mixing and convergence. If the chains show trends or don’t mix well, it indicates poor convergence and potential issues with the sampling process.</em></li>
+<li><em><strong>Interpretation</strong>: Look for a fuzzy caterpillar where the chains mix well and cover the parameter space evenly. This suggests good mixing and convergence.</em></li>
 </ul></li>
 </ul>
 <div class="cell">
@@ -460,11 +459,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <ul>
 <li><p><em><strong>Density Overlay Plot</strong>: Compares the density of the observed data to the density of the data generated by the model.</em></p>
 <ul>
-<li><em><strong>Interpretation</strong>: The observed data (usually shown in a solid line) should ideally lie within the range of the simulated data (shaded area or dashed lines). If the observed data fall outside this range, it may indicate that the model does not fit the data well.</em></li>
+<li><em><strong>Interpretation</strong>: The observed data (solid line) should ideally lie within the range of the simulated data (light blue lines). If the observed data fall outside this range, it may indicate that the model does not fit the data well.</em></li>
 </ul></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Posterior Predictive Checks (Density Overlay)</span></span>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Posterior Predictive Checks</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>pp_check_plot <span class="ot">&lt;-</span> <span class="fu">pp_check</span>(model, <span class="at">ndraws =</span> <span class="dv">100</span>)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(pp_check_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">

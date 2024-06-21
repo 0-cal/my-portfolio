@@ -1,6 +1,7 @@
 ---
 title: "Welcome to My Website"
 output: html_document
+toc: false
 ---
 
 ## 
