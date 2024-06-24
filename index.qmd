@@ -18,7 +18,7 @@ Explore my portfolio of R projects, where I showcase my data analysis, visualiza
 
 ## Learn R
 
-If you're new to R or part of my tutoring program, you've come to the right place. Here, I offer beginner-friendly tutorials and resources to help you master the basics of R programming.
+If you're part of my tutoring program or just new to R, you've come to the right place. Here, I offer beginner-friendly tutorials and resources to help you master the basics of R programming.
 
 ## Connect with Me
 

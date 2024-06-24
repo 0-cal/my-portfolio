@@ -190,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#building-an-arima-model-for-tuna-fisheries" id="toc-building-an-arima-model-for-tuna-fisheries" class="nav-link active" data-scroll-target="#building-an-arima-model-for-tuna-fisheries">Building an ARIMA Model for Tuna Fisheries</a>
+  <li><a href="#forecasting-tuna-fisheries" id="toc-forecasting-tuna-fisheries" class="nav-link active" data-scroll-target="#forecasting-tuna-fisheries">Forecasting Tuna Fisheries</a>
   <ul class="collapse">
   <li><a href="#install-and-load-packages" id="toc-install-and-load-packages" class="nav-link" data-scroll-target="#install-and-load-packages">1. Install and Load Packages</a></li>
   <li><a href="#plot-quantity-and-price" id="toc-plot-quantity-and-price" class="nav-link" data-scroll-target="#plot-quantity-and-price">2. Plot Quantity and Price</a></li>
@@ -200,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#evaluate-results" id="toc-evaluate-results" class="nav-link" data-scroll-target="#evaluate-results">6. Evaluate Results</a></li>
   <li><a href="#exploratory-data-analysis-with-different-species" id="toc-exploratory-data-analysis-with-different-species" class="nav-link" data-scroll-target="#exploratory-data-analysis-with-different-species">7. Exploratory Data Analysis with Different Species</a></li>
   <li><a href="#model-improvement" id="toc-model-improvement" class="nav-link" data-scroll-target="#model-improvement">8. Model Improvement</a></li>
-  <li><a href="#model-diagnostics" id="toc-model-diagnostics" class="nav-link" data-scroll-target="#model-diagnostics">9. Model Diagnostics</a></li>
+  <li><a href="#diagnostics" id="toc-diagnostics" class="nav-link" data-scroll-target="#diagnostics">9. Diagnostics</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -211,13 +211,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="building-an-arima-model-for-tuna-fisheries" class="level1">
-<h1>Building an ARIMA Model for Tuna Fisheries</h1>
-<p><em>This was a project I worked on in my Masters program in Environmental Psychology. It was one of my favorite projects and I felt like I learned a ton from the experience.</em></p>
+<section id="forecasting-tuna-fisheries" class="level1">
+<h1>Forecasting Tuna Fisheries</h1>
+<p><em>This project was part of a statistics course in environmental econometrics. My task was to develop a robust model to predict trends in environmental data, as well as write a paper that critically analyses the findings and offers potential contributing factors.</em></p>
 <p><em>The best resource I found that helped me understand the process of this analysis was in an online book (Gijón Air Pollution - An exercise of visualization and forecasting). Check out chapter 8 for ARIMA models! (</em><a href="https://bookdown.org/sergioberdiales/tfm-kschool_gijon_air_pollution/forecasting-models-arima.html" class="uri">https://bookdown.org/sergioberdiales/tfm-kschool_gijon_air_pollution/forecasting-models-arima.html</a>)</p>
 <p><em>Dataset retrieved from TCASHION on Kaggle (</em><a href="https://www.kaggle.com/datasets/tcashion/tokyo-wholesale-tuna-prices/code" class="uri">https://www.kaggle.com/datasets/tcashion/tokyo-wholesale-tuna-prices/code</a>)</p>
 <p><em>The Tsukiji fish market, which operated until 2018, was the largest wholesale fish market in the world, specializing in sashimi tunas.</em></p>
-<p><em>This dataset is ideal for econometric modeling.</em></p>
 <p><strong><em>Species Covered:</em></strong></p>
 <ul>
 <li><p><em>Bluefin Tuna</em></p></li>
@@ -476,7 +475,7 @@ Training set -0.01891516</code></pre>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Forecasting Quantity</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>fore_quan <span class="ot">&lt;-</span> <span class="fu">forecast</span>(fit_quan, <span class="at">h =</span> <span class="dv">12</span>) </span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(fore_quan) <span class="sc">+</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Forecasted Tuna Prices using ARIMA"</span>, <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Price"</span>) <span class="sc">+</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Forecasted Tuna Quantity using ARIMA"</span>, <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Price"</span>) <span class="sc">+</span></span>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
@@ -510,7 +509,7 @@ Training set -0.01891516</code></pre>
 </div>
 </div>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(residuals_q) <span class="sc">+</span> </span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Quanitity Residuals of ARIMA Model"</span>, <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Residuals"</span>) <span class="sc">+</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Quantity Residuals of ARIMA Model"</span>, <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Residuals"</span>) <span class="sc">+</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
@@ -845,8 +844,8 @@ Training set 0.002743469</code></pre>
 </div>
 </div>
 </section>
-<section id="model-diagnostics" class="level3">
-<h3 class="anchored" data-anchor-id="model-diagnostics">9. Model Diagnostics</h3>
+<section id="diagnostics" class="level3">
+<h3 class="anchored" data-anchor-id="diagnostics">9. Diagnostics</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot residuals</span></span>
 <span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(residuals_p1) <span class="sc">+</span> </span>
@@ -924,7 +923,6 @@ X-squared = 48.397, df = 20, p-value = 0.0003741</code></pre>
 <p><em>The updated price model shows a substantial reduction in error metrics and an increase in explanatory power, with the R-squared value improving from 0.657 to 0.737. This indicates that the model now explains approximately 73.72% of the variance in the price data, suggesting a more accurate and reliable model.</em></p>
 <p><em>The quantity model also shows improved performance, with lower error metrics and a higher R-squared value, now at 0.86291. This indicates that the model explains about 86.29% of the variance in the quantity data.</em></p>
 <p><em>The p-values for both tests are significantly lower than 0.05, indicating that there is still some autocorrelation in the residuals, suggesting that the models could be further refined. However, the current models still provide a substantial improvement over the initial attempts.</em></p>
-<p><em>I am definitely not satisfied with the results, but I really enjoyed working on this project. I learned a lot time series analysis using R and I can’t wait to design another model like this in the future.</em></p>
 
 
 </section>

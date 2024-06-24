@@ -1,14 +1,12 @@
-# Building an ARIMA Model for Tuna Fisheries
+# Forecasting Tuna Fisheries
 
-*This was a project I worked on in my Masters program in Environmental Psychology. It was one of my favorite projects and I felt like I learned a ton from the experience.*
+*This project was part of a statistics course in environmental econometrics. My task was to develop a robust model to predict trends in environmental data, as well as write a paper that critically analyses the findings and offers potential contributing factors.*
 
 *The best resource I found that helped me understand the process of this analysis was in an online book (Gijón Air Pollution - An exercise of visualization and forecasting). Check out chapter 8 for ARIMA models! (*<https://bookdown.org/sergioberdiales/tfm-kschool_gijon_air_pollution/forecasting-models-arima.html>)
 
 *Dataset retrieved from TCASHION on Kaggle (*<https://www.kaggle.com/datasets/tcashion/tokyo-wholesale-tuna-prices/code>)
 
 *The Tsukiji fish market, which operated until 2018, was the largest wholesale fish market in the world, specializing in sashimi tunas.*
-
-*This dataset is ideal for econometric modeling.*
 
 ***Species Covered:***
 
@@ -156,7 +154,7 @@ autoplot(fore_price) +
 # Forecasting Quantity
 fore_quan <- forecast(fit_quan, h = 12) 
 autoplot(fore_quan) +
-  labs(title = "Forecasted Tuna Prices using ARIMA", x = "Date", y = "Price") +
+  labs(title = "Forecasted Tuna Quantity using ARIMA", x = "Date", y = "Price") +
   theme_minimal()
 ```
 
@@ -177,7 +175,7 @@ autoplot(residuals_p) +
   theme_minimal()
 
 autoplot(residuals_q) + 
-  labs(title = "Quanitity Residuals of ARIMA Model", x = "Date", y = "Residuals") +
+  labs(title = "Quantity Residuals of ARIMA Model", x = "Date", y = "Residuals") +
   theme_minimal()
 
 # Calculate performance metrics
@@ -356,7 +354,7 @@ cat("MAE:", MAE_q1, "\n")
 cat("R-squared:", R_squared_q1, "\n")
 ```
 
-### 9. Model Diagnostics
+### 9. Diagnostics
 
 ```{r}
 # Plot residuals
@@ -387,5 +385,3 @@ Box.test(residuals_q1, lag = 20, type = "Ljung-Box")
 *The quantity model also shows improved performance, with lower error metrics and a higher R-squared value, now at 0.86291. This indicates that the model explains about 86.29% of the variance in the quantity data.*
 
 *The p-values for both tests are significantly lower than 0.05, indicating that there is still some autocorrelation in the residuals, suggesting that the models could be further refined. However, the current models still provide a substantial improvement over the initial attempts.*
-
-*I am definitely not satisfied with the results, but I really enjoyed working on this project. I learned a lot time series analysis using R and I can't wait to design another model like this in the future.*

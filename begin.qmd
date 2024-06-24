@@ -4,7 +4,7 @@
 
 *We all have our first "sense of horror" moment when we first encounter RStudio. For me, it was during my first year in a biostatistics class with my teacher, Tessa. She had us working on projects using RStudio during class, and those initial weeks were chaotic. We were all frustrated and terrified by what appeared on our screens---scary red errors seemed to pop up every second, and we felt like we were making no progress at all. However, Tessa remained by our side. She dedicated the beginning of every class to addressing the typical errors we encountered, guiding us toward smart tactics and helpful online resources.*
 
-*By the end of the semester, our perception of RStudio had completely changed. Tessa helped us realize that it wasn't some dark abyss from which no student returns; it was a powerful tool that made statistics easier to compute. We bid farewell to the daunting equations we were accustomed to and began computing statistical techniques at a rapid pace. To this day, every one of my classmates continues to use RStudio with excitement and without fear. This software is truly your best friend if you use it wisely.*
+*By the end of the semester, our perception of RStudio had completely changed. Tessa helped us realize that it wasn't some dark abyss from which no student returns; it was a powerful tool that made statistics easier to compute. We bid farewell to the daunting equations we were accustomed to and began computing statistical techniques at a rapid pace. To this day, every one of my classmates continues to use RStudio with excitement. This software is truly your best friend if you use it wisely.*
 
 ## Learning R
 
@@ -16,7 +16,7 @@
 
 4.  *Tidying Data*
 
-5.  *Building Functions*
+5.  *Functions*
 
 6.  *Data Visualization*
 
@@ -32,13 +32,13 @@
 
 -   ***RStudio Community**: An active forum where you can ask questions.*
 
--   ***R-Bloggers**:* *A fantastic resource for tutorials, tips, and tricks from the R community.*
+-   ***R-Bloggers**:* *A resource for tutorials, tips, and tricks from the R community.*
 
 -   ***YouTube**: Useful tutorials for visual learners.*
 
 -   ***Reddit**: A community where everyone deals with problems using R. Visit Reddit to view a wide range of questions and answers from people around the globe.*
 
--   ***Generative AI**: Appropriate in certain circumstances. Use with caution, as AI can occasionally produce incorrect solutions to your code.*
+-   ***Generative AI**: An easy tool that can pick out the flaw in your code and guide you toward a solution. However, I recommend you use with caution, as AI can occasionally produce unreliable solutions to your code.*
 
 *By leveraging these resources, you can make your learning journey with R more efficient and less daunting.*
 
@@ -46,25 +46,35 @@
 
 *R packages are collections of functions, data, and documentation that extend the capabilities of base R, making it easier and more efficient to perform a wide range of tasks.*
 
--   **Simplify Complex Tasks**
+-   *Simplify Complex Tasks*
 
-    -   *Packages can simplify complex tasks into manageable functions. For instance, data visualization with `ggplot2` or data manipulation with `dplyr` breaks down intricate processes into straightforward commands.*
+-   *Improve Data Analysis*
 
--   **Enhance Data Analysis**
+-   *Improve Data Visualization*
 
-    -   *Packages like `tidyverse` offer tools for data import, tidying, transformation, visualization, and modeling. These integrated tools follow a consistent philosophy, making data analysis more intuitive.*
+-   *Streamline Workflow*
 
--   **Improve Data Visualization**
+*Here are some of the most common or important packages in R used in the social sciences:*
 
-    -   *Packages such as `ggplot2`, `plotly`, and `shiny` help create advanced and interactive data visualizations. This makes it easier to explore and communicate data insights.*
+-   ***`ggplot2`:** Customizable plots*
 
--   **Streamline Workflow**
+-   ***`dplyr`:** Data manipulation*
 
-    -   *Packages like `knitr` and `rmarkdown` allow for dynamic report generation, integrating code and its output in a single document. This streamlines the workflow from data analysis to reporting.*
+-   ***`tidyr`:** Cleaning data*
 
--   **Access Vast Amounts of Data**
+-   ***`stringr`:** String manipulation*
 
-    -   *Packages like `dplyr` and `tidyr` help in efficiently handling and processing large datasets. This is particularly useful for big data applications where performance is crucial.*
+-   ***`lubridate`:** Dates and times*
+
+-   ***`psych`:** Psychometrics and psychological research*
+
+-   ***`lme4`:** Linear and generalized linear mixed-effects models*
+
+-   ***`afex`:** Factorial analysis*
+
+-   ***`bayesplot`**or**`brms`:** Bayesian statistics*
+
+*The **`tidyverse`** is a collection of R packages designed for data science. The core packages included in tidyverse are **`ggplot2`, `tidyr`, `readr`, `dplyr`,** and**`stringr`.** You can also download these packages separately.*
 
 ### 3. Reading data.
 

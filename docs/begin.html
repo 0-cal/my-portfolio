@@ -215,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Fear Not!</h1>
 <p><em>If you’re new to RStudio, you’ve come to the right place. Beyond my advanced projects, I’ve created this beginner-friendly page to share some basic computations. Whether you’re an employer or a colleague visiting, I’m delighted to have your interest.</em></p>
 <p><em>We all have our first “sense of horror” moment when we first encounter RStudio. For me, it was during my first year in a biostatistics class with my teacher, Tessa. She had us working on projects using RStudio during class, and those initial weeks were chaotic. We were all frustrated and terrified by what appeared on our screens—scary red errors seemed to pop up every second, and we felt like we were making no progress at all. However, Tessa remained by our side. She dedicated the beginning of every class to addressing the typical errors we encountered, guiding us toward smart tactics and helpful online resources.</em></p>
-<p><em>By the end of the semester, our perception of RStudio had completely changed. Tessa helped us realize that it wasn’t some dark abyss from which no student returns; it was a powerful tool that made statistics easier to compute. We bid farewell to the daunting equations we were accustomed to and began computing statistical techniques at a rapid pace. To this day, every one of my classmates continues to use RStudio with excitement and without fear. This software is truly your best friend if you use it wisely.</em></p>
+<p><em>By the end of the semester, our perception of RStudio had completely changed. Tessa helped us realize that it wasn’t some dark abyss from which no student returns; it was a powerful tool that made statistics easier to compute. We bid farewell to the daunting equations we were accustomed to and began computing statistical techniques at a rapid pace. To this day, every one of my classmates continues to use RStudio with excitement. This software is truly your best friend if you use it wisely.</em></p>
 <section id="learning-r" class="level2">
 <h2 class="anchored" data-anchor-id="learning-r">Learning R</h2>
 <ol type="1">
@@ -223,7 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><em>Packages</em></p></li>
 <li><p><em>Reading Data</em></p></li>
 <li><p><em>Tidying Data</em></p></li>
-<li><p><em>Building Functions</em></p></li>
+<li><p><em>Functions</em></p></li>
 <li><p><em>Data Visualization</em></p></li>
 </ol>
 <p><img src="images/IMG_5316-02.png" class="img-fluid"></p>
@@ -234,10 +234,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><em><strong>The Help Center in RStudio</strong>: Located in the bottom right pane of your window, the Help Center provides detailed explanations of each command in R. You can learn about the purpose of each function, as well as their sub-commands and properties. You can also type any command with the <code>?</code> symbol in front of it and it will direct you to the same window (e.g., <code>?plot()</code>).</em></p></li>
 <li><p><em><strong>The R Project Website</strong>: Provides comprehensive documentation and manuals.</em></p></li>
 <li><p><em><strong>RStudio Community</strong>: An active forum where you can ask questions.</em></p></li>
-<li><p><em><strong>R-Bloggers</strong>:</em> <em>A fantastic resource for tutorials, tips, and tricks from the R community.</em></p></li>
+<li><p><em><strong>R-Bloggers</strong>:</em> <em>A resource for tutorials, tips, and tricks from the R community.</em></p></li>
 <li><p><em><strong>YouTube</strong>: Useful tutorials for visual learners.</em></p></li>
 <li><p><em><strong>Reddit</strong>: A community where everyone deals with problems using R. Visit Reddit to view a wide range of questions and answers from people around the globe.</em></p></li>
-<li><p><em><strong>Generative AI</strong>: Appropriate in certain circumstances. Use with caution, as AI can occasionally produce incorrect solutions to your code.</em></p></li>
+<li><p><em><strong>Generative AI</strong>: An easy tool that can pick out the flaw in your code and guide you toward a solution. However, I recommend you use with caution, as AI can occasionally produce unreliable solutions to your code.</em></p></li>
 </ul>
 <p><em>By leveraging these resources, you can make your learning journey with R more efficient and less daunting.</em></p>
 </section>
@@ -245,27 +245,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="packages">2. Packages</h3>
 <p><em>R packages are collections of functions, data, and documentation that extend the capabilities of base R, making it easier and more efficient to perform a wide range of tasks.</em></p>
 <ul>
-<li><p><strong>Simplify Complex Tasks</strong></p>
-<ul>
-<li><em>Packages can simplify complex tasks into manageable functions. For instance, data visualization with <code>ggplot2</code> or data manipulation with <code>dplyr</code> breaks down intricate processes into straightforward commands.</em></li>
-</ul></li>
-<li><p><strong>Enhance Data Analysis</strong></p>
-<ul>
-<li><em>Packages like <code>tidyverse</code> offer tools for data import, tidying, transformation, visualization, and modeling. These integrated tools follow a consistent philosophy, making data analysis more intuitive.</em></li>
-</ul></li>
-<li><p><strong>Improve Data Visualization</strong></p>
-<ul>
-<li><em>Packages such as <code>ggplot2</code>, <code>plotly</code>, and <code>shiny</code> help create advanced and interactive data visualizations. This makes it easier to explore and communicate data insights.</em></li>
-</ul></li>
-<li><p><strong>Streamline Workflow</strong></p>
-<ul>
-<li><em>Packages like <code>knitr</code> and <code>rmarkdown</code> allow for dynamic report generation, integrating code and its output in a single document. This streamlines the workflow from data analysis to reporting.</em></li>
-</ul></li>
-<li><p><strong>Access Vast Amounts of Data</strong></p>
-<ul>
-<li><em>Packages like <code>dplyr</code> and <code>tidyr</code> help in efficiently handling and processing large datasets. This is particularly useful for big data applications where performance is crucial.</em></li>
-</ul></li>
+<li><p><em>Simplify Complex Tasks</em></p></li>
+<li><p><em>Improve Data Analysis</em></p></li>
+<li><p><em>Improve Data Visualization</em></p></li>
+<li><p><em>Streamline Workflow</em></p></li>
 </ul>
+<p><em>Here are some of the most common or important packages in R used in the social sciences:</em></p>
+<ul>
+<li><p><em><strong><code>ggplot2</code>:</strong> Customizable plots</em></p></li>
+<li><p><em><strong><code>dplyr</code>:</strong> Data manipulation</em></p></li>
+<li><p><em><strong><code>tidyr</code>:</strong> Cleaning data</em></p></li>
+<li><p><em><strong><code>stringr</code>:</strong> String manipulation</em></p></li>
+<li><p><em><strong><code>lubridate</code>:</strong> Dates and times</em></p></li>
+<li><p><em><strong><code>psych</code>:</strong> Psychometrics and psychological research</em></p></li>
+<li><p><em><strong><code>lme4</code>:</strong> Linear and generalized linear mixed-effects models</em></p></li>
+<li><p><em><strong><code>afex</code>:</strong> Factorial analysis</em></p></li>
+<li><p><em><strong><code>bayesplot</code></strong>or<strong><code>brms</code>:</strong> Bayesian statistics</em></p></li>
+</ul>
+<p><em>The <strong><code>tidyverse</code></strong> is a collection of R packages designed for data science. The core packages included in tidyverse are <strong><code>ggplot2</code>, <code>tidyr</code>, <code>readr</code>, <code>dplyr</code>,</strong> and<strong><code>stringr</code>.</strong> You can also download these packages separately.</em></p>
 </section>
 <section id="reading-data." class="level3">
 <h3 class="anchored" data-anchor-id="reading-data.">3. Reading data.</h3>
@@ -864,7 +861,7 @@ Number of Fisher Scoring iterations: 8</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//Rtmpb4xYxg/downloaded_packages</code></pre>
+    /var/folders/k3/v39j6g_x4bv7mv_xq03986d00000gn/T//RtmpMEnsi6/downloaded_packages</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
