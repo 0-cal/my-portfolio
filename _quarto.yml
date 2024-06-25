@@ -26,6 +26,8 @@ website:
         menu: 
         - text: "For Beginners"
           href: begin.qmd
+        - text: "Interpretations of Anova"
+          href: modelsel.qmd
         - text: "Building Websites (coming soon)"
         - text: "Building Packages (coming soon)"
     sidebar: false
