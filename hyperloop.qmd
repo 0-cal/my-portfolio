@@ -4,6 +4,8 @@ title: "Measuring Perceptions of the Hyperloop"
 
 # Project Description
 
+![](images/Mock-up1-e1667564800949-edited-1.jpg)
+
 *My primary research objective at Hardt Hyperloop was to investigate user perceptions of a simulated hyperloop trip. The company aimed to determine the appropriate dimensions of the hyperloop capsule before investing extensively in materials. However, since the company had not yet developed a hyperloop accessible to the public, predicting how people would feel inside the capsule was challenging. To address this, our team designed a real-life hyperloop experience---a wooden mock-up capsule equipped with seating and accompanied by a VR headset to illustrate the remaining characteristics of the hyperloop interior.*
 
 *We recruited residents in Groningen to participate in the VR simulation and complete questionnaires. Four main constructs---technology acceptance, perceived safety, perceived comfort, and claustrophobia---were identified for latent class analysis. This model will be instrumental in classifying users in future simulated hyperloop studies.*

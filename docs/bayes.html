@@ -135,6 +135,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./about.html">
  <span class="dropdown-text">My Resume</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./active.html">
+ <span class="dropdown-text">Climate Activism</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -168,6 +172,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="./begin.html">
  <span class="dropdown-text">For Beginners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./rconcept.html">
+ <span class="dropdown-text">Essential Statistical Concepts</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./modelsel.html">
@@ -295,8 +303,8 @@ Attaching package: 'bayesplot'</code></pre>
 <pre><code>
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 Chain 1: 
-Chain 1: Gradient evaluation took 3.3e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.33 seconds.
+Chain 1: Gradient evaluation took 6.3e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.63 seconds.
 Chain 1: Adjust your expectations accordingly!
 Chain 1: 
 Chain 1: 
@@ -313,15 +321,15 @@ Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
-Chain 1:  Elapsed Time: 0.043 seconds (Warm-up)
-Chain 1:                0.022 seconds (Sampling)
-Chain 1:                0.065 seconds (Total)
+Chain 1:  Elapsed Time: 0.045 seconds (Warm-up)
+Chain 1:                0.024 seconds (Sampling)
+Chain 1:                0.069 seconds (Total)
 Chain 1: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
 Chain 2: 
-Chain 2: Gradient evaluation took 9e-06 seconds
-Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.09 seconds.
+Chain 2: Gradient evaluation took 1e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.1 seconds.
 Chain 2: Adjust your expectations accordingly!
 Chain 2: 
 Chain 2: 
@@ -338,15 +346,15 @@ Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 2: 
-Chain 2:  Elapsed Time: 0.044 seconds (Warm-up)
-Chain 2:                0.031 seconds (Sampling)
-Chain 2:                0.075 seconds (Total)
+Chain 2:  Elapsed Time: 0.042 seconds (Warm-up)
+Chain 2:                0.027 seconds (Sampling)
+Chain 2:                0.069 seconds (Total)
 Chain 2: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
 Chain 3: 
-Chain 3: Gradient evaluation took 6e-06 seconds
-Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.06 seconds.
+Chain 3: Gradient evaluation took 8e-06 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.08 seconds.
 Chain 3: Adjust your expectations accordingly!
 Chain 3: 
 Chain 3: 
@@ -363,15 +371,15 @@ Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 3: 
-Chain 3:  Elapsed Time: 0.041 seconds (Warm-up)
-Chain 3:                0.026 seconds (Sampling)
-Chain 3:                0.067 seconds (Total)
+Chain 3:  Elapsed Time: 0.049 seconds (Warm-up)
+Chain 3:                0.029 seconds (Sampling)
+Chain 3:                0.078 seconds (Total)
 Chain 3: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
 Chain 4: 
-Chain 4: Gradient evaluation took 6e-06 seconds
-Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.06 seconds.
+Chain 4: Gradient evaluation took 7e-06 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.07 seconds.
 Chain 4: Adjust your expectations accordingly!
 Chain 4: 
 Chain 4: 
@@ -388,9 +396,9 @@ Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 4: 
-Chain 4:  Elapsed Time: 0.043 seconds (Warm-up)
-Chain 4:                0.027 seconds (Sampling)
-Chain 4:                0.07 seconds (Total)
+Chain 4:  Elapsed Time: 0.047 seconds (Warm-up)
+Chain 4:                0.025 seconds (Sampling)
+Chain 4:                0.072 seconds (Total)
 Chain 4: </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print a summary of the fitted model, we can assess our estimates and our credible intervals</span></span>
@@ -405,15 +413,15 @@ Formula: heart_rate ~ physical_activity + age + weight + gender
 
 Regression Coefficients:
                   Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept            75.48      9.51    56.87    94.65 1.00     6943     3199
-physical_activity    -0.05      0.12    -0.28     0.17 1.00     5895     3057
-age                   0.05      0.05    -0.05     0.14 1.00     5824     2797
-weight                0.01      0.10    -0.18     0.19 1.00     5780     3384
-genderMale           -0.90      1.74    -4.34     2.46 1.00     5780     2964
+Intercept            75.58      9.77    56.75    94.34 1.00     6425     3275
+physical_activity    -0.06      0.12    -0.29     0.17 1.00     5619     3328
+age                   0.05      0.05    -0.04     0.14 1.00     5681     2843
+weight                0.01      0.10    -0.18     0.20 1.00     6231     3241
+genderMale           -0.83      1.72    -4.14     2.51 1.00     5424     3195
 
 Further Distributional Parameters:
       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sigma    10.69      0.65     9.52    12.07 1.00     5621     3070
+sigma    10.68      0.63     9.52    12.03 1.00     4866     2718
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential

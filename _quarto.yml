@@ -12,6 +12,8 @@ website:
         menu: 
           - text: "My Resume"
             href: about.qmd
+          - text: "Climate Activism"
+            href: active.qmd
       - text: "My Projects" 
         menu: 
         - text: "Latent Class Analysis"
@@ -26,6 +28,8 @@ website:
         menu: 
         - text: "For Beginners"
           href: begin.qmd
+        - text: "Essential Statistical Concepts"
+          href: rconcept.qmd
         - text: "Interpretations of Anova"
           href: modelsel.qmd
         - text: "Building Websites (coming soon)"
