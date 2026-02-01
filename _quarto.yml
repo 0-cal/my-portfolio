@@ -12,38 +12,37 @@ website:
         menu: 
           - text: "My Resume"
             href: about.qmd
-          - text: "Climate Activism"
+          - text: "Political & Environmental Activism"
             href: active.qmd
       - text: "My Projects" 
         menu: 
-        - text: "Latent Class Analysis"
-          href: hyperloop.qmd
         - text: "Environmental Econometrics"
           href: timeseries.qmd          
-        - text: "Hierarchical Model"
-          href: multilevel.qmd
         - text: "Bayesian Linear Regression"
           href: bayes.qmd
-      - text: "Learn R"
+      - text: "Help"
         menu: 
-        - text: "For Beginners"
-          href: begin.qmd
         - text: "Essential Statistical Concepts"
           href: rconcept.qmd
         - text: "Interpretations of Anova"
           href: modelsel.qmd
-        - text: "Building Websites (coming soon)"
-        - text: "Building Packages (coming soon)"
     sidebar: false
     tools:
       - icon: github
         href: https://github.com/0-cal/my-portfolio
   page-footer:
     right: "Built with [Quarto](https://quarto.org/)"
-    left: "&copy; Copyright 2024, Owen Callahan"
+    left: "&copy; Copyright 2026, Owen Callahan"
 
 format:
   html:
+    backgroundcolor: "lightgreen"
+#   fontcolor: "black"
+#   linkcolor: "darkgreen"
+#   mainfont: "sarif"
+#   max-width: (width of the main text area of the pages)
+#   fontsize: (base font size for website)
+#   linestretch: (distance between lines of text)
     theme: cosmo
     css: styles.css
     toc: true

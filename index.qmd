@@ -16,10 +16,10 @@ Hi there! I'm Owen, a passionate data enthusiast, R programmer, and lifelong lea
 
 Explore my portfolio of R projects, where I showcase my data analysis, visualization, and programming skills.
 
-## Learn R
+## Help
 
-If you're part of my tutoring program or just new to R, you've come to the right place. Here, I offer beginner-friendly tutorials and resources to help you master the basics of R programming.
+If you're part of the R course, you can find additional tips and resources to help you create your own personalized website.
 
 ## Connect with Me
 
-Interested in collaborating on a project, discussing data science topics, or just saying hello? Don't hesitate to reach out! Connect with me via email at owen11callahan\@gmail.com
+Interested in collaborating on a project, discussing data science topics, or just saying hello? Don't hesitate to reach out! Connect with me via email at owen.callahan\@uni-bielefeld.de
