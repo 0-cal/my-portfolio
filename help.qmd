@@ -1,0 +1,86 @@
+---
+title: "Help Page"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-tools: true
+    code-fold: false
+    smooth-scroll: true
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# How Quarto Websites Actually Work
+
+A Quarto website has:
+
+-   `_quarto.yml` → controls the entire website
+-   `.qmd` files → individual pages
+-   `images` folder → store images
+-   `docs` folder → Github pages access (do not touch the docs folder)
+
+If something changes across the whole website, edit `_quarto.yml`. If
+something changes on one page only, edit that page’s YAML.
+
+------------------------------------------------------------------------
+
+# `_quarto.yml`
+
+Below is an example of a `_quarto.yml`.
+
+project: type: website output-dir: docs
+
+website: title: "Your Name" site-url: https://yourusername.github.io/
+navbar: left: - text: Home file: index.qmd - text: Research file:
+research.qmd - text: Teaching file: teaching.qmd - text: Blog href:
+blog.qmd right: - icon: github href: https://github.com/YOURUSERNAME -
+icon: linkedin href: https://linkedin.com/in/YOURNAME page-footer: left:
+"© 2026 Your Name" right: "Built with Quarto"
+
+format: html: theme: light: cosmo dark: darkly css: styles.css toc: true
+toc-location: right number-sections: true code-copy: true code-tools:
+true
+
+## Important Rules
+
+-   YAML indentation MUST use spaces, not tabs.
+-   Indentation defines hierarchy.
+-   A misplaced space will cause errors for your site.
+
+If your site fails to render, check indentation first.
+
+------------------------------------------------------------------------
+
+# Page-Level YAML (Inside Each `.qmd`)
+
+Every page can override global settings.
+
+Useful advanced options:
+
+-   `draft: true` → hides page from rendering
+-   `freeze: auto` → avoids re-running heavy computations
+-   `page-layout: full` → removes side margins
+-   `page-layout: article` → default blog style
+
+------------------------------------------------------------------------
+
+# Images
+
+Always store images in the images folder.
+
+Basic:
+
+Resize:
+
+Add caption + label for cross-referencing:
+
+Now reference it later:
+
+See Figure for results.
+
+Side-by-side images:
+
+------------------------------------------------------------------------

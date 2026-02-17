@@ -1,24 +1,24 @@
 ---
-title: "My Resume"
+title: "My CV"
+subtitle: "Owen Callahan | PhD in Applied Statistics"
+output: html_document
+toc: true
+
+image: images/IMG_8998-01.JPG
+about: 
+ template: broadside
+ image-shape: round
 ---
 
-![](images/IMG_8998-01.JPG)
-
-# Owen Callahan
-
-*I am passionate about research and exploring the intersections of psychology, environmental science, econometrics, and more. My curiosity drives me to tackle a wide range of unique questions, always seeking to uncover new insights and solutions.*
-
 ## Education
+
+### PhD Applied Statistics, Bielefeld University
+
+10/2024 - present
 
 ### MSc Environmental Psychology, University of Groningen
 
 09/2021 - 02/2023
-
--   *Utilized theories from social, cognitive, and developmental psychology to assess the interplay between humans and the built and natural world*
-
--   *Designed and tested interventions in real-world applications*
-
--   *Learned advanced multilevel statistical techniques to analyze and understand complex social and behavioral systems*
 
 ### BS Psychology and Statistics Minor, Virginia Polytech Institute and State University
 
@@ -68,69 +68,33 @@ title: "My Resume"
 
 ### Software
 
-*R, Atlas, SPSS, Microsoft Office*
+*R, NetLogo, Atlas, SPSS, Microsoft Office*
 
-### Statistics
+### Certifications
 
-*Set Theory and Logic, Methods of Regression, Item Response Theory, Latent Class Analysis, Hierarchical Modelling, Econometrics, Bayesian Statistics, Time Series Analysis, Contingency Table Analysis*
+**R Programming**
 
-### Psychology
+-   Johns Hopkins Bloomberg School of Public Health. 04/2023 - 03/2024
 
-*Cognitive, Social, Developmental, Clinical, Behavioral, Humanistic, Psychometrics*
+**Mathematical Biostatistics**
 
-### Environmental Science
+-   Johns Hopkins Bloomberg School of Public Health. 09/2023 - 11/2023
 
-*Geoscience, Geology, Meteorology, Climate Change, Ecosystems, Sustainable Systems,*
+-   
 
-## Certifications
-
-### R Programming (Coursera Specialization)
-
-**Johns Hopkins Bloomberg School of Public Health**
-
-04/2023 - 03/2024
-
--   Building Data Visualization Tools
-
--   Building R Packages
-
--   Advanced R Programming
-
--   The R Programming Environment
-
-### Mathematical Biostatistics (Coursera Specialization)
-
-**Johns Hopkins Bloomberg School of Public Health**
-
-09/2023 - 11/2023
-
--   Probability Mass and Density Functions
-
--   Bayesian Statistics
-
--   Bootstrapping Algorithms
-
--   Geometric Means
-
-![](images/IMG_9218.JPG)
-
-## Professional Presentations, Awards, and Conferences
-
-**Professional Presentations**
-
--   *Callahan, O., Eick, A., Takemoto-Jennings, R., & Geller, E. S. (2019, February). Gratitude from student to professor: Evaluating the impact of thanking a professor. Poster presented at the Annual North Carolina Association for Behavior Analysis, Winston-Salem, NC.*
-
--   *Callahan, O., Eick, A., Takemoto-Jennings, R., & Geller, E. S. (2019, March). The impact of showing gratitude in the classroom: Evaluating students' change in their mood-states. Poster presented at the Mid-Atlantic Undergraduate Research Conference, Blacksburg, VA.*
+## Awards, and Conferences
 
 **Awards**
 
--   *Dean's List*
+-   *Dean's List (VT)*
 
--   *Beyond Boundaries Scholar*
+-   *Beyond Boundaries Scholar (VT)*
 
--   *Summa Cum Laude*
+-   *Summa Cum Laude (VT) and (UG)*
 
 **Conferences**
+
+-   Social Simulation Conference. 08/2025 Delft, Netherlands.
 
 -   UniC Summit. 07/2021 Quebec, Canada
 
@@ -139,9 +103,3 @@ title: "My Resume"
 -   Mid-Atlantic Undergraduate Research Conference. 04/2019 Blacksburg, VA, USA
 
 -   North Carolina Applied Behavioral Association. 02/2019 Winston-Salem, NC, USA
-
-## Contact Information
-
-Email: owen11callahan\@gmail.com
-
-## 

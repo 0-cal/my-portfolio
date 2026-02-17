@@ -1,20 +1,23 @@
 ---
 title: "Welcome to My Website"
+subtitle: "Owen Callahan | PhD in Applied Statistics"
 output: html_document
 toc: false
+
+image: images/IMG_7437 copy-02.JPG
+about: 
+ template: marquee
+ image-shape: rounded
+
 ---
-
-## 
-
-![](images/IMG_7437%20copy-02.JPG)
 
 ## About Me
 
-Hi there! I'm Owen, a passionate data enthusiast, R programmer, and lifelong learner. Here you'll find information about my background, skills, and education. Whether you're a potential employer, colleague, or collaborator, I'm excited to share my journey with you.
+Hi there! I'm Owen, a passionate researcher, R programmer, and lifelong learner. Here you'll find information about my background, skills, and education. Whether you're a potential employer, colleague, or collaborator, I'm excited to share my journey with you.
 
 ## Dive into My R Projects
 
-Explore my portfolio of R projects, where I showcase my data analysis, visualization, and programming skills.
+Explore my portfolio of R projects.
 
 ## Help
 

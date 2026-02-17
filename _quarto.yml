@@ -16,27 +16,23 @@ website:
             href: active.qmd
       - text: "My Projects" 
         menu: 
-        - text: "Environmental Econometrics"
-          href: timeseries.qmd          
-        - text: "Bayesian Linear Regression"
-          href: bayes.qmd
+        - text: "Bootstraping Example"
+          href: proj1.qmd          
       - text: "Help"
-        menu: 
-        - text: "Essential Statistical Concepts"
-          href: rconcept.qmd
-        - text: "Interpretations of Anova"
-          href: modelsel.qmd
+        href: help.qmd
     sidebar: false
     tools:
       - icon: github
         href: https://github.com/0-cal/my-portfolio
+      - icon: linkedin
+#       href: enter link
   page-footer:
     right: "Built with [Quarto](https://quarto.org/)"
     left: "&copy; Copyright 2026, Owen Callahan"
 
 format:
   html:
-    backgroundcolor: "lightgreen"
+#   backgroundcolor: "blue"
 #   fontcolor: "black"
 #   linkcolor: "darkgreen"
 #   mainfont: "sarif"
@@ -44,7 +40,6 @@ format:
 #   fontsize: (base font size for website)
 #   linestretch: (distance between lines of text)
     theme: cosmo
-    css: styles.css
     toc: true
 
 editor: source
