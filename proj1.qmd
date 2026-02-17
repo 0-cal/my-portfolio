@@ -17,7 +17,7 @@ prediction error) to sample estimates and allows estimation of the
 sampling distribution of almost any statistic using simulation.
 
 I use rnorm function (randomize + normal distribution) to generate a
-practice set of data
+practice set of data.
 
 Fit model
 

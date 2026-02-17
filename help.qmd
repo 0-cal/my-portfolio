@@ -8,79 +8,132 @@ format:
     code-tools: true
     code-fold: false
     smooth-scroll: true
-editor: 
-  markdown: 
-    wrap: 72
+about: 
+ template: marquee
+
 ---
 
-# How Quarto Websites Actually Work
+# Project Files
 
-A Quarto website has:
+A Quarto website
+has:
 
--   `_quarto.yml` → controls the entire website
--   `.qmd` files → individual pages
--   `images` folder → store images
--   `docs` folder → Github pages access (do not touch the docs folder)
+-   `_quarto.yml`
+    → controls the
+    entire website
+-   `.qmd` files →
+    individual
+    pages
+-   `images`
+    folder → store
+    images
+-   `docs` folder
+    → Github pages
+    access (do not
+    touch the docs
+    folder)
+-   `styles.css` →
+    styling
+    specific pages
 
-If something changes across the whole website, edit `_quarto.yml`. If
-something changes on one page only, edit that page’s YAML.
+If something
+changes across the
+whole website,
+edit
+`_quarto.yml`. If
+something changes
+on one page only,
+edit that page’s
+YAML.
 
-------------------------------------------------------------------------
+------------------
 
-# `_quarto.yml`
+# YAML
 
-Below is an example of a `_quarto.yml`.
+Every page can
+override global
+settings.
 
-project: type: website output-dir: docs
+YAML indentation
+MUST use spaces,
+not tabs. -
+Indentation
+defines
+hierarchy. - A
+misplaced space
+will cause errors
+for your site.
 
-website: title: "Your Name" site-url: https://yourusername.github.io/
-navbar: left: - text: Home file: index.qmd - text: Research file:
-research.qmd - text: Teaching file: teaching.qmd - text: Blog href:
-blog.qmd right: - icon: github href: https://github.com/YOURUSERNAME -
-icon: linkedin href: https://linkedin.com/in/YOURNAME page-footer: left:
-"© 2026 Your Name" right: "Built with Quarto"
+Useful advanced
+options:
 
-format: html: theme: light: cosmo dark: darkly css: styles.css toc: true
-toc-location: right number-sections: true code-copy: true code-tools:
-true
+-   `draft: true`
+    → hides page
+    from rendering
+-   `freeze: auto`
+    → avoids
+    re-running
+    heavy
+    computations
+-   `page-layout: full`
+    → removes side
+    margins
+-   `page-layout: article`
+    → default blog
+    style
 
-## Important Rules
+------------------
 
--   YAML indentation MUST use spaces, not tabs.
--   Indentation defines hierarchy.
--   A misplaced space will cause errors for your site.
+# Styles
 
-If your site fails to render, check indentation first.
+To create the CSS
+File, click File →
+New File → Text
+File, and name the
+file however you
+like but make sure
+it ends with
+styles.css like
+the one in Owen's
+template.
 
-------------------------------------------------------------------------
+To link the
+styles.css file to
+a page of your
+choice, go to the
+yml code at the
+top of qmd file
+and paste the name
+of your css file
 
-# Page-Level YAML (Inside Each `.qmd`)
+``` r
+format:
+  html:
+    css: cv-styles.css
+```
 
-Every page can override global settings.
+To learn how the
+css code works you
+can visit this
+youtube link:
 
-Useful advanced options:
+[Customize
+appearance with
+CSS/SCSS](https://www.youtube.com/watch?v=pAN2Hiq0XGs)
 
--   `draft: true` → hides page from rendering
--   `freeze: auto` → avoids re-running heavy computations
--   `page-layout: full` → removes side margins
--   `page-layout: article` → default blog style
-
-------------------------------------------------------------------------
+------------------
 
 # Images
 
-Always store images in the images folder.
-
-Basic:
-
-Resize:
-
-Add caption + label for cross-referencing:
-
-Now reference it later:
-
-See Figure for results.
-
-Side-by-side images:
-
-------------------------------------------------------------------------
+Always store
+images in the
+images folder.\
+To add an image,
+the easiest way is
+to first make sure
+you are in visual
+mode, then click
+insert, then click
+Figure/Image and
+chose the file on
+your computer.

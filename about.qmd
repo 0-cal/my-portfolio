@@ -1,105 +1,136 @@
 ---
-title: "My CV"
-subtitle: "Owen Callahan | PhD in Applied Statistics"
-output: html_document
-toc: true
-
-image: images/IMG_8998-01.JPG
-about: 
- template: broadside
- image-shape: round
+title: "Curriculum Vitae"
+page-layout: full
+toc: false
+format:
+  html:
+    theme: cosmo
+    css: cv-styles.css
+    page-layout: full
 ---
+
+::: cv-container
+# Owen Callahan
+
+**PhD in Applied Statistics**\
+Bielefeld University
+
+------------------------------------------------------------------------
 
 ## Education
 
-### PhD Applied Statistics, Bielefeld University
+::: cv-item
+::: cv-left
+**PhD Applied Statistics**\
+Bielefeld University
+:::
 
-10/2024 - present
+::: cv-right
+10/2024 – Present
+:::
+:::
 
-### MSc Environmental Psychology, University of Groningen
+::: cv-item
+::: cv-left
+**MSc Environmental Psychology**\
+University of Groningen
+:::
 
-09/2021 - 02/2023
+::: cv-right
+09/2021 – 02/2023
+:::
+:::
 
-### BS Psychology and Statistics Minor, Virginia Polytech Institute and State University
+::: cv-item
+::: cv-left
+**BS Psychology (Minor: Statistics)**\
+Virginia Polytechnic Institute and State University
+:::
 
-09/2017 - 06/2021
+::: cv-right
+09/2017 – 06/2021
+:::
+:::
+
+------------------------------------------------------------------------
 
 ## Professional Experience
 
-### UX Researcher at Hardt Hyperloop, Groningen, NL
+::: cv-item
+::: cv-left
+**UX Researcher**\
+Hardt Hyperloop, Groningen, NL
+:::
 
-04/2022 - 11/2022
+::: cv-right
+04/2022 – 11/2022
+:::
+:::
 
-*Research lab focused on studying the user perceptions of a simulated hyperloop train, aimed at promoting sustainable transportation usage.*
+-   Designed psychometric instruments and latent-class models\
+-   Built multivariate regression models\
+-   Presented statistical findings to stakeholders
 
--   ***Psychometrics:** Designed questionnaires, interviewed subjects, and created latent-class models for experimental measures*
+::: cv-item
+::: cv-left
+**Student Researcher**\
+Center for Applied Behavioral Systems, VA
+:::
 
--   ***Regression:** Designed multivariate multiple regression models*
+::: cv-right
+01/2018 – 05/2021
+:::
+:::
 
--   ***Presentations:** Presented item structure and regression graphics to company members, and was interviewed by HiveMobility*
+-   Trained undergraduate researchers\
+-   Cleaned data\
+-   Designed and validated survey instruments in R\
+-   Co-authored research manuscripts
 
-### Student Researcher at the Center for Applied Behavioral Systems, Blacksburg, VA
+::: cv-item
+::: cv-left
+**Private Statistics Tutor**\
+Self-employed, Groningen, NL
+:::
 
-01/2018 - 05/2021
+::: cv-right
+09/2021 – Present
+:::
+:::
 
-*A center for intervention and community-based research techniques.*
+-   Supported 25+ students in advanced statistical methods
 
--   ***Teaching:** Training undergraduate students in responsible research methods*
+------------------------------------------------------------------------
 
--   ***Data Management:** Reviewing and preparing data for publication using the Virginia Polytech Data Repository*
+## Skills
 
--   ***Psychometrics:** Designed and tested surveys using Qualtrics and R*
+**Software:** R, NetLogo, SPSS, Atlas.ti, Microsoft Office
 
--   ***Collaborative Projects:** Conducted research projects with two of the doctoral students in the lab, including writing thorough literature reviews and co-authoring two papers*
+------------------------------------------------------------------------
 
-![](images/IMG_5310-01.png)
+## Certifications
 
-### Private Tutor in Statistics, Self Employed, Groningen, NL
+**R Programming**\
+Johns Hopkins Bloomberg School of Public Health (2023–2024)
 
-09/2021 - Present
+**Mathematical Biostatistics**\
+Johns Hopkins Bloomberg School of Public Health (2023)
 
-*Supported 16 bachelor students and 8 master's students in exam preparation and refining research methodology.*
+------------------------------------------------------------------------
 
--   ***Subject Knowledge**: Instructed on topics in bachelor and master level statistics*
+## Awards
 
--   ***Teaching**: Simplified coursework material into understandable lessons*
+-   Summa Cum Laude\
+-   Dean's List\
+-   Beyond Boundaries Scholar
 
-## Skills and Expertise
+------------------------------------------------------------------------
 
-### Software
+## Conferences
 
-*R, NetLogo, Atlas, SPSS, Microsoft Office*
-
-### Certifications
-
-**R Programming**
-
--   Johns Hopkins Bloomberg School of Public Health. 04/2023 - 03/2024
-
-**Mathematical Biostatistics**
-
--   Johns Hopkins Bloomberg School of Public Health. 09/2023 - 11/2023
-
--   
-
-## Awards, and Conferences
-
-**Awards**
-
--   *Dean's List (VT)*
-
--   *Beyond Boundaries Scholar (VT)*
-
--   *Summa Cum Laude (VT) and (UG)*
-
-**Conferences**
-
--   Social Simulation Conference. 08/2025 Delft, Netherlands.
-
--   UniC Summit. 07/2021 Quebec, Canada
-
--   COP25 United Nations Climate Change Conference. 12/2019 Madrid, Spain
-
--   Mid-Atlantic Undergraduate Research Conference. 04/2019 Blacksburg, VA, USA
-
--   North Carolina Applied Behavioral Association. 02/2019 Winston-Salem, NC, USA
+-   Social Simulation Conference (2025, Delft)\
+-   UniC Summit (2021, Quebec)\
+-   COP25 United Nations Climate Change Conference (2019, Madrid)\
+-   Mid-Atlantic Undergraduate Research Conference (2019)\
+-   North Carolina Applied Behavioral Association (2019)
+:::

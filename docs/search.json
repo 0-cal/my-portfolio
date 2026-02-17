@@ -4,56 +4,63 @@
     "href": "help.html",
     "title": "Help Page",
     "section": "",
-    "text": "A Quarto website has:\n\n_quarto.yml → controls the entire website\n.qmd files → individual pages\nimages folder → store images\ndocs folder → Github pages access (do not touch the docs folder)\n\nIf something changes across the whole website, edit _quarto.yml. If something changes on one page only, edit that page’s YAML."
-  },
-  {
-    "objectID": "help.html#important-rules",
-    "href": "help.html#important-rules",
-    "title": "Help Page",
-    "section": "Important Rules",
-    "text": "Important Rules\n\nYAML indentation MUST use spaces, not tabs.\nIndentation defines hierarchy.\nA misplaced space will cause errors for your site.\n\nIf your site fails to render, check indentation first."
+    "text": "Project Files\nA Quarto website has:\n\n_quarto.yml → controls the entire website\n.qmd files → individual pages\nimages folder → store images\ndocs folder → Github pages access (do not touch the docs folder)\nstyles.css → styling specific pages\n\nIf something changes across the whole website, edit _quarto.yml. If something changes on one page only, edit that page’s YAML.\n\n\n\nYAML\nEvery page can override global settings.\nYAML indentation MUST use spaces, not tabs. - Indentation defines hierarchy. - A misplaced space will cause errors for your site.\nUseful advanced options:\n\ndraft: true → hides page from rendering\nfreeze: auto → avoids re-running heavy computations\npage-layout: full → removes side margins\npage-layout: article → default blog style\n\n\n\n\nStyles\nTo create the CSS File, click File → New File → Text File, and name the file however you like but make sure it ends with styles.css like the one in Owen’s template.\nTo link the styles.css file to a page of your choice, go to the yml code at the top of qmd file and paste the name of your css file\nformat:\n  html:\n    css: cv-styles.css\nTo learn how the css code works you can visit this youtube link:\nCustomize appearance with CSS/SCSS\n\n\n\nImages\nAlways store images in the images folder.\nTo add an image, the easiest way is to first make sure you are in visual mode, then click insert, then click Figure/Image and chose the file on your computer."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "My CV",
+    "title": "Curriculum Vitae",
     "section": "",
-    "text": "10/2024 - present\n\n\n\n09/2021 - 02/2023\n\n\n\n09/2017 - 06/2021"
+    "text": "PhD in Applied Statistics\nBielefeld University\n\n\n\n\n\nPhD Applied Statistics\nBielefeld University\n\n\n10/2024 – Present\n\n\n\n\nMSc Environmental Psychology\nUniversity of Groningen\n\n\n09/2021 – 02/2023\n\n\n\n\nBS Psychology (Minor: Statistics)\nVirginia Polytechnic Institute and State University\n\n\n09/2017 – 06/2021\n\n\n\n\n\n\n\n\nUX Researcher\nHardt Hyperloop, Groningen, NL\n\n\n04/2022 – 11/2022\n\n\n\nDesigned psychometric instruments and latent-class models\n\nBuilt multivariate regression models\n\nPresented statistical findings to stakeholders\n\n\n\nStudent Researcher\nCenter for Applied Behavioral Systems, VA\n\n\n01/2018 – 05/2021\n\n\n\nTrained undergraduate researchers\n\nCleaned data\n\nDesigned and validated survey instruments in R\n\nCo-authored research manuscripts\n\n\n\nPrivate Statistics Tutor\nSelf-employed, Groningen, NL\n\n\n09/2021 – Present\n\n\n\nSupported 25+ students in advanced statistical methods\n\n\n\n\n\nSoftware: R, NetLogo, SPSS, Atlas.ti, Microsoft Office\n\n\n\n\nR Programming\nJohns Hopkins Bloomberg School of Public Health (2023–2024)\nMathematical Biostatistics\nJohns Hopkins Bloomberg School of Public Health (2023)\n\n\n\n\n\nSumma Cum Laude\n\nDean’s List\n\nBeyond Boundaries Scholar\n\n\n\n\n\n\nSocial Simulation Conference (2025, Delft)\n\nUniC Summit (2021, Quebec)\n\nCOP25 United Nations Climate Change Conference (2019, Madrid)\n\nMid-Atlantic Undergraduate Research Conference (2019)\n\nNorth Carolina Applied Behavioral Association (2019)"
   },
   {
     "objectID": "about.html#education",
     "href": "about.html#education",
-    "title": "My CV",
+    "title": "Curriculum Vitae",
     "section": "",
-    "text": "10/2024 - present\n\n\n\n09/2021 - 02/2023\n\n\n\n09/2017 - 06/2021"
+    "text": "PhD Applied Statistics\nBielefeld University\n\n\n10/2024 – Present\n\n\n\n\nMSc Environmental Psychology\nUniversity of Groningen\n\n\n09/2021 – 02/2023\n\n\n\n\nBS Psychology (Minor: Statistics)\nVirginia Polytechnic Institute and State University\n\n\n09/2017 – 06/2021"
   },
   {
     "objectID": "about.html#professional-experience",
     "href": "about.html#professional-experience",
-    "title": "My CV",
-    "section": "Professional Experience",
-    "text": "Professional Experience\n\nUX Researcher at Hardt Hyperloop, Groningen, NL\n04/2022 - 11/2022\nResearch lab focused on studying the user perceptions of a simulated hyperloop train, aimed at promoting sustainable transportation usage.\n\nPsychometrics: Designed questionnaires, interviewed subjects, and created latent-class models for experimental measures\nRegression: Designed multivariate multiple regression models\nPresentations: Presented item structure and regression graphics to company members, and was interviewed by HiveMobility\n\n\n\nStudent Researcher at the Center for Applied Behavioral Systems, Blacksburg, VA\n01/2018 - 05/2021\nA center for intervention and community-based research techniques.\n\nTeaching: Training undergraduate students in responsible research methods\nData Management: Reviewing and preparing data for publication using the Virginia Polytech Data Repository\nPsychometrics: Designed and tested surveys using Qualtrics and R\nCollaborative Projects: Conducted research projects with two of the doctoral students in the lab, including writing thorough literature reviews and co-authoring two papers\n\n\n\n\nPrivate Tutor in Statistics, Self Employed, Groningen, NL\n09/2021 - Present\nSupported 16 bachelor students and 8 master’s students in exam preparation and refining research methodology.\n\nSubject Knowledge: Instructed on topics in bachelor and master level statistics\nTeaching: Simplified coursework material into understandable lessons"
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "UX Researcher\nHardt Hyperloop, Groningen, NL\n\n\n04/2022 – 11/2022\n\n\n\nDesigned psychometric instruments and latent-class models\n\nBuilt multivariate regression models\n\nPresented statistical findings to stakeholders\n\n\n\nStudent Researcher\nCenter for Applied Behavioral Systems, VA\n\n\n01/2018 – 05/2021\n\n\n\nTrained undergraduate researchers\n\nCleaned data\n\nDesigned and validated survey instruments in R\n\nCo-authored research manuscripts\n\n\n\nPrivate Statistics Tutor\nSelf-employed, Groningen, NL\n\n\n09/2021 – Present\n\n\n\nSupported 25+ students in advanced statistical methods"
   },
   {
-    "objectID": "about.html#skills-and-expertise",
-    "href": "about.html#skills-and-expertise",
-    "title": "My CV",
-    "section": "Skills and Expertise",
-    "text": "Skills and Expertise\n\nSoftware\nR, NetLogo, Atlas, SPSS, Microsoft Office\n\n\nCertifications\nR Programming\n\nJohns Hopkins Bloomberg School of Public Health. 04/2023 - 03/2024\n\nMathematical Biostatistics\n\nJohns Hopkins Bloomberg School of Public Health. 09/2023 - 11/2023"
+    "objectID": "about.html#skills",
+    "href": "about.html#skills",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Software: R, NetLogo, SPSS, Atlas.ti, Microsoft Office"
   },
   {
-    "objectID": "about.html#awards-and-conferences",
-    "href": "about.html#awards-and-conferences",
-    "title": "My CV",
-    "section": "Awards, and Conferences",
-    "text": "Awards, and Conferences\nAwards\n\nDean’s List (VT)\nBeyond Boundaries Scholar (VT)\nSumma Cum Laude (VT) and (UG)\n\nConferences\n\nSocial Simulation Conference. 08/2025 Delft, Netherlands.\nUniC Summit. 07/2021 Quebec, Canada\nCOP25 United Nations Climate Change Conference. 12/2019 Madrid, Spain\nMid-Atlantic Undergraduate Research Conference. 04/2019 Blacksburg, VA, USA\nNorth Carolina Applied Behavioral Association. 02/2019 Winston-Salem, NC, USA"
+    "objectID": "about.html#certifications",
+    "href": "about.html#certifications",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "R Programming\nJohns Hopkins Bloomberg School of Public Health (2023–2024)\nMathematical Biostatistics\nJohns Hopkins Bloomberg School of Public Health (2023)"
+  },
+  {
+    "objectID": "about.html#awards",
+    "href": "about.html#awards",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Summa Cum Laude\n\nDean’s List\n\nBeyond Boundaries Scholar"
+  },
+  {
+    "objectID": "about.html#conferences",
+    "href": "about.html#conferences",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Social Simulation Conference (2025, Delft)\n\nUniC Summit (2021, Quebec)\n\nCOP25 United Nations Climate Change Conference (2019, Madrid)\n\nMid-Atlantic Undergraduate Research Conference (2019)\n\nNorth Carolina Applied Behavioral Association (2019)"
   },
   {
     "objectID": "proj1.html",
     "href": "proj1.html",
     "title": "Bootstrapping Examples in R",
     "section": "",
-    "text": "What is Bootstrapping?\nBootstrapping is a procedure for estimating the distribution of an estimator by resampling (often with replacement) from the data or from a fitted model.\nIt assigns measures of accuracy (bias, variance, confidence intervals, prediction error) to sample estimates and allows estimation of the sampling distribution of almost any statistic using simulation.\nI use rnorm function (randomize + normal distribution) to generate a practice set of data\nFit model\nset.seed(123)\n\nx &lt;- rnorm(50, mean = 10, sd = 2)\nn &lt;- length(x)\n\nmu_hat &lt;- mean(x)\nsd_hat &lt;- sd(x)\nRun bootstrap\nB &lt;- 1000\nmu_boot &lt;- numeric(B)\n\nfor (b in 1:B) {\n  x_star &lt;- rnorm(n, mean = mu_hat, sd = sd_hat)\n  mu_boot[b] &lt;- mean(x_star)\n}\nresults\nboot_mean &lt;- mean(mu_boot)\nboot_se &lt;- sd(mu_boot)\nci &lt;- quantile(mu_boot, c(0.025, 0.975))\n\nboot_mean\n\n[1] 10.06563\n\nboot_se\n\n[1] 0.2470952\n\nci\n\n     2.5%     97.5% \n 9.585642 10.531793"
+    "text": "What is Bootstrapping?\nBootstrapping is a procedure for estimating the distribution of an estimator by resampling (often with replacement) from the data or from a fitted model.\nIt assigns measures of accuracy (bias, variance, confidence intervals, prediction error) to sample estimates and allows estimation of the sampling distribution of almost any statistic using simulation.\nI use rnorm function (randomize + normal distribution) to generate a practice set of data.\nFit model\nset.seed(123)\n\nx &lt;- rnorm(50, mean = 10, sd = 2)\nn &lt;- length(x)\n\nmu_hat &lt;- mean(x)\nsd_hat &lt;- sd(x)\nRun bootstrap\nB &lt;- 1000\nmu_boot &lt;- numeric(B)\n\nfor (b in 1:B) {\n  x_star &lt;- rnorm(n, mean = mu_hat, sd = sd_hat)\n  mu_boot[b] &lt;- mean(x_star)\n}\nresults\nboot_mean &lt;- mean(mu_boot)\nboot_se &lt;- sd(mu_boot)\nci &lt;- quantile(mu_boot, c(0.025, 0.975))\n\nboot_mean\n\n[1] 10.06563\n\nboot_se\n\n[1] 0.2470952\n\nci\n\n     2.5%     97.5% \n 9.585642 10.531793"
   },
   {
     "objectID": "proj1.html#example-for-linear-regression",
@@ -102,7 +109,7 @@
     "href": "index.html#connect-with-me",
     "title": "Welcome to My Website",
     "section": "Connect with Me",
-    "text": "Connect with Me\nInterested in collaborating on a project, discussing data science topics, or just saying hello? Don’t hesitate to reach out! Connect with me via email at owen.callahan@uni-bielefeld.de"
+    "text": "Connect with Me\nInterested in collaborating on a project or discussing data science topics? Connect with me via email at owen.callahan@uni-bielefeld.de"
   },
   {
     "objectID": "active.html",

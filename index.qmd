@@ -8,7 +8,6 @@ image: images/IMG_7437 copy-02.JPG
 about: 
  template: marquee
  image-shape: rounded
-
 ---
 
 ## About Me
@@ -25,4 +24,4 @@ If you're part of the R course, you can find additional tips and resources to he
 
 ## Connect with Me
 
-Interested in collaborating on a project, discussing data science topics, or just saying hello? Don't hesitate to reach out! Connect with me via email at owen.callahan\@uni-bielefeld.de
+Interested in collaborating on a project or discussing data science topics? Connect with me via email at owen.callahan\@uni-bielefeld.de
