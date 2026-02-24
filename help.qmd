@@ -56,7 +56,7 @@ website:
             href: active.qmd
 ```
 
-YAML indentation MUST use spaces, not tabs. - Indentation defines hierarchy. - A misplaced space will cause errors for your site.
+YAML indentation MUST use spaces, not tabs. Indentation defines hierarchy. A misplaced space will cause errors for your site.
 
 Useful advanced options:
 
@@ -80,6 +80,8 @@ format:
 To learn how the css code works you can visit this youtube link:
 
 [Customize appearance with CSS/SCSS](https://www.youtube.com/watch?v=pAN2Hiq0XGs)
+
+or visit [Quarto's Website](https://quarto.org/docs/output-formats/html-themes.html)
 
 # Images
 
@@ -112,12 +114,26 @@ then paste the access token into your console and press enter your github should
 
 To publish your website, open your terminal and type each line of code below and press enter after each command separately:
 
+-   git init
+
 -   quarto render
 
--   git add .
+-   git remote add origin <https://github.com/USERNAME/REPOSITORY.git>
+
+-   git add -A
 
 -   git commit -m "Update website"
 
 -   git push
 
 If you check your repository on Github, you should see the updated pages, then click the link on the right and you should be able to see your published website
+
+If you want to update your website, then you only need to execute the following commands in your terminal again
+
+-   quarto render
+
+-   git add -A
+
+-   git commit -m "Update website"
+
+-   git push

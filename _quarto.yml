@@ -32,13 +32,13 @@ website:
 
 format:
   html:
-#   backgroundcolor: "blue"
-#   fontcolor: "black"
-#   linkcolor: "darkgreen"
-#   mainfont: "sarif"
-#   max-width: (width of the main text area of the pages)
-#   fontsize: (base font size for website)
-#   linestretch: (distance between lines of text)
+#    backgroundcolor: "blue"
+#    fontcolor: "green"
+#    linkcolor: "darkgreen"
+#    mainfont: "sarif"
+#    max-width: (width of the main text area of the pages)
+#    fontsize: (base font size for website)
+#    linestretch: (distance between lines of text)
     theme: cosmo
     toc: true
 
