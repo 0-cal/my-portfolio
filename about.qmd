@@ -22,7 +22,7 @@ Bielefeld University
 ::: cv-item
 ::: cv-left
 **PhD Applied Statistics**\
-Bielefeld University
+Bielefeld University, Germany
 :::
 
 ::: cv-right
@@ -33,7 +33,7 @@ Bielefeld University
 ::: cv-item
 ::: cv-left
 **MSc Environmental Psychology**\
-University of Groningen
+University of Groningen, Netherlands
 :::
 
 ::: cv-right
@@ -44,7 +44,7 @@ University of Groningen
 ::: cv-item
 ::: cv-left
 **BS Psychology (Minor: Statistics)**\
-Virginia Polytechnic Institute and State University
+Virginia Polytechnic Institute and State University, USA
 :::
 
 ::: cv-right
@@ -59,7 +59,7 @@ Virginia Polytechnic Institute and State University
 ::: cv-item
 ::: cv-left
 **UX Researcher**\
-Hardt Hyperloop, Groningen, NL
+Hardt Hyperloop, Groningen, Netherlands
 :::
 
 ::: cv-right
@@ -67,14 +67,10 @@ Hardt Hyperloop, Groningen, NL
 :::
 :::
 
--   Designed psychometric instruments and latent-class models\
--   Built multivariate regression models\
--   Presented statistical findings to stakeholders
-
 ::: cv-item
 ::: cv-left
 **Student Researcher**\
-Center for Applied Behavioral Systems, VA
+Center for Applied Behavioral Systems, VA, USA
 :::
 
 ::: cv-right
@@ -82,15 +78,10 @@ Center for Applied Behavioral Systems, VA
 :::
 :::
 
--   Trained undergraduate researchers\
--   Cleaned data\
--   Designed and validated survey instruments in R\
--   Co-authored research manuscripts
-
 ::: cv-item
 ::: cv-left
 **Private Statistics Tutor**\
-Self-employed, Groningen, NL
+Self-employed, Groningen, Netherlands
 :::
 
 ::: cv-right
@@ -98,13 +89,11 @@ Self-employed, Groningen, NL
 :::
 :::
 
--   Supported 25+ students in advanced statistical methods
-
 ------------------------------------------------------------------------
 
 ## Skills
 
-**Software:** R, NetLogo, SPSS, Atlas.ti, Microsoft Office
+**Software:** RStudio, NetLogo, SPSS, Atlas.ti, Microsoft Office
 
 ------------------------------------------------------------------------
 
